@@ -1,0 +1,199 @@
+% !TeX root = ../D4.2a_User_Manual.tex
+% !TeX spellcheck = en_GB
+
+\section{Using the Separate Modelling and Simulation Tools}\label{sec:simulators}
+This section provides a tutorial introduction to the FMI-specific functionality of each of the modelling and simulation tools.
+%
+This functionality is centered on the role of FMUs for each tool.
+%
+For more general descriptions of each tool, please refer to Appendix~\ref{appendix:tools}.
+%
+%
+%
+\subsection{Overture}
+\label{sec:simulators:overture}
+\input{overture-fmu-export.tex}
+
+%
+%
+%
+\subsection{20-sim}\label{sec:simulators:20sim}
+\input{sections/20sim-fmu.tex}
+
+%
+%
+%
+\subsection{20-sim 4C}\label{sec:simulators:20sim4C}
+\input{sections/20sim4C-fmu.tex}
+
+%
+%
+%
+\subsection{OpenModelica}
+This section explains the FMI and INTO-CPS related features of OpenModelica.
+%
+The focus is on import of \texttt{model\allowbreak{}Description.\allowbreak{}xml} files and standalone and tool-wrapper FMU export.
+%
+%
+%
+\subsubsection{Import of \texttt{modelDescription.xml} Files}\label{sec:simulators:openmodelica:modeldescriptionimport}
+OpenModelica can import \texttt{modelDescription\allowbreak{}.xml} interface files created using Modelio and create Modelica models from them.
+%
+To use the \texttt{modelDescription\allowbreak{}.xml} import feature, you will need to use OpenModelica nightly-builds versions, as this extension is new.
+%
+Nightly builds can be obtained through the main INTO-CPS GitHub site:
+%
+%
+%
+\begin{quote}
+\url{http://into-cps-association.github.io}
+\end{quote}
+%
+%
+%
+
+To import a \texttt{modelDescription\allowbreak{}.xml} file in OpenModelica one can use:
+\begin{enumerate}
+\item The OpenModelica Connection Editor GUI (OMEdit): \emph{FMI} $\rightarrow$ \emph{Import FMI Model Description}.
+\item A MOS script, \emph{i.\@e.\@} \texttt{script.mos}, see below.
+\end{enumerate}
+%
+%
+%
+\begin{lstlisting}[language=modelica]
+// start script.mos
+// import the FMU modelDescription.xml
+importFMUModeldescription("path/to/modelDescription.xml"); getErrorString();
+// end script.mos
+\end{lstlisting}
+%
+%
+The MOS script can be executed from command line via:
+\begin{lstlisting}
+// on Linux and Mac OS
+> path/to/omc script.mos
+// on Windows
+> %OPENMODELICAHOME%\bin\omc script.mos
+\end{lstlisting}
+
+%
+The result is a generated file with a Modelica model containing the inputs and outputs specified in \texttt{modelDescription\allowbreak{}.xml}.  For instance:
+%
+%
+%
+\begin{lstlisting}[language=modelica]
+model Modelica_Blocks_Math_Gain_cs_FMU "Output the product of a gain value with the input signal"
+  Modelica.Blocks.Interfaces.RealInput u  "Input signal connector" annotation(Placement(transformation(extent={{-120,60},{-100,80}})));
+  Modelica.Blocks.Interfaces.RealOutput y  "Output signal connector" annotation(Placement(transformation(extent={{100,60},{120,80}})));
+end Modelica_Blocks_Math_Gain_cs_FMU;"
+\end{lstlisting}
+%
+%
+%
+%This functionality will ultimately be integrated in the OMEdit (the OpenModelica Connection Editor) graphical user interface.
+%
+%
+%
+\subsubsection{FMU Export}
+All FMUs exported from OpenModelica are standalone. There are two ways to export an FMU:
+%
+%
+%
+\begin{enumerate}
+\item From a command prompt.
+\item From OMEdit (OpenModelica Connection Editor).
+\end{enumerate}
+%
+%
+%
+\paragraph{FMU export from a command prompt}
+%
+To export an FMU for co-simulation from a Modelica model, a Modelica script file \texttt{generateFMU.mos} containing the following calls to the OMC compiler can be used:
+%
+%
+%
+\begin{lstlisting}[language=modelica]
+// load Modelica library
+loadModel(Modelica); getErrorString();
+
+// load other libraries if needed
+// loadModel(OtherLibrary); getErrorString();
+
+// generate the FMU: PathTo.MyModel.fmu
+translateModelFMU(PathTo.MyModel, "2.0", "cs"); getErrorString();
+\end{lstlisting}
+%
+%
+%
+Next, the OMC compiler must be invoked on the \texttt{generateFMU\allowbreak{}.mos} script:
+%
+%
+\begin{lstlisting}
+// on Linux and Mac OS
+> path/to/omc generateFMU.mos
+// on Windows
+> %OPENMODELICAHOME%\bin\omc generateFMU.mos
+\end{lstlisting}
+%
+%
+%
+\paragraph{FMU export from OMEdit}
+One can also use OMEdit to export an FMU, as detailed in the figures below.
+%
+%
+%
+\begin{itemize}
+\item Open OMEdit (see \autoref{figure:OMEdit_1}.)
+\item Load the model in OMEdit (see \autoref{figure:OMEdit_2}.)
+\item Open the model in OMEdit (see \autoref{figure:OMEdit_3}.)
+\item Use the menu to export the FMU (see \autoref{figure:OMEdit_4}.)
+\item The FMU is now generated (see \autoref{figure:OMEdit_5}.)
+\end{itemize}
+%
+%
+%
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=12.5cm]{figures/OMEdit_1.png}}
+	\caption{Opening OMEdit.}
+	\label{figure:OMEdit_1}
+\end{figure}
+%
+%
+%
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=12.5cm]{figures/OMEdit_2.png}}
+	\caption{Loading the Modelica model in OMEdit.}
+	\label{figure:OMEdit_2}
+\end{figure}
+%
+%
+%
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=12.5cm]{figures/OMEdit_3.png}}
+	\caption{Opening the Modelica model in OMEdit.}
+	\label{figure:OMEdit_3}
+\end{figure}
+%
+%
+%
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=12.5cm]{figures/OMEdit_4.png}}
+	\caption{Exporting the FMU.}
+	\label{figure:OMEdit_4}
+\end{figure}
+%
+%
+%
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=12.5cm]{figures/OMEdit_5.png}}
+	\caption{Final step of FMU export.}
+	\label{figure:OMEdit_5}
+\end{figure}
+%
+%
+%
+The generated FMU will be saved to \texttt{\%{}TEMP\%{}\textbackslash{}OpenModelica\textbackslash{}OMEdit}.
+\clearpage
+\subsection{Unity}\label{sec:simulators:unity}
+\input{sections/unity-export.tex}
+\clearpage

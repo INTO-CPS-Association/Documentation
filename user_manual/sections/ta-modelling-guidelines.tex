@@ -1,0 +1,90 @@
+%% ----------------------------------------------------------------------
+%% $Revision: 6391 $
+%% $Id: ta-modelling-guidelines.tex 6391 2017-06-08 14:13:27Z oliver.moeller@verified.de $
+%% $URL: https://svn.nfit.au.dk/svn/iha_pgl-INTOCPS/WP4/D4_3a_User_Manual/sections/ta-modelling-guidelines.tex $
+%% ----------------------------------------------------------------------
+%% @TABLE OF CONTENTS:                 [TOCD: 15:26 08 Jun 2017]
+%%
+%% ----------------------------------------------------------------------
+%% @SPELL: british                      Thu Jun  8 16:12:01 2017
+%% ----------------------------------------------------------------------
+\subsection{Modeling Guidelines (for TA and MC purposes)}\label{sec:modeling.guidelines.TA.MC}
+When creating a model for test automation (TA) or model checking (MC), it is
+important to keep in mind that it will be input to a {\em solver} that
+explores the state space of the model. 
+It is not helpful to have a very precise state machine model which the solver
+cannot handle.\footnote{\emph{I.\@e.\@}, resources on time, memory or user patience will
+  be depleted before completion of the ``solving'' task.} 
+
+A {\em ``good''} model tries to find a balance between precision and solver
+time, \emph{i.\@e.\@}, it aims to represent all important logical aspects (that may
+contain design errors,) but abstract away from details where the
+implementation can be trusted to handle data correctly.
+%
+This section contains some guidelines on how to avoid common modelling pitfalls.
+%
+\paragraph{(G.1) Model independent parts as separate machines.}
+When you can think of two parts of the system as individual entities, then
+you should have one state machine for each part. This is much easier to
+maintain than a state machine that ``merges'' two (or more) behaviours.
+%
+\paragraph{(G.2) Reset auxiliary variables.}
+If you use ``auxiliary'' variables in your model (\emph{e.\@g.\@} to remember some
+situation) then they should have a limited lifetime where they can be of
+relevance.  Reset them (to ``0'') when they have fulfilled their purpose. This modelling
+trick will not influence the relevant behaviour of your model, but make the solver's task easier.
+%
+\paragraph{(G.3) Keep the diameter of state machines small (if possible).}
+The number of steps that are necessary to reach a certain situation can be a
+serious limitation in finding solutions.  If your state machine includes long sequences of transitions that need to be
+taken in order to reach a certain situation, consider simplifying it by
+\begin{itemize}
+\item breaking this state machine down into several state machines
+\item ``merging'' several similar states along this path into a single, more
+  abstract state (\emph{i.\@e.\@} make your model less precise)
+\end{itemize}
+%
+\paragraph{(G.4) Use abstractions whenever specific (payload) data is of no interest.}
+If the logical state depends on input data, try to model this as simply as
+possible. Consider omitting data sanitation steps (like plausibility checks,
+interpolation of values, data sanitation) that may exist in your specific
+system but only serve as countermeasures to unreliable sensor inputs. In the
+modelling world, inputs are always ``perfect'' and ``reliable''.
+{\bf Example}: When modelling a protocol, avoid modelling the payload. Also, do not put payload and addressing (housekeeping) information in the
+same variable.
+%
+\paragraph{(G.5) Try to think of ``logical states'' rather than of ``data driven states''.}
+Variables can be used to ``encode'' the states of your system. Try to find a
+balance where state machine states actually represent ``logical states'' (that
+are distinguished by their behaviour). This will make the guard conditions
+smaller and more maintainable.
+%
+\paragraph{(G.6) Keep a list of modelling parameters.}
+Keep an overview on what immutable ``parameters'' your modelling depends on,
+\emph{i.\@e.\@}, what values they have and where they are used.
+This will make it easier to revise your model consistently when required.
+%
+\paragraph{(G.7) Dare to approximate complex values.}
+In particular {\em continuous flows} may need to be broken down into manageable
+components.
+{\bf Example}: A physical accumulator can be approximated by a scalar value. 
+Using a (scaled) integer instead of a floating-point number may be good enough and make the
+task of the solver much easier.
+%
+\paragraph{(G.8) Dare to approximate complex behaviour.}
+A common modelling mistake is to ``model as precise as possible''. 
+In particular, capturing continuous states can be very expensive (in terms of
+state space).  Whenever possible, you should consider simplifying things, even if this
+means sacrificing precision. Remember that testing aims to find ``logical
+errors'' and not to ``represent the most precise approximation of the system''.
+{\bf Example}: When modelling a water tank with (continuous) in-flow and state
+change, it may suffice to create a ``coarse'' model of it which changes state
+only once per second, based in input value, water level, and maximal output
+capacity. 
+%
+\paragraph{(G.9) Start with small versions of your system.}
+Do not start modelling with a full-blown version of a complete system. Rather
+start with one relevant component, say, one controller and explore testing a
+small system
+before moving to ``many controllers, many other components''.
+%% -------------------------------------------------------------------------

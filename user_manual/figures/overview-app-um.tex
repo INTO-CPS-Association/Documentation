@@ -1,0 +1,133 @@
+% !TeX root=../D4.1a_User_Manual.tex
+\usetikzlibrary{positioning,fit,calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing}
+\makeatletter
+\tikzset{%
+  show node name/.code={%
+    \expandafter\def\expandafter\tikz@mode\expandafter{\tikz@mode\show\tikz@fig@name}%
+    }
+}
+
+\def\toolfmu#1#2#3{
+
+\node[myBox,#2,myGray] (#1ovtToolWrapper){\parbox{2.5cm}{\centering Tool Wrapper\\#3}};
+\node[myBox,#2, left=of #1ovtToolWrapper,myGray] (#1ovtNative){\parbox{2.5cm}{\centering Generated Native\\#3}};
+\coordinate (#1ovtToolWrapper-#1ovtNative) at ($(#1ovtToolWrapper)!0.5!(#1ovtNative)$);
+\node[myBox, below=of #1ovtToolWrapper-#1ovtNative,fill=orange!10] (#1model) {\parbox{2.5cm}{\centering Model\\+\\#3
+%\includegraphics[width=.25\textwidth]{Overture-logo.png}
+}    
+};
+\node[draw,dashed,fit=(#1ovtToolWrapper) (#1ovtNative) (#1model), ] (#1fmugroup) {\footnotesize Tool specific};
+
+\draw[draw,-triangle 90,dotted] (#1model.west) to[out=170,in=270,looseness=2]node [midway, below, sloped]   {\scriptsize Generate} (#1ovtNative.south) ;
+\draw[draw,-triangle 90,dotted] (#1ovtToolWrapper.south) to[out=170,in=0,looseness=2]node [midway, above, sloped]   {\scriptsize Using} (#1model.east) ;
+ 
+
+} 
+
+\begin{tikzpicture}[scale=0.55, transform shape]
+\tikzset{myFont/.style={font=\footnotesize}}
+\tikzset{myBox/.style={draw,minimum height=1cm,minimum width=2cm,myFont}}
+\tikzset{myGray/.style={fill=gray!10}}
+\tikzset{myBlue/.style={draw=blue!60}}
+\tikzset{tool/.style={dotted,draw,minimum size=2.5cm}}
+\tikzset{fmu/.style={draw,minimum width=2.5cm,minimum height=1cm}}
+
+
+\node[tool](modelio) {\parbox{3cm}{\includegraphics[width=2cm]{figures/logo-modeliosoft.png} \\ \centering Modelio}};
+
+%\node[tool, above right= 3cm of modelio](mc) {Model Checking};
+
+\node[myBox, below= 2cm of modelio](md) {Model Description};
+
+\node[tool, below left=2.8cm of md](overture) {\parbox{3cm}{\includegraphics[width=2cm]{figures/Overture_icon_128x128.png} \\ \centering Overture}};
+
+\node[tool, right=of overture](20sim) {\parbox{3cm}{\includegraphics[width=2cm]{figures/20simIconWithShadow48.jpg} \\ \centering 20-sim}};
+
+\node[tool, right=of 20sim](om) {\parbox{3cm}{\includegraphics[width=2cm]{figures/omediticon.png} \\ \centering OpenModelica}};
+
+\node[tool, right=of om](rttester) {\parbox{3cm}{\includegraphics[width=2cm]{figures/verified.jpeg} \\ \centering RT-Tester}};
+
+
+\node[fmu, below=1.8cm of overture](fmuOverture){FMU};
+\node[fmu, right=of fmuOverture](fmu20sim){FMU};
+\node[fmu, right=of fmu20sim](fmuOm){FMU};
+\node[fmu, right=of fmuOm,xshift = 0.6cm,yshift = -0.6cm,fill=white](fmuRttester2){   };
+\node[fmu, right=of fmuOm,xshift = 0.3cm,yshift = -0.3cm,fill=white](fmuRttester1){   };
+
+\node[fmu, right=of fmuOm,fill=white](fmuRttester){FMU};
+
+
+
+\node[dashed,draw,transform shape=false,fit=(fmuOverture) (fmu20sim) (fmuOm) (fmuRttester) (fmuRttester1) (fmuRttester2)] (fmu) {};
+%\node [anchor=north west] at (cosim.north west) {\underline{Simulation}};
+
+% links
+ \draw[draw,-triangle 90, ]
+	(modelio) -- (md) node [midway, above, sloped]  {Export part};
+
+% imports	
+ \draw[draw,-triangle 90, ]
+	(overture) -- (md) node [midway, above, sloped]  {Import};
+ \draw[draw,-triangle 90, ]
+	(20sim) -- (md) node [midway, above, sloped]  {Import};
+ \draw[draw,-triangle 90, ]
+	(om) -- (md) node [midway, above, sloped]  {Import};
+ \draw[draw,-triangle 90, ]
+	(rttester) -- (md) node [midway, above, sloped]  {Import};
+	
+% fmu export
+ \draw[draw,-triangle 90, ]
+	(overture) -- (fmuOverture) node [midway, above, sloped]  {Export};
+ \draw[draw,-triangle 90, ]
+	(20sim) -- (fmu20sim) node [midway, above, sloped]  {Export};
+ \draw[draw,-triangle 90, ]
+	(om) -- (fmuOm) node [midway, above, sloped]  {Export};
+ \draw[draw,-triangle 90, ]
+	(rttester) -- (fmuRttester) node [midway, above, sloped]  {Export};
+	
+% fmu import
+\draw[draw,-triangle 90,overlay] (fmu.west) to[out=120,in=180,looseness=1]node [midway, above, sloped]  {FMU Import} (modelio.west);
+
+% overture uml connection
+ \draw[draw,-triangle 90, ]
+	(overture) -- (modelio) node [midway, above, sloped]  {UML Model Exchange};
+
+\node[myBox, right=5cm of modelio](app){\parbox{2cm}{\centering INTO-CPS App}};
+
+\node[myBox, right=2cm of app](dse){DSE};
+
+\node[myBox, right=2cm of dse](coe){COE};
+
+% obtain config
+% \draw[draw,-triangle 90, ]
+%	(mc) -- (rttester) node [midway, above, sloped]  {Model Check?};
+	
+\draw[draw,-triangle 90] ($(rttester.south)-(-0.9,0)$) to[out=315,in=345,looseness=10]node [midway, below, sloped]  {FMU Model Check} ($(rttester.south east)+(-0,0.9)$);
+
+\draw[draw,-triangle 90] ($(rttester.north east)-(-0,1.2)$) to[out=15,in=60,looseness=5]node [midway, above, sloped]  {Co-sim Model Check} ($(rttester.north)-(-0.9,0.0)$) ;
+	
+%dse links
+
+
+\draw[draw,-triangle 90] (app.north east) to[out=90,in=90,looseness=1.5]node [midway, above, sloped]  {\parbox{2cm}{Co-sim config}} (dse.north west);
+\draw[draw,-triangle 90] (dse.south west) to[out=270,in=270,looseness=1.5]node [midway, below, sloped]  {\parbox{2cm}{\centering Optimal co-sim config}} (app.south east);
+
+\draw[draw,-triangle 90] (dse.north) to[out=90,in=90,looseness=1.5]node [midway, above, sloped]  {\parbox{2cm}{Co-sim config}} (coe.north west);
+\draw[draw,-triangle 90] (coe.south west) to[out=270,in=270,looseness=1.5]node [near end, above, sloped]  {} (dse.south);
+	
+	
+\draw[draw,-triangle 90,myBlue] (app.north) to[out=90,in=90,looseness=1.5]node [midway, above, sloped]  {\parbox{2cm}{Co-sim config}} (coe.north);
+\draw[draw,-triangle 90,myBlue] (coe.south) to[out=270,in=270,looseness=1.5]node [near end, above, sloped]  {} (app.south);
+
+%app update link
+\draw[draw,-triangle 90] ($(app.south)+(-0.9,0)$) to[out=290,in=210,looseness=55]node [midway, below, sloped]  {Live Update} (app.south west);
+%\draw (app.south west) to [out=330,in=300,looseness=8] (app.south west);
+
+%model check link
+ \draw[draw,-triangle 90, ]
+	(app) -- (modelio) node [midway, above, sloped]  {Obtain co-sim config};
+
+
+\end{tikzpicture}

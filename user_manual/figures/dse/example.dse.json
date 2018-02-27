@@ -1,0 +1,66 @@
+{
+    "algorithm": {},
+    "objectiveConstraints": {},
+    "objectiveDefinitions": {
+        "externalScripts": {
+			"lapTime": {
+                "scriptFile": "lapTime.py",
+                "scriptParameters": {
+                    "1": "time",
+					"2": "{bodyFMU}.body.robot_x",
+					"3": "{bodyFMU}.body.robot_y",
+					"4": "studentMap"
+					}
+				},	
+			"meanCrossTrackError": {
+                "scriptFile": "meanCrosstrackError.py",
+                "scriptParameters": {
+					"1": "{bodyFMU}.body.robot_x",
+					"2": "{bodyFMU}.body.robot_y"
+					}
+				}
+            
+        },
+        "internalFunctions": {
+			"energyConsumed": {
+				"columnID": "{bodyFMU}.body.total_energy_used",
+				"objectiveType": "max"
+				}
+			}
+    },
+    "parameterConstraints": [
+		"{sensor1FMU}.sensor1.lf_position_y == {sensor2FMU}.sensor2.lf_position_y",
+		"{sensor1FMU}.sensor1.lf_position_x == - {sensor2FMU}.sensor2.lf_position_x"
+	],
+    "parameters": {
+        "{sensor1FMU}.sensor1.lf_position_x": [
+            0.01,
+			0.03
+        ],
+        "{sensor1FMU}.sensor1.lf_position_y": [
+            0.07,
+			0.13
+        ],
+		"{sensor2FMU}.sensor2.lf_position_x": [
+            -0.01,
+			-0.03
+        ],
+        "{sensor2FMU}.sensor2.lf_position_y": [
+            0.07,
+			0.13
+        ]
+    },
+    "ranking": {
+        "pareto": {
+            "lapTime": "-",
+            "meanCrossTrackError": "-"
+        }
+    },
+	"scenarios": [
+		"studentMap"
+	],
+    "simulation": {
+        "endTime": "40",
+        "startTime": "0"
+    }
+}

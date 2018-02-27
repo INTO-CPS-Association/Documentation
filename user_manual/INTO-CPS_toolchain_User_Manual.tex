@@ -1,0 +1,224 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+
+%%% Add [final] option to the report class to switch between draft and final version of the report
+%%% Use [narrowmargin] to enable narrow margins - this may impair readability.
+%\documentclass[a4paper,12pt,draft]{include/intocpsreport}   %Or
+\documentclass[a4paper,12pt,final]{include/intocpsassociation}   %Or
+% intocpslargereport if chapters are required.
+%
+%
+%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{tikz-uml}
+\usepackage{framed}
+\usepackage{subcaption}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{courier}
+\usepackage{xspace}
+\usepackage{cleveref}
+\usepackage{subcaption}
+\usepackage{textcomp} % Used for 20-sim section \textrightarrow
+%\usepackage{showframe}
+
+\usepackage{listings}
+\input{listings-modelica.cfg}
+
+% The VDMlisting package loads the times package which changes the font so we just mark it as loaded to prevent the load. 
+\makeatletter
+\@namedef{ver@times.sty}{}% a fake for a "loaded" package
+\makeatother
+\usepackage{vdmlisting}
+
+%% Define listing environment for XML
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+
+\lstnewenvironment{xml}[1][]{\lstset{  language=XML,
+  morekeywords={encoding, xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}\lstset{#1}}
+{}
+
+%% end listing environment for XML
+%
+%
+%
+\def\draftnote#1{\noindent\smallskip\framebox{\begin{minipage}{0.95\columnwidth}\color{red}#1\end{minipage}}\smallskip\par}
+\newenvironment{draftnoteenv}{\noindent\smallskip\begin{framed}\begin{minipage}{0.95\columnwidth}\color{red}}{\end{minipage}\end{framed}\smallskip\par}
+\newenvironment{assumption}{\noindent\smallskip\color{blue}\begin{framed}\begin{minipage}{0.95\columnwidth}}{\end{minipage}\end{framed}\smallskip\par}
+%
+%
+%
+\newcommand{\revisit}[1]{\textcolor{red}{\pmb{[[[}\@ #1\@ \pmb{]]]}}}
+\newcommand{\intoapp}{INTO-CPS Application}
+\newcommand{\into}{INTO-CPS\xspace}
+%
+%
+%\reportnumber{D4.3a}
+\reporttitle{INTO-CPS Tool Chain User Manual}
+%\reporttitle{User Manual for the INTO-CPS Tool Chain}
+\shortreporttitle{INTO-CPS Tool Chain User Manual}  %To use if report title is too long for header
+%
+%
+%
+%%% Set document release class as appropriate
+%%% e.g. Public, Restricted, Programme Participant
+\reportstatus{Public}
+%
+%
+%
+%%% If document is a deliverable, this flag should be commented out 
+%%% e.g. %\technotetrue
+%%% If report is a technical report, leave uncommented
+%%% e.g. \technotetrue
+%\technotetrue % Comment out as appropriate
+%
+%
+%
+\submissiondate{February, 2018}
+\contributors{
+Victor Bandur, AU\\
+Peter Gorm Larsen, AU\\ 
+Kenneth Lausdahl, AU \\
+Casper Thule, AU\\
+Carl Gamble, UNEW\\
+Richard Payne, UNEW\\
+Adrian Pop, LIU\\
+Etienne Brosse, ST\\
+J{\"o}rg Brauer, VSI\\
+Florian Lapschies, VSI\\
+Marcel Groothuis, CLP\\
+Tom Bokhove, CLP\\
+Christian Kleijn, CLP\\
+Luis Diogo Couto, UTRC
+}
+%
+%
+%
+\editors{
+  Peter Gorm Larsen, AU
+}
+%
+%
+%
+%\reviewers{Ken Pierce, UNEW\\
+%Kangfeng Ye, UY\\
+%Luis Diogo Couto, UTRC}
+%
+%
+%
+%% Version details  
+% #1: version
+% #2: date
+% #3: author
+% #4: description
+\addversion{0.01}{11-01-2017}{Victor Bandur}{Initial version.}
+\addversion{0.02}{30-10-2017}{Victor Bandur}{Updates for internal review.}
+\addversion{0.03}{30-10-2017}{Marcel Groothuis}{Added 20-sim 4C FMI import/export manual.}
+\addversion{0.04}{12-12-2017}{Marcel Groothuis}{Address internal review comments 20-sim and 20-sim 4C sections.}
+\addversion{1.0}{18-12-2017}{Victor Bandur}{Final version inside the INTO-CPS project.}
+\addversion{1.1}{26-02-2018}{Peter Gorm Larsen}{First version in the INTO-CPS association.}
+
+%
+%
+\begin{document}
+\maketitle
+%
+%
+%
+%%%% Document abstract page %%%% 
+\section*{Abstract}
+\label{sec:abstract}
+%
+This user manual for the INTO-CPS tool chain, an update of Deliverable D4.3a \cite{INTOCPSD4.3a} that was developed inside the INTO-CPS H2020 project and it is now taken further inside the INTO-CPS association.
+%
+It is targeted at those wishing to make use of the INTO-CPS technology to design and validate cyber-physical systems.
+%
+This user manual is concerned with those aspects of the tool chain relevant to end-users, so it is necessarily high-level.
+%
+Other deliverables from the INTO-CPS project discuss finer details of individual components, including theoretical foundations (Deliverables D4.3b \cite{INTOCPSD4.3b}, D4.2c \cite{INTOCPSD4.2c}, D4.3c \cite{INTOCPSD4.3c}, D2.3a \cite{INTOCPSD2.3a}, D2.2b \cite{INTOCPSD2.2b}, D2.3b \cite{INTOCPSD2.3b}, D2.3c \cite{INTOCPSD2.3c}), methods and guidelines (Deliverables D3.3a \cite{INTOCPSD3.3a} and D3.6 \cite{INTOCPSD3.6}) and software design decisions (Deliverables D4.3d \cite{INTOCPSD4.3d}, D5.2a \cite{INTOCPSD5.2a}, D5.3c \cite{INTOCPSD5.3c}, D5.3d \cite{INTOCPSD5.3d}, D5.3e \cite{INTOCPSD5.3e}).
+%
+\newpage
+%
+%%%% Document table of contents page %%%% 
+\tableofcontents
+\newpage
+%
+%
+%
+%%%% Document Content %%%% 
+%% \chapter{Chapter Title} %% if intocpslargereport is in use
+%\begin{assumption}
+%
+%
+%
+\input{sections/intro.tex}
+\clearpage
+\input{sections/intocpsoverview.tex}
+\clearpage
+\input{sections/intoapp.tex}
+\clearpage
+\input{sections/modelioandsysml.tex}
+\clearpage
+\input{sections/separatetools.tex}
+\clearpage
+\input{sections/dse.tex}
+\clearpage % Force insertion of floating environments
+\input{sections/rttester.tex}
+\clearpage
+\input{sections/traceability.tex}
+\clearpage % Force insertion of floating environments\input{sections/codegen.tex}
+\input{sections/codegen.tex}
+\clearpage
+\input{sections/issue-handling.tex}
+\clearpage
+\input{sections/conclusions.tex}
+\clearpage
+%
+%
+%
+%
+%%%% Bibliography %%%%
+\bibliographystyle{alpha}
+\bibliography{bibliography} 
+\label{ch:bib} %label to refer to
+%
+%
+%
+\clearpage
+%
+%
+%
+\appendix
+\input{appendices/acronyms.tex}
+\clearpage
+\input{appendices/backgroundontools.tex}
+\clearpage
+\input{appendices/principles.tex}
+%
+%
+%
+\end{document}

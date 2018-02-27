@@ -1,0 +1,57 @@
+\section{Overview of the INTO-CPS Tool Chain}\label{sec:overview}
+The INTO-CPS tool chain consists of several special-purpose tools from a number of different providers.
+%
+Note that this is an open tool chain, so it is possible to incorporate other tools that also support the FMI standard for co-simulation.
+%
+We have already tested this with numerous external tools (both commercial as well as open-source).
+%
+The constituent tools are dedicated to the different phases of collaborative modelling activities.
+%
+They are discussed individually through the course of this manual.
+%
+An overview of the tool chain is shown in Figure \ref{figure:toolchainoverview}.
+%
+%
+%
+\begin{figure}[ht]
+\centering
+\input{figures/overview-app-um.tex}
+\caption{Overview of the structure of the INTO-CPS tool chain.}
+\label{figure:toolchainoverview}
+\end{figure}
+%
+%
+%
+The main interface to INTO-CPS is the \intoapp.
+%
+This is where the user can design co-simulations from scratch, assemble them using existing FMUs and configure how simulations are executed.
+%
+The result is a \emph{multi-model}.
+%
+The multi-model can then be analysed through co-simulation, model checking and model-based testing.
+
+The design of a multi-model is carried out visually using the Modelio SysML tool, in accordance with the SysML/INTO-CPS profile described in D2.3a \cite{INTOCPSD2.3a}.
+%
+Here one can either design a multi-model from scratch by specifying the characteristics and connection topology of Functional Mockup Units (FMUs) yet to be developed, or import existing FMUs so that the connections between them may be laid out visually.
+%
+The result is a SysML architecture model of the multi-model, expressed in the SysML/INTO-CPS profile.
+%
+In the former case, where no FMUs exist yet, a number of \texttt{model\allowbreak{}Description\allowbreak{}.xml} files are generated from this multi-model which serve as the starting point for constituent model construction inside each of the individual simulation tools, leading to the eventual FMUs.
+
+Once a multi-model has been designed and populated with concrete FMUs, the Co-simulation Orchestration Engine (COE) can be invoked to execute a co-simulation.
+%
+The COE controls all the individual FMUs in order to carry out the co-simulation.
+%
+In the case of tool-wrapper FMUs, the model inside each FMU is simulated by its corresponding simulation tool.
+%
+The tools involved are Overture \cite{Larsen&10a}, 20-sim \cite{20sim} and OpenModelica \cite{OpenModelica}.
+%
+RT-Tester is not under the direct control of the COE at co-simulation time, as its purpose is to carry out testing and model checking rather than simulation.
+%
+The user can configure a co-simulation, for instance by running it with different simulation parameter values and observing the effect of the different values on the co-simulation outcome.
+
+Alternatively, the user has the option of exploring optimal simulation parameter values by entering a DSE phase.
+%
+In this mode, ranges are defined for various parameters which are explored, in an intelligent way, by a design space exploration engine that searches for optimal parameter values based on defined optimization conditions.
+%
+This engine interacts directly with the COE and itself controls the conditions under which the co-simulation is executed.
