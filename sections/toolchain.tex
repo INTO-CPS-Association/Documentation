@@ -3,3 +3,66 @@
 \section{The INTO-CPS Tool Chain}\label{sec:toolchain}
 
 \fbox{Christian K\"{o}nig with support from Etienne Brosse}
+
+\fbox{make sure that this section fits to the other sections, incl. references}
+
+\fbox{indicate maturity of the different tool features, in particular wrt the new ones}
+
+This section discusses the interconnectivity of the different tools, and how the tools fit into the workflows and tasks that are covered by INTO-CPS. In particular, this section focuses on the features that were added during the INTO-CPS project, and in the framework of the INTO-CPS association. This section does \textit{not} describe all the tools in detail (here, the reader is referred to the different manuals, and to the User Manual (ref to the INTO-CPS tool manual).
+
+[text on the overall tool-chain, refer to workflows, probably from previous section]
+
+[Figure of the overall tool-chain]
+
+\subsection{Modelio}
+
+Modelio is an open-source modeling environment for various formalisms with many interfaces to import and export models. In the context of INTO-CPS, the support for SysML modelling is of primary importance, while Modelio can be extended with a range of modules to enable more modelling languages. In the terminology of the methods guidelines (e.g. \cite{INTOCPSD3.3a}), Modelio is a tool for the \textit{architectural modeling} and for \textit{requirements management}.
+
+During the INTO-CPS project, a SysML profile was created, which is available as a module for Modelio 3.4 and 3.6 (see \url{http://forge.modelio.org/projects/intocps}). This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere (refs). Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
+
+To support the FMI multi-modelling approach, ModelDescription.xml files can now be imported into, and exported from a SysML Architectural Modeling diagram. Importing ModelDescription.xml files creates a SysML block with the corresponding flow ports and attributes, exporting them allows import in other modeling tools, such as those described below.
+
+The Connections Diagram describes the signal flow between the different SysML blocks, which can each correspond to one FMU. Using the new INTO-CPS SysML profile, the Connections Diagram can be exported to an intermediary JSON format, which can then be imported by the INTO-CPS Application, to create a new Multi-Model.
+
+%The INTO-CPS SysML Profile\\
+%Import of ModelDescription.xml \\
+%Export of ModelDescription.xml files (for modeling tools)\\
+%Export of Connections Diagram (for the Application)\\
+DSE modeling configuration\\
+Requirements management\\
+
+\subsection{OpenModelica}
+
+MD.xml import\\
+FMU export\\
+Traceability support\\
+
+\subsection{20-sim}
+
+MD.xml import\\
+FMU export\\
+Traceability support\\
+
+\subsection{20-sim4C}
+
+\subsection{RT Tester}
+
+Model checking\\
+Test automation\\
+
+\subsection{Overture}
+
+MD.xml import\\
+FMU export\\
+Traceability support\\
+
+\subsection{AutoFocus3}
+
+\subsection{4Diac}
+
+\subsection{The INTO-CPS Application}
+
+Integration of the different artifacts\\ 
+configuration and execution of Co-Simulation\\
+Front-end for Test-automation and model checking\\
+Viewer for traceability\\
