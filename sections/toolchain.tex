@@ -31,34 +31,38 @@ The Connections Diagram describes the signal flow between the different SysML bl
 DSE modeling configuration\\
 Requirements management\\
 
-\subsection{OpenModelica}
+\subsection{Modeling tools}
+
+Most modelling tools support the same functions.
+
+
+\begin{table*}[ht]
+	\centering
+		\begin{tabular}{l|c|c|c|c}
+			Tool & MD.xml import & FMU export (stand alone) & FMU export (tool wrapper) & Traceability\\
+			\hline
+			20-sim & yes & no & yes & yes\\
+			OpenModelica & yes & yes & no & yes\\
+			Overture & yes & yes & no & yes\\
+			4diac & N.A. & N.A. & N.A. & N.A \\
+			AutoFocus 3 & N.A. & N.A. & N.A. \\
+			Cossim & N.A. & N.A. & N.A. \\
+			ABS & N.A. & N.A. & N.A. \\
+		\end{tabular}
+	\caption{Functionalities of the modeling tools}
+	\label{tab:FunctionalitiesOfTheModelingTools}
+\end{table*}
 
 MD.xml import\\
 FMU export\\
 Traceability support\\
-
-\subsection{20-sim}
-
-MD.xml import\\
-FMU export\\
-Traceability support\\
-
-\subsection{20-sim4C}
 
 \subsection{RT Tester}
 
-Model checking\\
-Test automation\\
+Import of xsd files from Modelio\\
+FMU export of test oracles \\
 
-\subsection{Overture}
-
-MD.xml import\\
-FMU export\\
-Traceability support\\
-
-\subsection{AutoFocus3}
-
-\subsection{4Diac}
+\subsection{3D animation}
 
 \subsection{The INTO-CPS Application}
 
