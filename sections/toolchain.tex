@@ -38,15 +38,16 @@ The Connections Diagram describes the signal flow between the different SysML bl
 %Export of Connections Diagram (for the Application)\\
 DSE modeling configuration\\
 Requirements management\\
+Traceability\\
 
 \subsection{Modeling tools}
 
-Most modelling tools support the same functions.
+Most modelling tools support the same functions. A ModelDescription.xml file (e.g. one that is automatically created from Modelio, see previous section) can be imported to create a skeleton model with the input and output signals and exposed parameters. 
 
 
 \begin{table*}[ht]
 	\centering
-		\begin{tabular}{l|c|c|c|c}
+		\begin{tabular}{l|p{3cm}|p{3cm}|p{3cm}|p{3cm}}
 			Tool & MD.xml import & FMU export (stand alone) & FMU export (tool wrapper) & Traceability\\
 			\hline
 			20-sim & yes & no & yes & yes\\
