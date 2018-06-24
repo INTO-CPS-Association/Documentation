@@ -8,24 +8,65 @@
 
 %\fbox{Peter Gorm Larsen}
 
-It is envisaged that the INTO-CPS technology will be further extended as the FMI standard evolves and in particular in future research projects. Thus, the future directions here will depend both on the paying members of the INTO-CPS Association as well as which externally funded research projects that will be successful in achieving funding. In the subsections below candidate future directions are proposed.
+It is envisaged that the INTO-CPS technology will be further extended as the FMI standard evolves and in particular in future research projects. 
+Thus, the future directions here will depend both on the paying members of the INTO-CPS Association as well as which externally funded research projects that will be successful in achieving funding. 
+
+\claudio{Why paying members only? What about the in-kind contributions?}
+
+In the subsections below candidate future directions are proposed.
 
 \subsection{Adapting FMUs Easily to Ones Needs}
 
+\claudio{Motivation:} In the context of continuous system co-simulation, it is well known that there is no one-size-fits-all co-simulation approach. 
+Different kinds of systems are best co-simulation different ways (cite survey).
+At the same time, different domains have specialized numerical solvers, which means we cannot ignore the solvers in the FMUs.
+A future research direction is to understand how to reconcile these contradicting requirements.
+A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them (cite semantic adaptation work)
+This way does not solve all challenges in this regard, and the approach lacks validation from multiple domains.
+
+\claudio{Maybe providing``connector'' FMUs for the most common connections in different domains. For example, if I'm building a co-simulation of an hydraulic system, I may want to connect a large pipe to a small pipe.}
+
 \subsection{Enlarging the tools and standards supported by the INTO-CPS Toolsuite}
+
+\claudio{Can you elaborate on this? What does supporting more tools mean? Also, which standards are we talking about? HLA?}
 
 \subsection{Use in a Cloud-based Eco-system/Marketplace}
 
 \subsection{Use in a Digital Twin setting}
 
+\claudio{I can't understand what exactly this entails.
+Maybe it is best to describe the case studies that we want to support?
+To me, supporting digital twin entails at least enhancing the COE for real-time co-simulation (to use in a diagnosing use case)}
+
 \subsection{Increased Support for Dynamic Evolution Scenarios}
+
+\claudio{Not clear what dynamic evolution means\ldots Is this supporting incremental development (having multiple refinments of the same component?) Isn't this related to traceability?}
 
 \subsection{Incorporation of Computational Fluid Dynamics Co-simulations}
 
+\claudio{Might be easier to describe the use cases in concrete. For example, I think the into-cps can already support CFD co-simulations (you just need the FMUs to do that\ldots). What is does not support is error control techniques, that can kick in when CFD co-simulations are run.}
+
 \subsection{Increased support for Human Interaction}
+
+\claudio{Can you provide example advancements to support this? Example, real-time co-simulation seems an easy one. Maybe the ability to pause, inspect, and debug co-simulations?
+Maybe fault injection?}
 
 \subsection{Increased support for Network Considerations}
 
+\claudio{What does this entail? Adding delays to the signals? Adding noise? Is this related to semantic adaptation or fault injection?}
+
 \subsection{Intelligence, Adaptivity and Autonomy}
 
+\claudio{We need to make this more concrete. Do we mean the co-simulation of adpative systems?
+Are we looking at variable structure systems? Or the development of a COE that is adaptive (nice challenge, to ensure stability with adaptive master algorithms)?
+Also, another possible direction is to support certification processes by, e.g., having built in mechanisms to calculate the errors being made (during or after the co-simulation is run).
+This is interesting because the user just has to provide the bounds he can tolerace, and the co-simulation will be run as many times as required, so that these tolerances are met.
+Another possible direction is to support hybrid co-simulation (even when there is no possibility of rolling back from the FMUs).
+}
+
 \subsection{Tradeoff in Abstraction between Speed and Accuracy}
+
+\claudio{
+An interesting direction is to support DSE's, while using multiple abstraction models.
+For example, higher abstraction models might be used to optimize the design globally, while lower abstraction models validate the candidate found, and further optimize each of them to find the best one.
+}
