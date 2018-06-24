@@ -28,7 +28,7 @@
 \usepackage{listings}
 %\input{listings-modelica.cfg}
 
-% The VDMlisting package loads the times package which changes the font so we just mark it as loaded to prevent the load. 
+% The VDMlisting package loads the times package which changes the font so we just mark it as loaded to prevent the load.
 \makeatletter
 \@namedef{ver@times.sty}{}% a fake for a "loaded" package
 \makeatother
@@ -79,10 +79,11 @@
 %
 %
 %\reportnumber{D4.3a}
-\reporttitle{The INTO-CPS Manifesto}
+\reporttitle{The INtegrated TOolchain for Cyber-Physical Systems (INTO-CPS): a Guide}
+%\reporttitle{The INTO-CPS Manifesto}
 %\reporttitle{User Manual for the INTO-CPS Tool Chain}
-\shortreporttitle{The INTO-CPS Manifesto}  %To use if report title is too long for header
-%
+%\shortreporttitle{The INTO-CPS Manifesto}  %To use if report title is too long for header
+\shortreporttitle{The INTO-CPS Guide}  %To use if report title is too long for header%
 %
 %
 %%% Set document release class as appropriate
@@ -91,17 +92,23 @@
 %
 %
 %
-%%% If document is a deliverable, this flag should be commented out 
+%%% If document is a deliverable, this flag should be commented out
 %%% e.g. %\technotetrue
 %%% If report is a technical report, leave uncommented
 %%% e.g. \technotetrue
 %\technotetrue % Comment out as appropriate
 %
 %
+\def\into{INTO-CPS}
+\def\SG{Smart Grid}
+\def\term#1{\textbf{\emph{#1}}}
+%
+%
+%
 %
 \submissiondate{October, 2018}
 \contributors{
-Peter Gorm Larsen, Aarhus University\\ 
+Peter Gorm Larsen, Aarhus University\\
 John Fitzgerald, University of Newcastle\\
 Jim Woodcock, University of York\\
 Christian K\"{o}nig, TWT\\
@@ -112,13 +119,16 @@ Jos\'{e} Cabral, Fortiss \\
 Hugo Macedo, Aarhus University\\
 Andrey Sadovykh, Softeam\\
 Constantin-Bala Zamfirescu,``Lucian Blaga'', University of Sibiu\\
-Mihai Neghina, ``Lucian Blaga'', University of Sibiu
+Mihai Neghina, ``Lucian Blaga'', University of Sibiu\\
+Ken Pierce, University of Newcastle\\
+Carl Gamble, University of Newcastle
 }
 %
 %
 %
 \editors{
   Peter Gorm Larsen, Aarhus University
+  John Fitzgerald, Newcastle University
 }
 %
 %
@@ -129,7 +139,7 @@ Mihai Neghina, ``Lucian Blaga'', University of Sibiu
 %
 %
 %
-%% Version details  
+%% Version details
 % #1: version
 % #2: date
 % #3: author
@@ -143,21 +153,24 @@ Mihai Neghina, ``Lucian Blaga'', University of Sibiu
 %
 %
 %
-%%%% Document abstract page %%%% 
+%%%% Document abstract page %%%%
 \section*{Abstract}
 \label{sec:abstract}
 %
 \fbox{John Fitzgerald}
-%
+The successful design, implementation and maintenance of cyber-physical systems requires collaboration between diverse engineering disciplines and organisations, each of which may use radically different tools and notations.
+The INtegrated TOolchain for Cyber-Physical Systems (INTO-CPS) is an open framework that permits the coupling of tools for model-based CPS engineering. Its formal foundations and the use of the Functional Mockup Interface standard permit the coherent integration of tools that describe CPS architecture, data, and discrete-event and continuous-time models of system elements. This allows engineers to produce collaborative models (co-models) and undertake co-simulation of behaviour at the whole-CPS level. It permits the machine-assisted trade space analysis, analytic detection and resolution of defects, generation of tests and of code. The value of the approach in reducing time to market and particular in reducing the number of physical prototype iterations required in product development, has been demonstrated in industry.
+
+This report is a guide to INTO-CPS. It includes a review of the challenges facing CPS engineers today and argues for open and integrated toolchains. The INTO-CPS technology is described briefly, and the semantic foundation of the approach are outlined. Methods for exploiting the toolchain within existing systems engineering processes are outlined, and the current toolchain itself is described alongside several real industry studies. We argue that the future of CPS engineering relies on the integration of existing tools and processes, and we offer a potential roadmap for future research in the field, notably in realising the potenital of co-models as learning digital twins.
 \newpage
 %
-%%%% Document table of contents page %%%% 
+%%%% Document table of contents page %%%%
 \tableofcontents
 \newpage
 %
 %
 %
-%%%% Document Content %%%% 
+%%%% Document Content %%%%
 %% \chapter{Chapter Title} %% if intocpslargereport is in use
 %\begin{assumption}
 %
@@ -174,9 +187,9 @@ Mihai Neghina, ``Lucian Blaga'', University of Sibiu
 \input{sections/method.tex}
 \clearpage
 \input{sections/toolchain.tex}
-\clearpage 
+\clearpage
 \input{sections/casestudies.tex}
-\clearpage 
+\clearpage
 \input{sections/related.tex}
 \clearpage
 \input{sections/future.tex}
@@ -187,7 +200,7 @@ Mihai Neghina, ``Lucian Blaga'', University of Sibiu
 %
 %%%% Bibliography %%%%
 \bibliographystyle{alpha}
-\bibliography{bibliography} 
+\bibliography{bibliography,intocps,intocpsdev}
 \label{ch:bib} %label to refer to
 %
 %
