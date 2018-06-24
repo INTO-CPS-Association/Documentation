@@ -9,26 +9,28 @@
 %\fbox{Peter Gorm Larsen}
 
 It is envisaged that the INTO-CPS technology will be further extended as the FMI standard evolves and in particular in future research projects. 
-Thus, the future directions here will depend both on the paying members of the INTO-CPS Association as well as which externally funded research projects that will be successful in achieving funding. 
-
-\claudio{Why paying members only? What about the in-kind contributions?}
+Thus, the future directions here will depend both on the members of the INTO-CPS Association as well as which externally funded research projects that will be successful in achieving funding. 
 
 In the subsections below candidate future directions are proposed.
 
 \subsection{Adapting FMUs Easily to Ones Needs}
 
-\claudio{Motivation:} In the context of continuous system co-simulation, it is well known that there is no one-size-fits-all co-simulation approach. 
+In the context of continuous system co-simulation, it is well known that there is no one-size-fits-all co-simulation approach. 
 Different kinds of systems are best co-simulation different ways (cite survey).
-At the same time, different domains have specialized numerical solvers, which means we cannot ignore the solvers in the FMUs.
-A future research direction is to understand how to reconcile these contradicting requirements.
-A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them (cite semantic adaptation work)
-This way does not solve all challenges in this regard, and the approach lacks validation from multiple domains.
+At the same time, different domains have specialised numerical solvers, which means we cannot ignore the solvers in the FMUs.
+A future research direction is to understand how to reconcile such contradicting requirements.
+A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them \cite{Gomes&18a}.
+This way does not solve all challenges in this regard, and the approach lacks validation from multiple domains. It is envisaged that this kind of Domain Specific Languages (DSLs) will be developed to make it easier to make semantic adaptations of FMUs.
 
 \claudio{Maybe providing``connector'' FMUs for the most common connections in different domains. For example, if I'm building a co-simulation of an hydraulic system, I may want to connect a large pipe to a small pipe.}
 
-\subsection{Enlarging the tools and standards supported by the INTO-CPS Toolsuite}
+\subsection{Enlarging the tools and standards supported by the INTO-CPS Tool Suite}
 
-\claudio{Can you elaborate on this? What does supporting more tools mean? Also, which standards are we talking about? HLA?}
+The INTO-CPS tool suite is on purpose open to any tool that live up to the requirements in the FMI version 2.0 standard for co-simulation. As indicated in Section~\ref{sec:toolchain} a possible entry point to the co-simulation setup is a special SysML profile supporting CPS models. Right now this is discussed in OMG as a potential new standard in a SysML setting and this is only supported by the Modelio tool (supporting export of both model descriptions as well as configurations of co-simulation). It would be great to see this special profile by other SysML tools as well. In addition, one can imagine that alternative tool supporting AADL \cite{AADL04} or Capella \cite{Roques17}.
+
+There are also a lot of other standards for co-simulations \cite{Gomes&18} and it is possible to imagine that bridges from the INTO-CPS tool chain will be made to a number of these. Here the most obvious candidate is High Level Architecture (HLA) \cite{IEEE1516}. 
+
+%\claudio{Can you elaborate on this? What does supporting more tools mean? Also, which standards are we talking about? HLA?}
 
 \subsection{Use in a Cloud-based Eco-system/Marketplace}
 
