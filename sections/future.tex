@@ -28,7 +28,7 @@ This way does not solve all challenges in this regard, and the approach lacks va
 
 The INTO-CPS tool suite is on purpose open to any tool that live up to the requirements in the FMI version 2.0 standard for co-simulation. As indicated in Section~\ref{sec:toolchain} a possible entry point to the co-simulation setup is a special SysML profile supporting CPS models. Right now this is discussed in OMG as a potential new standard in a SysML setting and this is only supported by the Modelio tool (supporting export of both model descriptions as well as configurations of co-simulation). It would be great to see this special profile by other SysML tools as well. In addition, one can imagine that alternative tool supporting AADL \cite{AADL04} or Capella \cite{Roques17}.
 
-There are also a lot of other standards for co-simulations \cite{Gomes&18} and it is possible to imagine that bridges from the INTO-CPS tool chain will be made to a number of these. Here the most obvious candidate is High Level Architecture (HLA) \cite{IEEE1516}. Initial work has been carried out in other research groups for such a combination \cite{Awais&17} but we imagine that more work is needed here to get this combination working smoothly.
+There are also a lot of other standards for co-simulations \cite{Gomes&18} and it is possible to imagine that bridges from the INTO-CPS tool chain will be made to a number of these. Here the most obvious candidate is High Level Architecture (HLA) \cite{IEEE1516}. Initial work has been carried out in other research groups for such a combination \cite{Neema&14,Awais&17} but we imagine that more work is needed here to get this combination working smoothly.
 
 %\claudio{Can you elaborate on this? What does supporting more tools mean? Also, which standards are we talking about? HLA?}
 
@@ -40,11 +40,11 @@ In addition to the tools becoming available in a cloud context one can imagine t
 
 \subsection{Use in a Digital Twin setting}
 
-\cite{Gamble&18}
+In order to increase the value of multi-models one can imagine making use of them in a deployed setting, i.e., after the CPS has been deployed if data from it can be fed back to a cloud where a co-simulation can be used to predict how alternative interventions can be made and what the consequences of these will be \cite{Gamble&18}. This is known as a \emph{digital twin} but there are naturally a number of research challenges in connection with something like this since you need to determine how to set up such a co-simulation as well as what the consequences will be of the frequency of the data arriving in pseudo-real-time. For some types of application this could work, whereas for others the predictions would be far from representing reality. Research is needed to determine when this would work.
 
-\claudio{I can't understand what exactly this entails.
-Maybe it is best to describe the case studies that we want to support?
-To me, supporting digital twin entails at least enhancing the COE for real-time co-simulation (to use in a diagnosing use case)}
+%\claudio{I can't understand what exactly this entails.
+%Maybe it is best to describe the case studies that we want to support?
+%To me, supporting digital twin entails at least enhancing the COE for real-time co-simulation (to use in a diagnosing use case)}
 
 \subsection{Increased Support for Dynamic Evolution Scenarios}
 
