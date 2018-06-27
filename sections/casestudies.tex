@@ -1,5 +1,7 @@
 % !TeX root = ../INTO-CPS-Manifesto.tex
 
+
+
 \section{The INTO-CPS Industrial Case Studies}\label{sec:casestudies}
 
 \fbox{Stylianos Basagiannis}
@@ -48,4 +50,49 @@ The experiment assessed the benefits and the maturity level of model-driven engi
 
 \subsection{Use of the INTO-CPS Technology at MAN Diesel \& Turbo}
 
-\cite{Pedersen&17}
+As reported in \cite{Pedersen&17}, at \ac{mdt} the conventional approach for
+developing two-stroke combustion engines with a distributed embedded control
+system is being challenged. In particular, for diesel engines pollution is a
+key element that it is desirable to reduce from a competitive perspective. New
+emission legislation focuses on the reduction of especially NO$_x$ emission.
+Widely known emission reduction technologies for reducing NO$_x$ are selective
+catalytic reduction and \ac{egr}, both being developed at \ac{mdt}
+\cite{Pedersen&17}.
+
+These systems require advanced algorithms to control the complexity of the
+physical dynamics of large engines. \ac{mdt} is divided into different
+departments with different responsibilities in the same way as many other large
+organisations. In the control department at \ac{mdt}, control algorithms are
+created directly in the target software framework with the possibility of
+performing \ac{sil} simulation during development.  Models of the physical
+behaviour are created in other departments of \ac{mdt} using the tools most
+suitable for the specific constituent system.  
+
+For the control system development, the physical dynamics models are
+implemented in an internally developed tool for \ac{ct} simulation called the
+\ac{mdse} which is part of the software framework. The primary focus in
+\ac{mdse} is \ac{sil}/\ac{hil}, and the physics models implemented here are
+often an abstraction of high-fidelity models. Historically it has been
+challenging inside \ac{mdt} to enable heterogeneous collaborations between the
+different teams producing models in different departments. As a result
+different models are typically fragmented and solely used within one department
+for the dedicated purpose each of the models serve. Thus, efforts that goes
+across these individual insights are only found at the test on the real
+platform.
+
+
+%% Change this paragraph
+At \ac{mdt} the models used in the control department are based on a software
+framework and \ac{mdse} is implemented in C++ and run on a 32-bit Linux
+platform while the physical modelling tools often require Windows. During the
+INTO-CPS project it was illustrated how a transition from the current
+simulation process at \ac{mdt} to one using co-simulation utilising the
+\ac{fmi} standard can be performed by using the \ac{coe} from the \ac{intocps}
+project. The aim with the approach suggested was to reduce redundancy in the
+development process and reuse and combine models from different
+departments\cite{Pedersen&17}. One of the main challenges for such a transition
+is to enable co-simulation across different hardware architectures and \ac{os}
+platforms due to constraints from software frameworks, physical simulation
+tools and version compatibility, and INTO-CPS Technology was key in overcoming
+it.
+
