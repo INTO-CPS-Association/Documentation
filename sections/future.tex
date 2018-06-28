@@ -48,13 +48,18 @@ In order to increase the value of multi-models one can imagine making use of the
 
 \subsection{Increased Support for Dynamic Evolution Scenarios}
 
-\claudio{Not clear what dynamic evolution means\ldots Is this supporting incremental development (having multiple refinements of the same component?) Isn't this related to traceability?}
+In a System of System setting it is regular that the composition of constituent systems involved in a scenario change dynamically over time. In an FMI setting this is currently not possible since it is necessary to have a static composition of the FMUs used in a co-simulation. In order to be able to support dynamic evolution in a co-simulation scenario it is desirable to conduct research exploring to what extend this could be a possibility.
+
+%\claudio{Not clear what dynamic evolution means\ldots Is this supporting incremental development (having multiple refinements of the same component?) Isn't this related to traceability?}
 
 \subsection{Incorporation of Computational Fluid Dynamics Co-simulations}
 
-\claudio{Might be easier to describe the use cases in concrete. For example, I think the into-cps can already support CFD co-simulations (you just need the FMUs to do that\ldots). What is does not support is error control techniques, that can kick in when CFD co-simulations are run.}
+To accurately model flow of material (typically liquid or gasses) Computational Fluid Dynamics (CFD) models are typically used. These are typically represented at a very detailed level, and as a consequence CFD simulations can be really slow. In addition, in case CFD simulations fail the error control is not properly aligned with the orchestration enabled in a FMI based setting. In order to properly support CFD elements in an INTO-CPS setting research is needed to determine how this can be carried out efficiently in a semantically sound manner. Here it is imagined that a part of this will be approximating the CFDs with Reduced Order Models (ROMs) \cite{Carlberg&13}.
+
+%\claudio{Might be easier to describe the use cases in concrete. For example, I think the into-cps can already support CFD co-simulations (you just need the FMUs to do that\ldots). What is does not support is error control techniques, that can kick in when CFD co-simulations are run.}
 
 \subsection{Increased support for Human Interaction}
+
 
 \claudio{Can you provide example advancements to support this? Example, real-time co-simulation seems an easy one. Maybe the ability to pause, inspect, and debug co-simulations?
 Maybe fault injection?}
