@@ -66,7 +66,9 @@ Maybe fault injection?}
 
 \subsection{Increased support for Network Considerations}
 
-\claudio{What does this entail? Adding delays to the signals? Adding noise? Is this related to semantic adaptation or fault injection?}
+FMI is not by itself good at modelling the communication layers between different constituent systems. In the INTO-CPS project it was attempted to model this as an FMU ether where messages can be lost. However, it would be ideal to be able to appropriate model each FMU being at a particular address (e.g., a URL or an IP address) and then have a library of alternative connections between such addresses, where one could experiment with non-ideal behaviour (e.g., delays and loosing messages). Such non-ideal behaviour may actually influence the way the real system behaves and thus it makes a lot of sense that it also would be possible to incorporate such aspects at a modelling level so it could be analysed either in plain co-simulations or with DSEs.
+
+%\claudio{What does this entail? Adding delays to the signals? Adding noise? Is this related to semantic adaptation or fault injection?}
 
 \subsection{Intelligence, Adaptivity and Autonomy}
 
