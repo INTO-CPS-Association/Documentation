@@ -23,10 +23,10 @@ An overview of the different tools that form the tool-chain of the INTO-CPS asso
 %[Figure of the overall tool-chain]
 
 \subsection{Modelio}
-
+\label{sec:modelio}
 Modelio is an open-source modeling environment for various formalisms with many interfaces to import and export models. In the context of INTO-CPS, the support for SysML modelling is of primary importance, while Modelio can be extended with a range of modules to enable more modelling languages. In the terminology of the methods guidelines (e.g. \cite{INTOCPSD3.3a}), Modelio is a tool for the \textit{architectural modeling} and for \textit{requirements management}.
 
-During the INTO-CPS project, a SysML profile was created, which is available as a module for Modelio 3.4 and 3.6 (see \url{http://forge.modelio.org/projects/intocps}). This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere (refs). Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
+During the INTO-CPS project, a SysML profile was created, which is currently available as a module for Modelio 3.4 and 3.6 (see \url{http://forge.modelio.org/projects/intocps}). This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere (refs). Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
 
 To support the FMI multi-modelling approach, ModelDescription.xml files can now be imported into, and exported from a SysML Architectural Modeling diagram. Importing ModelDescription.xml files creates a SysML block with the corresponding flow ports and attributes, exporting them allows import in other modeling tools, such as those described below.
 
@@ -73,13 +73,13 @@ FMU export of test oracles \\
 
 \subsection{3D animation}
 
-The 3D animation FMU allows visualisation of the simulation. It is based on the Unity engine, and extends it by exporting the scenario and the 3D rendering as a FMU.
-
-(add some more details)
+The 3D animation FMU allows visualisation of the simulation. It is based on the Unity engine \footnote{see \url{https://unity3d.com}}, and extends it by exporting the scenario and the 3D rendering as a FMU \cite{Foldager&17}. The Modelio SysML profile (see Section \ref{sec:modelio}}) takes the visualisation FMU into account. The 3D animation FMU also supports Virtual Reality (VR) headsets. It has been used in multiple case studies of INTO-CPS [ref].
 
 \subsection{The INTO-CPS Application}
 
-Integration of the different artifacts\\ 
-configuration and execution of Co-Simulation\\
-Front-end for Test-automation and model checking\\
-Viewer for traceability\\
+The INTO-CPS Application is the central tool to integrate the different tools and artifacts, to configure and run simulations, manage results, and more. It allows configuration and execution of DSE scenarios (which can be imported from Modelio), and is a front-end for Model-checking and Test automation, by using the RT Tester tool. Furthermore, traceability data can be viewed in the Application, either in an expert view, using the Neo4J visualisation, or by pre-configured queries.
+
+%Integration of the different artifacts\\ 
+%configuration and execution of Co-Simulation\\
+%Front-end for Test-automation and model checking\\
+%Viewer for traceability\\
