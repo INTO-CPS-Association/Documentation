@@ -12,7 +12,7 @@ The DSE component was valuable as a way to sweep parameters and automate co-simu
 
 \begin{figure}[!ht]
 	\centering
-		\includegraphics[width=0.9 \textwidth]{./figures/industrial}
+		\includegraphics[width=0.5 \textwidth]{./figures/industrial}
 	\caption{INTO-CPS Industrial Case studies}
 	\label{fig:industrial}
 \end{figure}
@@ -63,6 +63,15 @@ The functionality of the HVAC is to regulate operation of various devices to ens
 Modelling and simulation is heavily used to evaluate performance and robustness of the system with regards to requirements. Aspects such as simulation speed, and model fidelity are of high importance. Going beyond model-based design and single model simulation, co-simulation enables the analysis of physical interactions of systems that were previously uncaptured, due to the different domains at which the physics were modeled. Multi-physics analysis enables early analysis and detection of issues that were only uncovered at the physical prototyping stage, thus saving time and money. The 3D visualization feature is particularly appealing for several spatial exploration of HVACs effectiveness, as well as for engaging with non-technical stakeholders and demonstrating results. In addition, certain industrial domains operate in context where the visual aspect of the 3D co-simulation can bring genuine insights. Other capabilities of the INTO-CPS tool chain such as test automation and verification are not particularly in demand for HVAC systems, but are highly valuable for aerospace applications.
 
 Related Publications can be found at: 
+
+\subsection{The Railway case study} 
+
+In railway signalling, an interlocking is an arrangement of signal apparatus that prevents conflicting movements of trains through an arrangement of tracks, junctions and crossings. Usually, interlocking is in charge of a complete railways or tram line, computing the status of actuators (switches and signals) based on signalling safety rules that are encoded as ”binary equations” as shown in Figure 2, usually managing s 180; 000 equations that have to be recalculated several times per second. These equations compute the commands to be issued to track-side devices: they encode the safety behaviour that enable trains to move from one position to another through routes that are allocated and then released. Currently, there are attempts to find the right trade-off between efficiency of an interlocking system (availability of routes, trains’ delays and cost of interlocking system) and safety (collision avoidance, derailment prevention, availability and efficiency of emergency system).
+
+In this case study, an Interlocking system was considered that controls a part of a tramway line, including two platforms and a bidirectionnal track (between SW5 and SW2). It involves eleven track circuits; sensors that detect the absence of a train on a railway track; three commands that can accept several positions and are activated by the train; five mechanical switches that allow changing direction (those switches have to be set accordingly to the route chosen) and three light signals, red when the train is not allowed on the track and green when it can pass. The interlocking system also makes use of five mechanical safety relays that externalize the state of a route and allow redundancy between software logic and electronic circuits.
+
+\subsection{The Aerospace case study} 
+IDA2- Aerospace - MISSION
 
 
 \subsection{Integrated product-production co-simulation for cyber-physical production system (iPP4CPPS) } 
