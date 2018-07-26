@@ -1,10 +1,69 @@
 % !TeX root = ../INTO-CPS-Manifesto.tex
 
-
-
 \section{The INTO-CPS Industrial Case Studies}\label{sec:casestudies}
 
 \fbox{Stylianos Basagiannis}
+
+The industrial domains benefited from the INTO-CPS technologies in different ways, as expected due to their different multidisciplinary engineering activities. Nonetheless, certain aspects of the tool chain were of benefit to all industrial partners. We thus argue that these are the most broadly applicable benefits of INTO-CPS and the ones that can most successfully be transferred to other domains (fig. \ref{fig:industrial}.
+Modelling and simulation is heavily used in industry today, to evaluate performance and robustness of the system with regards to requirements. Aspects such as simulation speed, and model fidelity are of high importance. Going beyond model-based design and single model simulation, co-simulation enables the analysis of physical interactions of systems that were previously uncaptured, due to the different domains at which the physics were modeled. Multi-physics analysis enables early analysis and detection of issues that were only uncovered at the physical prototyping stage, thus saving time and money.
+
+The use of SysML modelling with the INTO-CPS profile was valuable to the majority of the industrial case studies, as a way to provide a common documentation of the system structure (particularly valuable for larger teams). It also enhanced communication within each case study project and across the disciplines and tools of the project. The connection with the simulation tools and the COE via the export of Model Description and Co-Simulation Configuration adds even more value to the SysML model.
+The DSE component was valuable as a way to sweep parameters and automate co-simulations. This led to faster prototyping (and lessened the need for physical prototypes) and a better understanding of the complex interactions between the system parameters. The DSE component was well integrated into the toolchain and used in the industrial studies through a user friendly interface, providing also its capability to reuse existing parts of the tools and models (through respectively the INTO-CPS application and FMUs).
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.9 \textwidth]{./figures/industrial}
+	\caption{INTO-CPS Industrial Case studies}
+	\label{fig:industrial}
+\end{figure}
+
+The 3D visualization component was valuable for all industrial partners. As commercial entities, the 3D visualization has great value as a marketing and sales tool. It also greatly enhances the user experience when analyzing the models. These benefits are in addition to engineering benefits which can be gained for certain case studies, where the visual aspects of the problem are of interest and can be studied using the 3D visualization. This is not the case for all CPS problems, but any CPS company can benefit from the 3D capabilities for marketing purposes, which are of high importance to any business. More generally, one of the greater benefits of the INTO-CPS tool chain was the ability to reuse models, including existing legacy models for new purposes. The broad tool compatibility (including tools outside the tool chain, this attesting its openness) increased the reuse even more. The tool chain is also fully compliant with the FMI standard which increases the value of models developed with INTOCPS tools, as they can be reused further in the future. Finally, the baseline tools of INTO-CPS were all made compatible and tested with industry-grade and open source tools through the FMI standard, thus opening new possibilities for the tools and their users.
+
+\subsection{The Automotive Case Study } 
+This sections presents mainly a case study that develops functions for vehicles, in particular electric vehicles using the INTO-CPS technology. Its goal is to create an assistant system for estimating the range of an electric vehicle, based on a vehicle model and real data from the environment, such as route topology or weather. Furthermore, the range estimation is dynamic, as it takes changes in the initial assumptions into account, and influences the vehicle behavior accordingly. 
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.9 \textwidth]{./figures/auto}
+	\caption{Automotive case study using INTO-CPS: Velocity and altitude profile for a route of 35 km in the vicinity of Stuttgart. The route consists here of a country road only, and thus the velocity is stable at 70 km/h, while the altitude varies between 450m and 850 m above sea level.}
+	\label{fig:auto}
+\end{figure}
+
+The case study can be considered a Cyber-Physical System because it contains local intelligence and autonomy in the vehicle. This is assisted by information about its environment typically derived from a cloud context (here, information on weather and traffic / route) and the logic depends upon the physical dynamics of the electric vehicle (Fig. \ref{fig:auto}). 
+
+A part of the system is transferred seamlessly from a simulation model to real hardware (here, as Raspberry Pi) and simulated with the remainder of the system. Since the case study was developed as part of the INTO-CPS project [4], one aim was to evaluate the INTO-CPS tools and methods. Here this is in particular the Co-simulation orchestration engine (COE), which is a FMI 2.0 compliant master algorithm that allows coupling of continuous-time (CT) and discrete event (DE) models in a Co-Simulation setup [4,5].  furthermore, the system was modeled in SysML, using the CPS-extension of the Modelio tools [7]. The models themselves were created using Matlab1, 20-sim2, C++ and Overture3 [2].
+
+\subsection{The Agricultural Case Study } 
+The focus of the case study is the development of the agricultural field robot, Robotti using the INTO-CPS technology. Models of the machine dynamics and controllers have been developed using the baseline tools and Co-simulated using the COE. The DSE feature is applied in the development and assessment of the steering controller which is crucial to the performance of the robot. The agricultural case study has been extended with an additional industrial application, namely the AI-Mower. The dynamics of the mower is modelled and co-simulated to assess and optimize a new approach for steering the mower. 
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.9 \textwidth]{./figures/agri}
+	\caption{Simulated trajectories of the six controller configurations (a,b,...,f)}
+	\label{fig:agri}
+\end{figure}
+
+Additionally, the 3D FMU feature has been applied to visualize the machine based on the models of the kinematics and dynamics. The details on the mower are kept confidential contrary to the Robotti project which is public.
+Through the model development using INTO-CPS, the work related to Robotti have been focused towards DSE-based optimization of the steering controller which is crucial to the performance of the machine. Several scenarios of different steering controller configurations are simulated using the COE and the DSE feature is applied to estimate the optimal controller configuration of the Robotti. The influence of the controller parameters are shown in Fig. \ref{fig:agri} where the six simulated trajectories are shown corresponding to six combinations of two controller parameters. The dashed line represents the desired route and the blue line represents the simulated trajectory of the Robot.
+
+Related Publications can be found at: 
+
+\subsection{The Building Case Study } 
+ The building case study focuses on modelling and analysis of energy and comfort for Heating, Ventilation and Air Conditioning (HVAC) systems that control the temperature of connected areas inside building premises. The case study models various concepts shown in fig. \ref{fig:building} such as: a) Fan Coil Unit (FCU) and control; b) Supervision and fault detection of FCUs; c) Communication between master-slave FCUs; d) Communication between FCUs and supervisor; e) Air Handling Unit (AHU) and control; f) Chiller load and control; g) Physical rooms and air flow; h) Water and air pipe connections.
+
+The functionality of the HVAC is to regulate operation of various devices to ensure user comfort. User inputs are taken into account from room and zone thermostats and are compared with current Room Air Temperature (RAT) sensed by the FCUs, triggering certain action on the FCUs to reach the desired temperature by a) regulating the air flow using its fan, b) regulating the water pipe valves to control the cooled water into the coil, c) synchronizing with the supervisor to coordinate with the rest of the FCUs. Fresh air is provided to the FCUs by the AHU and cooled by the Chiller.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.9 \textwidth]{./figures/building}
+	\caption{INTO-CPS Co-Simulation Results for Room temperature in building zones}
+	\label{fig:building}
+\end{figure}
+
+Modelling and simulation is heavily used to evaluate performance and robustness of the system with regards to requirements. Aspects such as simulation speed, and model fidelity are of high importance. Going beyond model-based design and single model simulation, co-simulation enables the analysis of physical interactions of systems that were previously uncaptured, due to the different domains at which the physics were modeled. Multi-physics analysis enables early analysis and detection of issues that were only uncovered at the physical prototyping stage, thus saving time and money. The 3D visualization feature is particularly appealing for several spatial exploration of HVACs effectiveness, as well as for engaging with non-technical stakeholders and demonstrating results. In addition, certain industrial domains operate in context where the visual aspect of the 3D co-simulation can bring genuine insights. Other capabilities of the INTO-CPS tool chain such as test automation and verification are not particularly in demand for HVAC systems, but are highly valuable for aerospace applications.
+
+Related Publications can be found at: 
+
 
 \subsection{Integrated product-production co-simulation for cyber-physical production system (iPP4CPPS) } 
 
