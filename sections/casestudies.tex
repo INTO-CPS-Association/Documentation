@@ -29,7 +29,7 @@ This sections presents mainly a case study that develops functions for vehicles,
 	\label{fig:auto}
 \end{figure}
 
-The case study can be considered a CPS because it contains local intelligence and autonomy in the vehicle. This is assisted by information about its environment typically derived from a cloud context (here, information on weather and traffic / route) and the logic depends upon the physical dynamics of the electric vehicle (Fig. \ref{fig:auto}). 
+The case study can be considered a CPS because it contains local intelligence and autonomy in the vehicle. This is assisted by information about its environment typically derived from a cloud context (here, information on weather and traffic / route) and the logic depends upon the physical dynamics of the electric vehicle (Fig.~\ref{fig:auto}). 
 
 A part of the system is transferred seamlessly from a simulation model to real hardware (here, as Raspberry Pi) and simulated with the remainder of the system. Since the case study was developed as part of the INTO-CPS project [4], one aim was to evaluate the INTO-CPS tools and methods. Here this is in particular the Co-simulation orchestration engine (COE), which is a FMI 2.0 compliant master algorithm that allows coupling of continuous-time (CT) and discrete event (DE) models in a Co-Simulation setup [4,5].  furthermore, the system was modelled in SysML, using the CPS-extension of the Modelio tools [7]. The models themselves were created using Matlab1, 20-sim2, C++ and Overture3 [2].
 
