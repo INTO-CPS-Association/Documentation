@@ -47,20 +47,36 @@ Traceability\\
 
 \subsection{Modelling tools}
 
-Most modelling tools support the same functions. A \texttt{ModelDescription.xml} file (e.g.\ one that is automatically created from Modelio, see previous section) can be imported to create a skeleton model with the input and output signals and exposed parameters. After the actual modelling work is done, the model can be exported as Functional Mock-up Unit (FMU), in accordance with the FMI 2.0 for Co-Simulation standard. This FMU can either contain all the necessary models and solvers, so that is a self-contained model (also called stand alone), or it contains libraries which call a simulation tool to execute the simulation. The latter case is called a tool wrapper FMU. Furthermore, the different steps of importing, saving and exporting generate traces which are sent to the traceability engine of the INTO-CPS Application. The following table summarises the status of the different tools at the time of writing of this document.
+At the core of the tool-chain are several modelling tools that describe a system or a sub-system in a specific formalism, and perform calculations to understand the dynamic behaviour of the (sub-)system. While the formalisms or application areas can be vastly different, the modelling tools share some common features, which are summarized in this section. 
+
+\paragraph{20-sim} is a commercial tool for modelling and simluation of mechatronic systems. Together with the related software, 20-sim 4C, Hardware-in-the-Loop simulations can be performed. \url{http://www.20sim.com/}
+
+\paragraph{OpenModelica} is an open-source environment which is based on the Modelica language. It features numerous free libraries to easily model systems from different domains. \url{https://openmodelica.org/}
+
+\paragraph{Overture} is an open-source tool that supports the modelling method \textit{The Vienna Development Method (VDM)}, which is a formal method to describe computing systems. \url{http://overturetool.org/}
+
+\paragraph{4Diac} is an open-source tool for distributed process measurement and control systems based on the IEC 61499 standard. \url{https://www.eclipse.org/4diac/}
+
+\paragraph{AutoFocus3} is an open-source model based tool to develop embedded software systems. \url{https://af3.fortiss.org/}
+
+\paragraph{Cossim}
+
+\paragraph{ABS}
+
+Most modelling tools support the same functions in the context of INTO-CPS. A \texttt{ModelDescription.xml} file (e.g.\ one that is automatically created from Modelio, see previous section) can be imported to create a skeleton model with the input and output signals and exposed parameters. After the actual modelling work is done, the model can be exported as Functional Mock-up Unit (FMU), in accordance with the FMI 2.0 for Co-Simulation standard. This FMU can either contain all the necessary models and solvers, so that is a self-contained model (also called stand alone), or it contains libraries which call a simulation tool to execute the simulation. The latter case is called a tool wrapper FMU. Furthermore, the different steps of importing, saving and exporting generate traces which are sent to the traceability engine of the INTO-CPS Application. The following table summarizes the status of the different tools at the time of writing of this document.
 
 \begin{table*}[ht]
 	\centering
 		\begin{tabular}{l|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}}
-			Tool & MD.xml import & FMU export (stand alone) & FMU export (tool wrapper) & Traceability\\
+			Tool & MD.xml import & FMU import & FMU export (stand alone) & FMU export (tool wrapper) & Traceability\\
 			\hline
-			20-sim & yes & no & yes & yes\\
-			OpenModelica & yes & yes & no & yes\\
-			Overture & yes & yes & yes & yes\\
-			4diac & N.A. & N.A. & N.A. & N.A \\
-			AutoFocus 3 & N.A. & N.A. & N.A. \\
-			Cossim & N.A. & N.A. & N.A. \\
-			ABS & N.A. & N.A. & N.A. \\
+			20-sim & yes & yes & no & yes & yes\\
+			OpenModelica & yes & yes & yes & no & yes\\
+			Overture & yes & yes & yes & yes & yes\\
+			4diac & no & no & under development & no & no \\
+			AutoFocus 3 & no & under development & no & no & no\\
+			Cossim & N.A. & N.A. & N.A. & N.A. & N.A. \\
+			ABS & no & no & no & planned & no \\
 		\end{tabular}
 	\caption{Functionalities of the modelling tools}
 	\label{tab:FunctionalitiesOfTheModelingTools}
@@ -68,8 +84,16 @@ Most modelling tools support the same functions. A \texttt{ModelDescription.xml}
 
 \subsection{RT Tester}
 
-Import of \texttt{xsd} files from Modelio\\
-FMU export of test oracles \\
+In the framework of INTO-CPS, the RT Tester tool suite (see \url{https://www.verified.de/products/rt-tester/}) is extended with mainly two objectives: Integration of Test-Automation and of Model Checking in the INTO-CPS tool-chain. Both functions are integrated into the INTO-CPS application, and both support traceability.
+
+\subsubsection{Test Automation}
+
+Test Automation within INTO-CPS uses the RT Tester tools to generate, perform and analyze tests, based on Co-simulation of a system. The Test Automation functionalities are integrated into the INTO-CPS Application. The behavioural model can be generated in Modelio, and exported as \texttt{.xmi} file, which in turn can be read by RT Tester. After the test is created in RT Tester, the test procedure can be cast into an FMU file. Together with a Co-Simulation scenario, and using the COE, the test procedure is used to run a test project. More information on Test Automation in INTO-CPS can be found in \cite{INTOCPSD5.3b}.
+
+\subsubsection{Model Checking}
+
+Model checking in INTO-CPS is used to verify system properties of multi-models, consisting of continuous-time (CT) and discrete-event (DE) models. Similar to the Test Automation features, Model Checking is based on the RT Tester tool suite. From a tool-chain perspective, Model Checking is integrated in the INTO-CPS Application, which allows the complete configuration, execution and analysis of a Model Checking experiment. More information on Model Checking in INTO-CPS can be found in \cite{INTOCPSD5.3c}.
+
 
 \subsection{3D animation}
 
