@@ -6,7 +6,7 @@
 
 \fbox{make sure that this section fits to the other sections, incl. references}
 
-\fbox{indicate maturity of the different tool features, in particular wrt. the new ones}
+%\fbox{indicate maturity of the different tool features, in particular wrt. the new ones}
 
 This section discusses the interconnectivity of the different tools, and how the tools fit into the workflows and tasks that are covered by INTO-CPS. In particular, this section focuses on the features that were added during the INTO-CPS project, and in the framework of the INTO-CPS association. This section does \textit{not} describe all the tools in detail (here, the reader is referred to the different manuals, and to the User Manual (ref to the INTO-CPS tool manual).
 
@@ -26,26 +26,20 @@ An overview of the different tools that form the tool-chain of the INTO-CPS asso
 \label{sec:modelio}
 Modelio is an open-source modelling environment for various formalisms with many interfaces to import and export models. In the context of INTO-CPS, the support for SysML modelling is of primary importance, while Modelio can be extended with a range of modules to enable more modelling languages. In the terminology of the methods guidelines (e.g. \cite{INTOCPSD3.3a}), Modelio is a tool for the \textit{architectural modelling} and for \textit{requirements management}.
 
-During the INTO-CPS project, a SysML profile was created, which is currently available as a module for Modelio 3.4 and 3.6 (see \url{http://forge.modelio.org/projects/intocps}). This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere (refs). Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
+During the INTO-CPS project, a SysML profile was created, which is currently available as a module for Modelio 3.4 and 3.6 \footnote{see \url{http://forge.modelio.org/projects/intocps}}. This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere \cite{INTOCPSD41c,INTOCPSD4.2c,INTOCPSD4.3c}. Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
 
-To support the FMI multi-modelling approach, \texttt{ModelDescription.xml} files can now be imported into, and exported from a SysML Architectural Modelling diagram. Importing ModelDescription.xml files creates a SysML block with the corresponding flow ports and attributes, exporting them allows import in other modelling tools, such as those described below.
+To support the FMI multi-modelling approach, \texttt{ModelDescription.xml} files can now be imported into, and exported from a SysML Architectural Modelling diagram. Importing ModelDescription.xml files creates a SysML block with the corresponding flow ports and attributes, exporting them allows import in other modelling tools, such as those described below in Section \ref{sec:tools}.
 
-The Connections Diagram describes the signal flow between the different SysML blocks, which can each correspond to one FMU. Using the new INTO-CPS SysML profile, the Connections Diagram can be exported to an intermediary JSON format, which can then be imported by the INTO-CPS Application, to create a new Multi-Model.
-
-%The INTO-CPS SysML Profile\\
-%Import of ModelDescription.xml \\
-%Export of ModelDescription.xml files (for modeling tools)\\
-%Export of Connections Diagram (for the Application)\\
+The Connections Diagram describes the signal flow between the different SysML blocks, which can each correspond to one FMU. Using the INTO-CPS SysML profile, the Connections Diagram can be exported to an intermediary JSON format, which can then be imported by the INTO-CPS Application, to create a new Multi-Model.
 
 Diagrams for handling of Design Space Exploration (DSE) were created for Modelio, also included in the INTO-CPS SysML profile. These diagrams allow connection of parameters with signals, definition of objectives for a DSE, connection of signals with objectives, and ranking of results. Using these diagrams, a complete DSE configuration can be exported from Modelio.
 
-Behavioural models that are designed in Modelio as state machines can be exported as \texttt{.xmi} files, so that they can be imported to the RT Tester tools
+Behavioural models that are designed in Modelio as state machines can be exported as \texttt{.xmi} files, so that they can be imported to the RT Tester tool.
 
-%DSE modeling configuration\\
-Requirements management\\
-Traceability\\
+Furthermore, Modelio allows Requirements management, and supports traceability in the context of INTO-CPS.
 
 \subsection{Modelling tools}
+\label{sec:tools}
 
 At the core of the tool-chain are several modelling tools that describe a system or a sub-system in a specific formalism, and perform calculations to understand the dynamic behaviour of the (sub-)system. While the formalisms or application areas can be vastly different, the modelling tools share some common features, which are summarized in this section. 
 
@@ -59,23 +53,23 @@ At the core of the tool-chain are several modelling tools that describe a system
 
 \paragraph{AutoFocus3} is an open-source model based tool to develop embedded software systems. \url{https://af3.fortiss.org/}
 
-\paragraph{Cossim}
+%\paragraph{Cossim}
 
-\paragraph{ABS}
+\paragraph{ABS} is a language for Abstract Behavioral Specification, which combines implementation-level specifications with verifiability, high-level design with executablity, and formal semantics with practical usability. ABS is a concurrent, object-oriented, modeling language that features functional data-types. \url{http://abs-models.org/}
 
 Most modelling tools support the same functions in the context of INTO-CPS. A \texttt{ModelDescription.xml} file (e.g.\ one that is automatically created from Modelio, see previous section) can be imported to create a skeleton model with the input and output signals and exposed parameters. After the actual modelling work is done, the model can be exported as Functional Mock-up Unit (FMU), in accordance with the FMI 2.0 for Co-Simulation standard. This FMU can either contain all the necessary models and solvers, so that is a self-contained model (also called stand alone), or it contains libraries which call a simulation tool to execute the simulation. The latter case is called a tool wrapper FMU. Furthermore, the different steps of importing, saving and exporting generate traces which are sent to the traceability engine of the INTO-CPS Application. The following table summarizes the status of the different tools at the time of writing of this document.
 
 \begin{table*}[ht]
 	\centering
-		\begin{tabular}{l|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}}
-			Tool & MD.xml import & FMU import & FMU export (stand alone) & FMU export (tool wrapper) & Traceability\\
+		\begin{tabular}{l|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}}
+			\rotatebox[origin=c]{90}{Tool} & \rotatebox[origin=c]{90}{MD.xml import} & \rotatebox[origin=c]{90}{FMU import} & \rotatebox[origin=c]{90}{FMU export (stand alone)} & \rotatebox[origin=c]{90}{FMU export (tool wrapper)} & \rotatebox[origin=c]{90}{Traceability}\\
 			\hline
 			20-sim & yes & yes & no & yes & yes\\
 			OpenModelica & yes & yes & yes & no & yes\\
 			Overture & yes & yes & yes & yes & yes\\
 			4diac & no & no & under development & no & no \\
 			AutoFocus 3 & no & under development & no & no & no\\
-			Cossim & N.A. & N.A. & N.A. & N.A. & N.A. \\
+			%Cossim & N.A. & N.A. & N.A. & N.A. & N.A. \\
 			ABS & no & no & no & planned & no \\
 		\end{tabular}
 	\caption{Functionalities of the modelling tools}
@@ -83,6 +77,7 @@ Most modelling tools support the same functions in the context of INTO-CPS. A \t
 \end{table*}
 
 \subsection{RT Tester}
+\label{sec:tool-RTTester}
 
 In the framework of INTO-CPS, the RT Tester tool suite (see \url{https://www.verified.de/products/rt-tester/}) is extended with mainly two objectives: Integration of Test-Automation and of Model Checking in the INTO-CPS tool-chain. Both functions are integrated into the INTO-CPS application, and both support traceability.
 
@@ -97,11 +92,11 @@ Model checking in INTO-CPS is used to verify system properties of multi-models, 
 
 \subsection{3D animation}
 
-The 3D animation FMU allows visualisation of the simulation. It is based on the Unity engine (see \url{https://unity3d.com}), and extends it by exporting the scenario and the 3D rendering as a FMU \cite{Foldager&17}. The Modelio SysML profile (see Section \ref{sec:modelio}) takes the visualisation FMU into account. The 3D animation FMU also supports Virtual Reality (VR) headsets. It has been used in multiple case studies of INTO-CPS [ref].
+The 3D animation FMU allows visualisation of the simulation. It is based on the Unity engine (see \url{https://unity3d.com}), and extends it by exporting the scenario and the 3D rendering as a FMU \cite{Foldager&17}. The Modelio SysML profile (see Section \ref{sec:modelio}) takes the visualisation FMU into account. The 3D animation FMU also supports Virtual Reality (VR) headsets. 
 
 \subsection{The INTO-CPS Application}
 
-The INTO-CPS Application is the central tool to integrate the different tools and artefacts, to configure and run simulations, manage results, and more. It allows configuration and execution of DSE scenarios (which can be imported from Modelio), and is a front-end for Model-checking and Test automation, by using the RT Tester tool. Furthermore, traceability data can be viewed in the Application, either in an expert view, using the Neo4J visualisation\footnote{\url{https://neo4j.com/}}, or by pre-configured queries.
+The INTO-CPS Application is the central tool to integrate the different tools and artefacts, to configure and run simulations, manage results, and more. It allows configuration and execution of DSE scenarios (which can be imported from Modelio), and is a front-end for Model-checking and Test automation, by using the RT Tester tool (see Section \ref{sec:tool-RTTester}). Furthermore, traceability data can be viewed in the Application, either in an expert view, using the Neo4J visualisation\footnote{\url{https://neo4j.com/}}, or by pre-configured queries.
 
 %Integration of the different artifacts\\ 
 %configuration and execution of Co-Simulation\\
