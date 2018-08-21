@@ -19,7 +19,8 @@ The DSE component was valuable as a way to sweep parameters and automate co-simu
 
 The 3D visualisation component was valuable for all industrial partners. As commercial entities, the 3D visualisation has great value as a marketing and sales tool. It also greatly enhances the user experience when analysing the models. These benefits are in addition to engineering benefits which can be gained for certain case studies, where the visual aspects of the problem are of interest and can be studied using the 3D visualisation. This is not the case for all CPS problems, but any CPS company can benefit from the 3D capabilities for marketing purposes, which are of high importance to any business. More generally, one of the greater benefits of the INTO-CPS tool chain was the ability to reuse models, including existing legacy models for new purposes. The broad tool compatibility (including tools outside the tool chain, this attesting its openness) increased the reuse even more. The tool chain is also fully compliant with the FMI standard which increases the value of models developed with the INTO-CPS tool chain, as they can be reused further in the future. Finally, the baseline tools of INTO-CPS were all made compatible and tested with industry-grade and open source tools through the FMI standard, thus opening new possibilities for the tools and their users.
 
-\subsection{The Automotive Case Study } 
+\subsection{The Automotive Case Study} 
+
 This sections presents mainly a case study that develops functions for vehicles, in particular electric vehicles using the INTO-CPS technology. Its goal is to create an assistant system for estimating the range of an electric vehicle, based on a vehicle model and real data from the environment, such as route topology or weather. Furthermore, the range estimation is dynamic, as it takes changes in the initial assumptions into account, and influences the vehicle behaviour accordingly. 
 
 \begin{figure}[!ht]
@@ -31,9 +32,10 @@ This sections presents mainly a case study that develops functions for vehicles,
 
 The case study can be considered a CPS because it contains local intelligence and autonomy in the vehicle. This is assisted by information about its environment typically derived from a cloud context (here, information on weather and traffic / route) and the logic depends upon the physical dynamics of the electric vehicle (Fig.~\ref{fig:auto}). 
 
-A part of the system is transferred seamlessly from a simulation model to real hardware (here, as Raspberry Pi) and simulated with the remainder of the system. Since the case study was developed as part of the INTO-CPS project [4], one aim was to evaluate the INTO-CPS tools and methods. Here this is in particular the Co-simulation orchestration engine (COE), which is a FMI 2.0 compliant master algorithm that allows coupling of continuous-time (CT) and discrete event (DE) models in a Co-Simulation setup [4,5].  furthermore, the system was modelled in SysML, using the CPS-extension of the Modelio tools [7]. The models themselves were created using Matlab1, 20-sim2, C++ and Overture3 [2].
+A part of the system is transferred seamlessly from a simulation model to real hardware (here, as Raspberry Pi) and simulated with the remainder of the system. Since the case study was developed as part of the INTO-CPS project [4], one aim was to evaluate the INTO-CPS tools and methods. Here this is in particular the Co-simulation orchestration engine (COE), which is a FMI 2.0 compliant master algorithm that allows coupling of continuous-time (CT) and discrete event (DE) models in a Co-Simulation setup [4,5].  furthermore, the system was modelled in SysML, using the CPS-extension of the Modelio tools [7]. The models themselves were created using Matlab, 20-sim, C++ and Overture \cite{Larsen&10a}.
 
-\subsection{The Agricultural Case Study } 
+\subsection{The Agricultural Case Study} 
+
 The focus of the case study is the development of the agricultural field robot, Robotti using the INTO-CPS technology. Models of the machine dynamics and controllers have been developed using the baseline tools and Co-simulated using the COE. The DSE feature is applied in the development and assessment of the steering controller which is crucial to the performance of the robot. The agricultural case study has been extended with an additional industrial application, namely the AI-Mower. The dynamics of the mower is modelled and co-simulated to assess and optimise a new approach for steering the mower. 
 
 \begin{figure}[!ht]
@@ -44,9 +46,10 @@ The focus of the case study is the development of the agricultural field robot, 
 \end{figure}
 
 Additionally, the 3D FMU feature has been applied to visualise the machine based on the models of the kinematics and dynamics. The details on the mower are kept confidential contrary to the Robotti project which is public.
-Through the model development using INTO-CPS, the work related to Robotti have been focused towards DSE-based optimisation of the steering controller which is crucial to the performance of the machine. Several scenarios of different steering controller configurations are simulated using the COE and the DSE feature is applied to estimate the optimal controller configuration of the Robotti. The influence of the controller parameters are shown in Fig. \ref{fig:agri} where the six simulated trajectories are shown corresponding to six combinations of two controller parameters. The dashed line represents the desired route and the blue line represents the simulated trajectory of the Robot.
+Through the model development using INTO-CPS, the work related to Robotti have been focused towards DSE-based optimisation of the steering controller which is crucial to the performance of the machine. Several scenarios of different steering controller configurations are simulated using the COE and the DSE feature is applied to estimate the optimal controller configuration of the Robotti. The influence of the controller parameters are shown in Fig.~\ref{fig:agri} where the six simulated trajectories are shown corresponding to six combinations of two controller parameters. The dashed line represents the desired route and the blue line represents the simulated trajectory of the Robot.
 
-Related Publications can be found at: 
+Related Publications can be found at \cite{Foldager&17}.
+
 
 \subsection{The Building Case Study } 
  The building case study focuses on modelling and analysis of energy and comfort for Heating, Ventilation and Air Conditioning (HVAC) systems that control the temperature of connected areas inside building premises. The case study models various concepts shown in fig. \ref{fig:building} such as: a) Fan Coil Unit (FCU) and control; b) Supervision and fault detection of FCUs; c) Communication between master-slave FCUs; d) Communication between FCUs and supervisor; e) Air Handling Unit (AHU) and control; f) Chiller load and control; g) Physical rooms and air flow; h) Water and air pipe connections.
@@ -62,7 +65,7 @@ The functionality of the HVAC is to regulate operation of various devices to ens
 
 Modelling and simulation is heavily used to evaluate performance and robustness of the system with regards to requirements. Aspects such as simulation speed, and model fidelity are of high importance. Going beyond model-based design and single model simulation, co-simulation enables the analysis of physical interactions of systems that were previously not captured, due to the different domains at which the physics were modelled. Multi-physics analysis enables early analysis and detection of issues that were only uncovered at the physical prototyping stage, thus saving time and money. The 3D visualisation feature is particularly appealing for several spatial exploration of HVACs effectiveness, as well as for engaging with non-technical stakeholders and demonstrating results. In addition, certain industrial domains operate in context where the visual aspect of the 3D co-simulation can bring genuine insights. Other capabilities of the INTO-CPS tool chain such as test automation and verification are not particularly in demand for HVAC systems, but are highly valuable for aerospace applications.
 
-Related Publications can be found at: 
+Related Publications can be found at \cite{Fitzgerald&16,Couto&17}
 
 \subsection{The Railway case study} 
 
