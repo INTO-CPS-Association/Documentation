@@ -4,43 +4,43 @@
 
 %\fbox{Peter Gorm Larsen}
 
-Systems composed of closely coupled computing and physical elements are becoming increasingly important in the modern world. For society and citizens, the potential of such smart systems to deliver more efficient, sustainable and resilient services is enormous.  Such Cyber-Physical Systems (CPSs) are characterised by a complex architecture and a design process involving several diverse science and engineering disciplines. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields. The developer of a CPS faces a large design space that is hard to cover with hardware prototypes due to the high cost of their implementation. Common workflows to assist CPS engineers, and the necessary tools, are currently lacking.
+Systems composed of closely coupled computing and physical elements are becoming increasingly important in the modern world. For society and citizens, the potential of such smart systems to deliver more efficient, sustainable and resilient services is enormous.  Such Cyber-Physical Systems (CPSs) are characterised by a complex architecture and a design process involving several diverse science and engineering disciplines. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields. The developer of a CPS faces a large design space that is hard to cover with hardware prototypes due to the high cost of their implementation. Common workflows to assist the engineering of CPSs with a model-based approach, and the necessary tools, are currently lacking. Different stakeholders can produce models of the parts they are responsible for, and we will call these constituent models that together form the entire CPS. 
 
 The design of CPSs involves the usage of results obtained
 using a combination of different formalisms serving different engineering
-disciplines. Compounding the variety of formalisms, the formalisms are usually
-associated with different tools. Either as different versions, or supported by 
-different entities.
+disciplines. Different formalisms are usually
+supported by different tools running on different Operating Systems (OSs). 
 
 In this manifesto we put forward the idea of combining different formalisms and
 respective supporting tools by means of a tool chain. A tool chain allows the
 practitioner to easily combine the results from the various fields during the
-design process.  Our view is to keep the best of each of the tools and
-integrating them by building an environment automating the tool chain
+design process.  Our view is that it is best to enable different disciplinary experts to use the tools they are most familiar with and
+integrating the different constituent models by building an environment automating the tool chain
 interaction, accessibility, and unifying the entry point to it. 
 
 In such unified environment of several tools, users keep their usual patterns
 of interaction with their familiar tool or tools available in the tool chain.
-Instead of having to learn a new formalism\ldots
+Instead of having to learn a new formalism the different disciplinary experts can stay with the tools they are most familiar with and they find most natural to create the constituent models requires for their work.  The chain of tools then need also to enable each individual of seeing the consequences of changes locally in a global context where the other constituent models are incorporated.
 
+Naturally such different constituent models needs to interface to each other and here we make use of a de-facto standard originating in the automotive industry called the Functional-Mockup Interface (FMI). Thus, the different tools in the INTO-CPS tool chain are able to interact with other tools directly or indirectly using the FMI standard. In order also to be able to trace artefacts from different constituent models and results generated from analysis using different tools another standard called the Open Services for Lifecycle Collaboration (OSLC) is used. This enables seeing and documenting the dependencies between different versions of different constituent models and local or global analysis conducted about them.
 
-But, on the other hand, it is hard to master all the components of the tool
-chain.  The mastering of tool chains involves the management of the whole set
+It is hard for a single person to master all the components of the tool
+chain, but fortunately that is not required.  The mastering of tool chains involves the management of the whole set
 of models and inputs/results for each of the tools. In addition, the conversion
 of results, traceability of changes and keeping track of the user interactions
 need also to be taken into account.  Moreover, given the evolving nature of
 each of the tools, the task of managing the tool chain while ensuring the
 dependencies of each of the tools and their interoperability becomes too
-complex. 
+complex. The INTO-CPS Association attempts to ensure that the different tools are kept in sync and that the importable examples expressed in a collection of notations using different tools (these are called multi-models) are kept up to date.
 
-Practice shows users are more receptive to a  push-button approach when it is
-time to combine their results with the other tools.  
+%Practice shows users are more receptive to a  push-button approach when it is
+%time to combine their results with the other tools.  
 
-The INTO-CPS builds upon a frontend application which was developed following the
+The INTO-CPS technology builds upon a frontend application which was developed following the
 unified entry point idea.  The INTO-CPS application allows the user to fetch
-the different tools, checkout model files from repositories, orchestrate the
+the different tools, checkout multi-models from repositories, orchestrate the
 several tools run, and organise the results/interactions.  This reduces the
-previously mentioned mastering complexity demands to a push-button effort.
+challenges of mastering the complexity essentially to a push-button effort when the multi-models have been produced by different disciplinary experts.
  
 
 
