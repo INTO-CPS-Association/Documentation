@@ -2,6 +2,35 @@
 
 \section{Related Work}\label{sec:related}
 
-\fbox{Claudio Gomes}
+Extensive work has been done to identify the main concepts and essential challenges in co-simulation.
+In this section, we review some of these works.
 
-\claudio{Scope: related work into-cps.}
+\cite{Trcka2007} reviews principles and implementation strategies of co-simulation applied to an HVAC system.
+It provides multiple experiments showing how the stability and accuracy of the co-simulation is affected by the choice of those strategies.
+
+The work in \cite{Hafner2017} exposes the disparity in terminology related to co-simulation (e.g., the term ``co-simulation'' is understood as ``cooperative simulation'', or ``coupled system simulation''), provides an in-depth discussion of the multiple concepts, and proposes a way to classify and structure co-simulation methods.
+The authors propose the distinction by:
+\begin{compactdesc}
+\item[state of development] --- the motivation being the use of co-simulation (e.g., optimize the simulation of a single model by partitioning, or couple the behavior of wildly different subsystems);
+\item[application field] --- see, e.g., the application fields described in \cite{Gomes2017};
+\item[model description] --- the kind of models being combined (e.g., ODE's, DAE's, discrete event systems);
+\item[numerical approach] --- the kind of coupling algorithms employed; and
+\item[interfaces] --- the nature of the physical interfaces between the systems being coupled.
+\end{compactdesc}
+
+Recognizing that co-simulation is not a new concept and that it has been applied in wildly different fields, \cite{Gomes2018} reviewed co-simulation approaches, research challenges, and research opportunities. 
+They apply feature oriented domain analysis \cite{Kang1990} to help map the field. 
+The main result is a feature model that classifies the requirements of co-simulation frameworks and the participating simulators. 
+They conclude that the main research needs are: finding generic approaches for modular, stable, valid, and accurate coupling of simulation units; and finding standard interfaces for hybrid co-simulation. 
+
+With a focus on power systems, but still covering the fundamental concepts, \cite{Palensky2017} highlights the value of co-simulation for the analysis of large scale power systems. 
+In a tutorial fashion, it goes over the main concepts and challenges, providing a great introduction for new researchers in the field.
+
+Recognizing the research in co-simulation should be driven by both industry and academia, \cite{Schweiger2018a} reports on an empirical survey, given to both practitioners and academics.
+The preliminary results \claudio{(An extended version is being published at the American Modelica Conference)} corroborate the challenges pointed out in the surveys we referenced here.
+Additionally, it becomes clear that co-simulation is being used without in-depth knowledge of the subject, which may lead to the improper use of the technique, as well as highlighting the need to develop more usable tools.
+
+Finally, \cite{Gomes2018b} discusses the past and future of co-simulation, providing an historical overview of the topic, as well as possible research directions.
+
+\claudio{Should we survey also co-simulation frameworks, or are the above surveys on the topic enough?
+I guess that if someone wants to learn about co-simulation, the surveys are a better way to start\ldots}
