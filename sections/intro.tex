@@ -4,8 +4,12 @@
 
 %\fbox{Peter Gorm Larsen}
 
-Systems composed of closely coupled computing and physical elements are becoming increasingly important in the modern world. For society and citizens, the potential of such smart systems to deliver more efficient, sustainable and resilient services is enormous.  Such Cyber-Physical Systems (CPSs) are characterised by a complex architecture and a design process involving several diverse science and engineering disciplines. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields. The developer of a CPS faces a large design space that is hard to cover with hardware prototypes due to the high cost of their implementation. Common workflows to assist the engineering of CPSs with a model-based approach, and the necessary tools, are currently lacking. Different stakeholders can produce models of the parts they are responsible for, and we will call these constituent models that together form the entire CPS. 
+Systems composed of closely coupled computing and physical elements are becoming increasingly important in the modern world. For society and citizens, the potential of such smart systems to deliver more efficient, sustainable and resilient services is enormous.  Such Cyber-Physical Systems (CPSs) are characterised by a complex architecture and a design process involving several diverse science and engineering disciplines. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields. 
+\claudio{It's not clear how the previous sentence relates to the next. Is it the cause of the vast design space? It seems to be more related to the two last sentences of this paragraph.}
+The developer of a CPS faces a large design space that is hard to cover with hardware prototypes \claudio{maybe add: and physical experiments} due to the high cost of their implementation. Common workflows to assist the engineering of CPSs with a model-based approach, and the necessary tools, are currently lacking. Different stakeholders can produce models of the parts they are responsible for, and we will call these constituent models that together form the entire CPS. 
 
+\claudio{This paragraph seems to be the continuous of the previous one (but the previous one has a gap, and should maybe be splitted).
+Anyhow, the logical workflow is a bit confusing. Maybe we should go bottom up: first explain the there are diverse disciplines, and that each has its methods, formalisms, and jargon, and then explain that these need to interact and collaborate, in order to successfully develop a CPS. This then leads us to the need for into-cps.}
 The design of CPSs involves the usage of results obtained
 using a combination of different formalisms serving different engineering
 disciplines. Different formalisms are usually
@@ -17,25 +21,39 @@ practitioner to easily combine the results from the various fields during the
 design process.  Our view is that it is best to enable different disciplinary experts to use the tools they are most familiar with and
 integrating the different constituent models by building an environment automating the tool chain
 interaction, accessibility, and unifying the entry point to it. 
+\claudio{If the motivation is clearly provided in the previous paragraphs, then this last sentence should be redundant.}
 
 In such unified environment of several tools, users keep their usual patterns
-of interaction with their familiar tool or tools available in the tool chain.
-Instead of having to learn a new formalism the different disciplinary experts can stay with the tools they are most familiar with and they find most natural to create the constituent models requires for their work.  The chain of tools then need also to enable each individual of seeing the consequences of changes locally in a global context where the other constituent models are incorporated.
+of interaction with their familiar tool(s) available in the tool chain.
+\claudio{The next sentence says the same thing as the previous one.}
+Instead of having to learn a new formalism, the different disciplinary experts can stay with the tools they are most familiar with and they find most natural to create the constituent models requires for their work.
+The chain of tools then needs also to enable each individual of seeing the consequences of changes locally in a global context where the other constituent models are incorporated.
+\claudio{I think this paragraph should not need to exist, if the problem is well motivated. These are all pressing needs in the current development of CPS.
+So the logical flow should be ``MOTIVATION (pressing needs) -> Solution (it should be clear why this is a solution, we don't need to justify more)''.}
 
-Naturally such different constituent models needs to interface to each other and here we make use of a de-facto standard originating in the automotive industry called the Functional-Mockup Interface (FMI). Thus, the different tools in the INTO-CPS tool chain are able to interact with other tools directly or indirectly using the FMI standard. In order also to be able to trace artefacts from different constituent models and results generated from analysis using different tools another standard called the Open Services for Lifecycle Collaboration (OSLC) is used. This enables seeing and documenting the dependencies between different versions of different constituent models and local or global analysis conducted about them.
+Naturally, such different constituent models needs to interface to each other and here we make use of a de-facto standard originating in the automotive industry called the Functional-Mockup Interface (FMI). 
+\claudio{The next sentence says the same thing as the previous one.}
+Thus, the different tools in the INTO-CPS tool chain are able to interact with other tools directly or indirectly using the FMI standard. 
+\claudio{The next couple of sentences seems to be an afterthought. Maybe they should be put in a different paragraph, and the problem that the traceability solves should be described in the motivation section.}
+In order also to be able to trace artefacts from different constituent models and results generated from analysis using different tools another standard called the Open Services for Lifecycle Collaboration (OSLC) is used. This enables seeing and documenting the dependencies between different versions of different constituent models and local or global analysis conducted about them.
 
-It is hard for a single person to master all the components of the tool
-chain, but fortunately that is not required.  The mastering of tool chains involves the management of the whole set
+\claudio{What's the point of the next sentence?}
+It is hard for a single person to master all the components of the tool chain, but fortunately that is not required.
+The mastering of tool chains involves the management of the whole set
 of models and inputs/results for each of the tools. In addition, the conversion
 of results, traceability of changes and keeping track of the user interactions
-need also to be taken into account.  Moreover, given the evolving nature of
+need also to be taken into account.  
+\claudio{The next sentence is one of the motivations for the INTO-CPS association\ldots It should be in a paragraph by itself.}
+Moreover, given the evolving nature of
 each of the tools, the task of managing the tool chain while ensuring the
 dependencies of each of the tools and their interoperability becomes too
-complex. The INTO-CPS Association attempts to ensure that the different tools are kept in sync and that the importable examples expressed in a collection of notations using different tools (these are called multi-models) are kept up to date.
+complex. The INTO-CPS Association attempts to ensure that the different tools are kept in sync and that the importable examples expressed in a collection of notations using different tools \claudio{Do we need to say ``expressed in a collection of notations using different tools''? That seems redundant.} (these are called multi-models \claudio{We don't need to define a new term here, if we are not going to use it in this section.}) are kept up to date.
 
 %Practice shows users are more receptive to a  push-button approach when it is
 %time to combine their results with the other tools.  
 
+\claudio{Why did we switch from talking about the into-cps association, to the into-cps tool?
+Why not start with the tecnology, and end with the into-cps association? Because we start with the tecnological problems\ldots}
 The INTO-CPS technology builds upon a frontend application which was developed following the
 unified entry point idea.  The INTO-CPS application allows the user to fetch
 the different tools, checkout multi-models from repositories, orchestrate the
