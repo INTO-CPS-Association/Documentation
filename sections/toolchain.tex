@@ -24,7 +24,7 @@ An overview of the different tools that form the tool-chain of the INTO-CPS asso
 
 \subsection{Modelio}
 \label{sec:modelio}
-Modelio is an open-source modelling environment for various formalisms with many interfaces to import and export models. In the context of INTO-CPS, the support for SysML modelling is of primary importance, while Modelio can be extended with a range of modules to enable more modelling languages. In the terminology of the methods guidelines (e.g. \cite{INTOCPSD3.3a}), Modelio is a tool for the \textit{architectural modelling} and for \textit{requirements management}.
+Modelio is an open-source modelling environment for various formalisms with many interfaces to import and export models. In the context of INTO-CPS, the support for SysML modelling is of primary importance, while Modelio can be extended with a range of modules to enable more modelling languages. In the terminology of the methods guidelines (e.g.\ \cite{INTOCPSD3.3a}), Modelio is a tool for the \textit{architectural modelling} and for \textit{requirements management}.
 
 During the INTO-CPS project, a SysML profile was created, which is currently available as a module for Modelio 3.4 and 3.6 \footnote{see \url{http://forge.modelio.org/projects/intocps}}. This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere \cite{INTOCPSD41c,INTOCPSD4.2c,INTOCPSD4.3c}. Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
 
@@ -36,18 +36,18 @@ Diagrams for handling of Design Space Exploration (DSE) were created for Modelio
 
 Behavioural models that are designed in Modelio as state machines can be exported as \texttt{.xmi} files, so that they can be imported to the RT Tester tool.
 
-Furthermore, Modelio allows Requirements management, and supports traceability in the context of INTO-CPS.
+Furthermore, Modelio allows Requirements management, and supports traceability in the context of INTO-CPS. More details about Modelio can be found in \autoref{app:modelio}.
 
 \subsection{Modelling tools}
 \label{sec:tools}
 
 At the core of the tool-chain are several modelling tools that describe a system or a sub-system in a specific formalism, and perform calculations to understand the dynamic behaviour of the (sub-)system. While the formalisms or application areas can be vastly different, the modelling tools share some common features, which are summarised in this section. 
 
-\paragraph{20-sim} is a commercial tool for modelling and simulation of mechatronic systems. Together with the related software, 20-sim 4C, Hardware-in-the-Loop simulations can be performed. \url{http://www.20sim.com/}
+\paragraph{20-sim} is a commercial tool for modelling and simulation of mechatronic systems. Together with the related software, 20-sim 4C, Hardware-in-the-Loop simulations can be performed (\url{http://www.20sim.com/}). This is described further in \autoref{app:20sim}.
 
-\paragraph{OpenModelica} is an open-source environment which is based on the Modelica language. It features numerous free libraries to easily model systems from different domains. \url{https://openmodelica.org/}
+\paragraph{OpenModelica} is an open-source environment which is based on the Modelica language. It features numerous free libraries to easily model systems from different domains (\url{https://openmodelica.org/}). This is described further in \autoref{app:OM}.
 
-\paragraph{Overture} is an open-source tool that supports the modelling method \textit{The Vienna Development Method (VDM)}, which is a formal method to describe computing systems. \url{http://overturetool.org/}
+\paragraph{Overture} is an open-source tool that supports the modelling method \textit{The Vienna Development Method (VDM)}, which is a formal method to describe computing systems (\url{http://overturetool.org/}). This is described further in \autoref{app:overture}.
 
 \paragraph{4Diac} is an open-source tool for distributed process measurement and control systems based on the IEC 61499 standard. \url{https://www.eclipse.org/4diac/}
 
@@ -64,11 +64,11 @@ Most modelling tools support the same functions in the context of INTO-CPS. A \t
 		\begin{tabular}{|l|p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|}\hline
 			\rotatebox[origin=c]{90}{Tool} & \rotatebox[origin=c]{90}{MD.xml import} & \rotatebox[origin=c]{90}{FMU import} & \rotatebox[origin=c]{90}{FMU export (stand alone)} & \rotatebox[origin=c]{90}{FMU export (tool wrapper)} & \rotatebox[origin=c]{90}{Traceability}\\
 			\hline
-			20-sim & yes & yes & no & yes & yes\\
-			OpenModelica & yes & yes & yes & no & yes\\
-			Overture & yes & yes & yes & yes & yes\\
-			4diac & no & no & yes & no & no \\
-			AutoFocus 3 & no & under development & no & no & no\\
+			20-sim & yes & yes & no & yes & yes\\ \hline
+			OpenModelica & yes & yes & yes & no & yes\\ \hline
+			Overture & yes & yes & yes & yes & yes\\ \hline
+			4diac & no & no & yes & no & no \\ \hline
+			AutoFocus 3 & no & under development & no & no & no\\ \hline
 			%Cossim & N.A. & N.A. & N.A. & N.A. & N.A. \\
 			ABS & no & no & no & planned & no \\ \hline
 		\end{tabular}
@@ -79,7 +79,7 @@ Most modelling tools support the same functions in the context of INTO-CPS. A \t
 \subsection{RT Tester}
 \label{sec:tool-RTTester}
 
-In the framework of INTO-CPS, the RT Tester tool suite (see \url{https://www.verified.de/products/rt-tester/}) is extended with mainly two objectives: Integration of Test-Automation and of Model Checking in the INTO-CPS tool-chain. Both functions are integrated into the INTO-CPS application, and both support traceability.
+In the framework of INTO-CPS, the RT Tester tool suite (see \url{https://www.verified.de/products/rt-tester/}) is extended with mainly two objectives: Integration of Test-Automation and of Model Checking in the INTO-CPS tool-chain. Both functions are integrated into the INTO-CPS application, and both support traceability. This is described further in \autoref{app:RTT}.
 
 \subsubsection{Test Automation}
 
