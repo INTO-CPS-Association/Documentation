@@ -13,14 +13,14 @@ This pilot study is an example of a vehicle driving a route defined from a set o
 \end{figure}
 
 \subsection{Usage} \label{sec:bicycle_usage}
-The autonomous vehicle pilot study is an example of a vehicle driving through a path of specified way points. The example is available on \texttt{https://github.com/into-cps/case-study\_vehicle}. 
+The autonomous vehicle pilot study is an example of a vehicle driving through a path of specified way points. The example is available on \texttt{https://github.com/INTO-CPS-Association/example-autonomous\_vehicle}. 
 
 The folder \texttt{FMUs} contains \texttt{vehicle.fmu} and \texttt{steering\_controller.fmu}. The folder \texttt{Models} contains the VDM-RT project of the steering controller and the 20sim model of the dynamic description of the vehicle, \texttt{BicycleModel.emx}. The folder \texttt{Multi-models} contains the multi-model definition.  
 
 To run a simulation, open the INTO-CPS application, expand the \texttt{basic-sim} folder and open \texttt{Simulation-1}. Launch the COE and hit `Simulate'. 
 By default, the simulation integrates with a fixed time step size of 0.1 second for 100 seconds. \newline
 
-After a finished simulation, visualize the trajectory by running the file, \texttt{plot\_trajectory.py} that illustrates the trajectory of the latest simulation in the folder \texttt{\textbackslash Multi-models\textbackslash si\-mu\-la\-tion-1}. 
+After a finished simulation, visualize the trajectory by running the file \texttt{plot\_trajectory.py} using Python 2.x. That illustrates the trajectory of the latest simulation in the folder \texttt{\textbackslash Multi-models\textbackslash si\-mu\-la\-tion-1}.
 
 \subsection{INTO-CPS SysML profile}
 The autonomous vehicle study SysML model is constructed using the the INTO-CPS profile. The Architecture Diagram of the co-simulation is shown in Figure~\ref{fig:bicycle_architecture_diagram},the Connection Diagram is shown in Figure~\ref{fig:bicycle_connection_diagram}.
@@ -160,3 +160,13 @@ The column \texttt{mean\-Cross\-Track\-Error2} is forced to \texttt{1.0} since t
 	\end{center}
 \end{figure}
 Which illustrates that the best combination of parameters in terms of tracking the route is the combination of look-ahead and control parameter p is [1.0, 1.0] at a velocity of 0.5 m/s.
+
+To run the DSE script perform the following:
+\begin{itemize}
+  \item Download the DSE scripts using the download manager
+  \item Open the terminal and write the following (Requires Python 2.x): \texttt{python Algorithm\_selector.py Relative\_path\_to\_dse\_config Relative\_path\_to\_coe\_config}
+\end{itemize}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../INTO-CPS_Examples_Compendium"
+%%% End:
