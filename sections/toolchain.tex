@@ -2,17 +2,9 @@
 
 \section{The INTO-CPS Tool Chain}\label{sec:toolchain}
 
-%\fbox{Christian K\"{o}nig with support from Etienne Brosse}
+This section discusses the interconnectivity of the different tools, and how the tools fit into the workflows and tasks that are covered by INTO-CPS. In particular, this section focuses on the features that were added during the INTO-CPS project, and in the framework of the INTO-CPS association. This section does \textit{not} describe all the tools in detail (here, the reader is referred to the different manuals, and to the User Manual \cite{INTOCPSD4.3a} and to Appendix \ref{appendix:tools}). The main concepts of the tool-chain are discussed above in Section \ref{sec:method:concepts}.
 
-%\fbox{make sure that this section fits to the other sections, incl. references}
-
-%\fbox{indicate maturity of the different tool features, in particular wrt. the new ones}
-
-This section discusses the interconnectivity of the different tools, and how the tools fit into the workflows and tasks that are covered by INTO-CPS. In particular, this section focuses on the features that were added during the INTO-CPS project, and in the framework of the INTO-CPS association. This section does \textit{not} describe all the tools in detail (here, the reader is referred to the different manuals, and to the User Manual (ref to the INTO-CPS tool manual).
-
-An overview of the different tools that form the tool-chain of the INTO-CPS association, is given in Figure \ref{fig:tool-chain}.
-
-[text on the overall tool-chain, refer to workflows, probably from previous section]
+An overview of the different tools that form the tool-chain of the INTO-CPS association, is given below in Figure \ref{fig:tool-chain}, where the red boxes indicate the different sections of this chapter.
 
 \begin{figure}[!ht]
 	\centering
@@ -28,7 +20,7 @@ Modelio is an open-source modelling environment for various formalisms with many
 
 During the INTO-CPS project, a SysML profile was created, which is currently available as a module for Modelio 3.4 and 3.6 \footnote{see \url{http://forge.modelio.org/projects/intocps}}. This INTO-CPS SysML profile extends Modelio with several functionalities that described in detail elsewhere \cite{INTOCPSD41c,INTOCPSD4.2c,INTOCPSD4.3c}. Here, only those parts of the INTO-CPS SysML profile are discussed that add features for interconnectivity in the tool-chain.
 
-To support the FMI multi-modelling approach, \texttt{ModelDescription.xml} files can now be imported into, and exported from a SysML Architectural Modelling diagram. Importing ModelDescription.xml files creates a SysML block with the corresponding flow ports and attributes, exporting them allows import in other modelling tools, such as those described below in Section \ref{sec:tools}.
+To support the FMI multi-modelling approach, \texttt{ModelDescription.xml} files can now be imported into, and exported from a SysML Architectural Modelling diagram. Importing \texttt{ModelDescription.xml} files creates a SysML block with the corresponding flow ports and attributes, exporting them allows import in other modelling tools, such as those described below in Section \ref{sec:toolchain:tools}.
 
 The Connections Diagram describes the signal flow between the different SysML blocks, which can each correspond to one FMU. Using the INTO-CPS SysML profile, the Connections Diagram can be exported to an intermediary JSON format, which can then be imported by the INTO-CPS Application, to create a new Multi-Model.
 
@@ -39,7 +31,7 @@ Behavioural models that are designed in Modelio as state machines can be exporte
 Furthermore, Modelio allows Requirements management, and supports traceability in the context of INTO-CPS. More details about Modelio can be found in \autoref{app:modelio}.
 
 \subsection{Modelling tools}
-\label{sec:tools}
+\label{sec:toolchain:tools}
 
 At the core of the tool-chain are several modelling tools that describe a system or a sub-system in a specific formalism, and perform calculations to understand the dynamic behaviour of the (sub-)system. While the formalisms or application areas can be vastly different, the modelling tools share some common features, which are summarised in this section. 
 
@@ -97,8 +89,3 @@ The 3D animation FMU allows visualisation of the simulation. It is based on the 
 \subsection{The INTO-CPS Application}
 
 The INTO-CPS Application is the central tool to integrate the different tools and artefacts, to configure and run simulations, manage results, and more. It allows configuration and execution of DSE scenarios (which can be imported from Modelio), and is a front-end for Model-checking and Test automation, by using the RT Tester tool (see Section \ref{sec:tool-RTTester}). Furthermore, traceability data can be viewed in the Application, either in an expert view, using the Neo4J visualisation\footnote{\url{https://neo4j.com/}}, or by pre-configured queries.
-
-%Integration of the different artifacts\\ 
-%configuration and execution of Co-Simulation\\
-%Front-end for Test-automation and model checking\\
-%Viewer for traceability\\
