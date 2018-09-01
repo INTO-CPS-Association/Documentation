@@ -1,70 +1,67 @@
-\section{The INTO-CPS Method and Guidelines}\label{sec:method}
-
-\fbox{John Fitzgerald}
-\begin{enumerate}
-  \item Draft 1 (based on Deliverables only): end June
-  \item Draft 2 (pared down, appropriate material dealt with by external references): end July
-  \item Draft 3 (consistent with other sections, cross-references): end August
-\end{enumerate}
+\section{INTO-CPS Method Guidelines}
+\label{sec:method}
 
 \subsection{Introduction}
 \label{sec:method:intro}
 
-The INTO-CPS tool chain enables collaborative multidisciplinary model-based design of CPSs. Each discipline has its own culture, abstractions, and approaches to problem solving that inform how they are used. Many of these things are tacit and tend to be discovered only after trying to combine them. This chapter aims to help the reader overcome these challenges, and to understand how best to use these technologies.
+The INTO-CPS tool chain enables collaborative multidisciplinary model-based design of CPSs. Although each discipline involved in a CPS engineering enterprise has its own culture, abstractions, and approaches to problem solving, it may only be on federating them that knowledge which is otherwise tacit in some disciplines has to be made explicit. To date, there is only limited experience in model-based multidisciplinary design of CPSs, and so the methods and approaches for bringing models together are only beginning to emerge. This chapter aims to distil the methods and guidelines that have emerged in our experience with the INTO-CPS toolchain, and to do so in a way that helps the reader understand how best to use INTO-CPS co-modelling technologies.
 
-This chapter complements the tools User Manual (Deliverable D4.3a~\cite{INTOCPSD4.3a}) ---which gives detail on how to use the features of the tool chain--- by providing information on when and why you might use these features. The guidance in this document has been distilled from experience gained in a series of pilot studies and applications of INTO-CPS technologies to real industrial case studies. These pilot studies now appear as examples that can be opened directly from the INTO-CPS Application, supported by descriptions in the \fbox{Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6})}. Industrial applications can be read about in the \fbox{Case Studies report (Deliverable D1.3a~\cite{INTOCPSD1.3a})}.
-
-Since this document is aimed at both new and experienced users of the INTO-CPS technologies, it has been divided into two parts. Sections~\ref{sec:method:intro}--\ref{sec:method:workflows} covers introductory material including the terminology used in INTO-CPS, and the various activities that INTO-CPS enables. Sections~\ref{sec:method:trace}--\ref{sec:method:dse}, covers more advanced topics that require a basic familiarity with the INTO-CPS technologies. Although Sections~\ref{sec:method:trace}--\ref{sec:method:dse} are ordered based on a start-to-end ``work flow'' of system development with INTO-CPS, it is not necessary to read them in order. Experienced users may read any section on which they require further guidance, new users are recommended to:
+The chapter complements the Tool Chain User Manual~\cite{INTOCPSD4.3a}--- which gives detail on how to use the features of the tool chain--- by providing guidance on when and why you might use these features. The guidance given here has been distilled from experience gained through pilot studies and applications of INTO-CPS technologies to real industrial cases. These pilot studies now appear as examples that can be opened directly from the INTO-CPS Application, supported by descriptions in the Examples Compendium~\cite{INTOCPSD3.6}. Industrial applications are described in the Case Studies report~\cite{INTOCPSD1.3a}. Sections~\ref{sec:method:intro}--\ref{sec:method:workflows} provide an introduction to core INTO-CPS terminology and the activities that INTO-CPS enables. Advanced topics including traceability, design space exploration, architectural modelling, New users are recommended to:
 
 %\begin{itemize}[noitemsep]
 \begin{itemize}
   \item Read the introductory material in Sections~\ref{sec:method:intro}--\ref{sec:method:workflows}.
-  \item Follow the first tutorial to experience using the INTO-CPS Application.
-  \item Import one or two examples from the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}) into the INTO-CPS Application and interact with them.
+  \item Follow the first tutorial to experience the INTO-CPS Application.
+  \item Import one or two examples from the Examples Compendium\footnote{\url{https://github.com/INTO-CPS-Association/training/tree/master/tutorials}} into the INTO-CPS Application and interact with them.
   \item As you start your own multi-modelling, return to this chapter for guidance on particular topics as required.
 \end{itemize}
 
 \subsection{Concepts and Terminology}
 \label{sec:method:concepts}
 
-CPSs bring together domain experts from  diverse backgrounds such as software engineering and control engineering. Each discipline has developed its own terminologies, principles and philosophy, often using similar terms for quite different meanings and different terms that have the same meaning. In this section we discuss the meanings that we give to common concepts.
+Given the diversity of backgrounds in CPS engineering teams, it is worth clarifying some common concepts.
 
 \subsubsection{Systems}
 \label{sec:concepts:systems}
-A \term{System} is ``a combination of interacting elements organized to achieve one or more stated purposes''~\cite{INCOSEseh15}. Any given system will have an~\term{environment}, considered to be everything outside of the system. The behaviour exhibited by the environment is beyond the direct control of the developer~\cite{Broenink&12b}. We also define a \term{system boundary} as being the common frontier between the system and its environment. The definition of the system boundary is application-specific~\cite{Broenink&12b}.
+A \term{System} is ``a combination of interacting elements organized to achieve one or more stated purposes''~\cite{INCOSEseh15}. Any given system will have an~\term{environment}, considered to be everything outside of the system. The behaviour exhibited by the environment is beyond the direct control of the developer~\cite{Broenink&12b}. A \term{system boundary} is the common frontier between a system of interest and its environment~\cite{Broenink&12b}. An \term{interface} is a shared boundary between two entities, which can be defined in terms of physical and digital interactions and flows~\cite{INCOSEseh15}.
 
-\term{Cyber-Physical Systems (CPSs)} refer to ``ICT systems (sensing, actuating, computing, communication, etc.) embedded in physical objects, interconnected (including through the Internet) and providing citizens and businesses with a wide range of innovative applications and services''~\cite{Thompson13, Deka&15}.
 
-Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of constituent systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems''~\cite{Holt&14}. CPSs may exhibit the characteristics of SoSs.
+\term{Cyber-Physical Systems (CPSs)} are ``ICT systems (sensing, actuating, computing, communication, etc.) embedded in physical objects, interconnected (including through the Internet) and providing citizens and businesses with a wide range of innovative applications and services''~\cite{Thompson13, Deka&15}.
+
+Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of independent systems, integrated into a larger system that delivers unique capabilities''~\cite{INCSOEsosprimer18}.
+%Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of constituent systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems''~\cite{Holt&14}. CPSs may exhibit the characteristics of SoSs.
 
 \subsubsection{Models}
 \label{sec:concepts:models}
 
-A \term{model} is a  potentially partial and abstract description of a system, limited to those components and properties of the system that pertain to the current goal~\cite{Holt&14}. A model should be ``just complex enough to describe or study the phenomena that are relevant for our problem context''~\cite{Amerongen10}. Models should be abstract ``in the sense that aspects of the product not relevant to the analysis in hand are not included''~\cite{Fitzgerald&98b}. A model ``may contain representations of the system, environment and stimuli''~\cite{Fitzgerald&14c}\fbox{Further discussion may be required on the definition of: environment models, test models in RT-Tester and their correspondence in the INTO-CPS SysML profile?}.
+A \term{model} is a  potentially partial and abstract description of a system, limited to those components and properties of the system that pertain to the current goal~\cite{Holt&14}. A model should be ``just complex enough to describe or study the phenomena that are relevant for our problem context''~\cite{Amerongen10}. Models should be abstract ``in the sense that aspects of the product not relevant to the analysis in hand are not included''~\cite{Fitzgerald&98b}. A model ``may contain representations of the system, environment and stimuli''~\cite{Fitzgerald&14c}
 
-In a CPS model, we describe systems with cyber, physical and network elements. These components are  often drawn from different domains, and are modelled in a variety of languages, with different notations, concepts, levels of abstraction, and semantics, which are not necessarily easily mapped one to another. This heterogeneity presents a significant challenge to simulation in CPSs~\cite{Holt&14}. We use \term{continuous time (CT)} and \term{discrete event (DE)} models to represent physical and cyber elements as appropriate. A CT model has state that can be changed and observed \emph{continuously}~\cite{Amerongen10} and is described using either explicit continuous functions of time  either implicitly as a solution of differential equations. A DE model has state that can be changed and observed only at fixed, \emph{discrete}, time intervals~\cite{Amerongen10}.  The approach used in the DESTECS project was to use \emph{co-models} -- ``a model comprising a DE model, a CT model and a contract''~\cite{Broenink&12b}. In \into\ we use the term \term{multi-models} -- ``comprising multiple \term{constituent} DE and CT models''. Related to this is a \term{Hybrid Model}, which contains both DE and CT elements.
+%\fbox{Further discussion may be required on the definition of: environment models, test models in RT-Tester and their correspondence in the INTO-CPS SysML profile?}.
 
-A \term{requirement} may impose restrictions, define system capabilities or identify qualities of a system and should indicate some value or use for the different stockholders of a CPS. \term{Requirements Engineering (RE)} is the process of the specification and documentation of requirements placed upon a CPS. Requirements may be considered in relation to different \term{contexts} -- that is the point of view of some system component or domain, or interested stakeholder.
+In a CPS model, we describe systems with cyber, physical and network elements. These components are often modelled in a variety of languages, with different notations, concepts, levels of abstraction, and semantics, which are not necessarily easily mapped one to another. We use \term{continuous time (CT)} and \term{discrete event (DE)} models to represent physical and cyber elements as appropriate. A CT model has state that can be changed and observed \emph{continuously}~\cite{Amerongen10} and is described using either explicit continuous functions of time or implicitly as a solution of differential equations. A DE model has state that can be changed and observed only at fixed, \emph{discrete}, time intervals~\cite{Amerongen10}.  We use the term \term{multi-model} to refer to the federation of several constituent DE and CT models.
+
+A \term{requirement} may impose restrictions, define capabilities or identify qualities of a system, and should indicate some value or use for the stakeholders in a CPS. \term{Requirements Engineering (RE)} is the process of specifying and documenting requirements placed upon a CPS. Requirements may be considered in relation to different \term{contexts} -- that is the point of view of some system component or domain, or interested stakeholder.
 
 A \term{design parameter} is a property of a model that can be used to affect the model's behaviour, but remains constant during a given simulation~\cite{Broenink&12b}. A \term{variable} is feature of a model that may change during a given simulation~\cite{Broenink&12b}. \term{Non-functional properties (NFPs)} pertain to characteristics other than functional correctness. For example, reliability, availability, safety and performance of specific functions or services are NFPs that are quantifiable. Other NFPs may be more difficult to measure~\cite{Payne&10}.
 
 The activity of creating models may be referred to as \term{modelling} ~\cite{Fitzgerald&14c} and related terms include \term{co-modelling} and \term{multi-modelling}. A \term{workflow} is a sequence of \term{activities} performed to aid in modelling. A workflow has a defined purpose, and may cover a subset of the CPS engineering development lifecycle.
 
-The term \term{architecture} has many different definitions, and range in scope depending upon the scale of the product being `architected'. We use the simple definition from~\cite{COMPASSD22.6}:  ``an architecture defines the major elements of a system, identifies the relationships and interactions between the elements and takes into account process. Those elements are referred to as \term{components}. An architecture involves both a definition of structure and behaviour. Importantly, architectures are not static but must evolve over time to reflect the change in a system as it evolves to meet changes to its requirements''. In a CPS architecture, components may be either \term{cyber components} or \term{physical components} corresponding to some functional logic or an entity of the physical world respectively.
+The term \term{architecture} has many different definitions, and range in scope depending upon the scale of the product being `architected'. We use the simple definition from~\cite{COMPASSD22.6}:  ``an architecture defines the major elements of a system, identifies the relationships and interactions between the elements and takes into account process. Those elements are referred to as \term{components}. An architecture involves both a definition of structure and behaviour. Importantly, architectures are not static but must evolve over time to reflect the change in a system as it evolves to meet changes to its requirements''. In a CPS architecture, components may be either \term{cyber components} or \term{physical components} is they describe computational or physical elements.
 
-We consider both a \term{holistic architecture} and a \term{design architecture}. An example of their use is given in Section~\ref{sec:method:sysml}. The aim of a holistic architecture is to identify the main units of functionality of the system reflecting the \emph{terminology and structure of the domain of application}. It describes a conceptual model that highlights the main units of the system architecture and the way these units are connected with each other, taking a holistic view of the overall system. The design architectural model of the system is effectively a multi-model. The INTO-CPS SysML profile~\cite{INTOCPSD2.1a} is designed to enable the specification of CPS design architectures, which emphasises a decomposition of a system into \term{subsystems}, where each subsystem is an assembly of cyber and physical components and possibly other subsystems, and modelled separately in isolation using a special notation and tool designed for the domain of the subsystem. \term{Evolution} refers to the ability of a system to benefit from a varying number of alternative system components and relations, as well as its ability to gain from the adjustments of the individual components' capabilities over time (Adjusted from SoS~\cite{Nielsen&13}).
+We consider both \term{holistic} and a \term{design} architectures~(Section~\ref{sec:method:sysml}). The aim of a holistic architecture is to identify the units of functionality of the system reflecting the \emph{terminology and structure of the domain of application}. It describes a conceptual model of these units and their interconnections, giving a holistic view of the overall system. The design architectural model of the system is effectively a multi-model. The INTO-CPS SysML profile~\cite{INTOCPSD2.1a} is designed to assist in the specification of CPS design architectures. It helps the architect describe a system as a decomposition into interconnected \term{subsystems}, each of which is an assembly of cyber and physical components and possibly other subsystems. Each of these components and subsystems can be modelled separately in a domain-specific notation and tool.
 
-Considering the interactions between components in a system architecture, an \term{interface} ``defines the boundary across which two entities meet and communicate with each other''~\cite{Holt&14}. Interfaces may describe both digital and physical interactions: digital interfaces  contain descriptions of operations and attributes that are \emph{provided} and \emph{required} by components. Physical interfaces describe the flow of physical matter (for example fluid and electrical power) between components.
+\term{Evolution} refers to the ability of a system to benefit from a varying number of alternative system components and relations, as well as its ability to gain from the adjustments of the individual components' capabilities over time.
+%An \term{interface} defines the boundary across which two entities meet and communicate with each other~\cite{Holt&14}. Interfaces may describe both digital and physical interactions: digital interfaces  contain descriptions of operations and attributes that are \emph{provided} and \emph{required} by components. Physical interfaces describe the flow of physical matter (for example fluid and electrical power) between components.
 
-There are many methods of describing an architecture. In this report, an \term{architecture diagram} refers to the symbolic representation of architectural information contained in a model. An \term{architectural framework} is a ``defined set of viewpoints and an ontology'' and ``is used to structure an architecture from the point of view of a specific industry, stakeholder role set, or organisation.~\cite{Holt&14}. In the application of an architecture framework, an \term{architectural view} is a ``work product (for example an architecture diagram) expressing the architecture of a system from the perspective of specific system concerns''~\cite{COMPASSD22.6}.
+There are many methods of describing architectures. An \term{architecture diagram} is a symbolic representation of architectural information contained in a model. An \term{architectural framework} is a ``defined set of viewpoints and an ontology'' and ``is used to structure an architecture from the point of view of a specific industry, stakeholder role set, or organisation. In the application of an architecture framework, an \term{architectural view} is a ``work product (for example an architecture diagram) expressing the architecture of a system from the perspective of specific system concerns''~\cite{COMPASSD22.6}.
 
-The \into\ SysML profile comprises diagrams for architectural modelling and \term{design space exploration} specification. There are two architectural diagrams. The \term{Architecture Structure Diagram (ASD)} specialises SysML block definition diagrams to support the specification of a system architecture described in terms of a system's components. \term{Connections Diagrams (CDs)} specialise SysML internal block diagrams to convey the internal configuration of the system's components and the way they are connected. The system architecture defined in the profile should inform a co-simulation multi-model and therefore all components interact through connections between flow ports. The profile permits the specification of \term{cyber} and \term{physical} components and also components representing the \term{environment} and \term{visualisation} elements. The \into\ SysML profile includes three design space exploration diagrams: a \term{parameters diagram}; an \term{objective diagram}; and a \term{ranking diagram}. See Section~\ref{sec:concepts:analysis} for concepts relating to design space exploration.
+The \into\ SysML profile comprises diagrams for architectural modelling and specifying \term{design space exploration}. There are two architectural diagrams. The \term{Architecture Structure Diagram (ASD)} specialises SysML block definition diagrams to support the specification of a system architecture described in terms of a system's components. \term{Connections Diagrams (CDs)} specialise SysML internal block diagrams to convey the internal configuration of the system's components and the way they are connected. The system architecture defined in the profile should inform a co-simulation multi-model and therefore all components interact through connections between flow ports. The profile permits the specification of \term{cyber} and \term{physical} components and also components representing the \term{environment} and \term{visualisation} elements. The \into\ SysML profile includes three design space exploration diagrams: a \term{parameters diagram}; an \term{objective diagram}; and a \term{ranking diagram}. See Section~\ref{sec:concepts:analysis} for concepts relating to design space exploration.
 
 
 \subsubsection{Tools}
 \label{sec:concepts:tools}
 
-The \term{\into\ tool chain} is a collection of software tools, based centrally around FMI-compatible co-simulation, that  supports the collaborative development of CPSs. The \term{\into\ Application} is a front-end to the INTO-CPS tool chain. The Application allows the specification of the co-simulation configuration, and the co-simulation execution itself. The application also provides access to features of the tool chain without an existing user interface (such as design space exploration and model checking). 
+The \term{\into\ tool chain} is a collection of software tools, based centrally around FMI-compatible co-simulation, that  supports the collaborative development of CPSs. The \term{\into\ Application} is a front-end to the INTO-CPS tool chain. The Application allows the specification of the co-simulation configuration, and the co-simulation execution itself. The application also provides access to features of the tool chain without an existing user interface (such as design space exploration and model checking).
 
 Central to the \into\ tool chain is the use of the \term{Functional Mockup Interface (FMI)} standard. This is a tool-independent standard to support both model exchange and co-simulation of dynamic models using a combination of XML-files and compiled C-code~\cite{FMIStandard2.0}. Part of the FMI standard for model exchange is specification of a \term{model description} file. This is an XML file that supplies a description of all properties of a model (for example input/output variables). A \term{Functional Mockup Unit (FMU)} is a tool component that implements FMI. Data exchange between FMUs and the synchronisation of all simulation solvers~\cite{FMIStandard2.0} is controlled by a \term{Master Algorithm}.
 
@@ -118,30 +115,124 @@ The Unifying Theories of Programming (UTP)~\cite{Hoare&98} provides a unified fr
 The Communicating Sequential Processes \term{CSP} notation~\cite{Hoare85} is a formal process algebra for describing  communication  and interaction.
 \term{INTO-CSP} is a version of CSP, which will be used to provide a model for the SysML-FMI profile, FMI, VDM-RT and Modelica semantics. It is a front end for a UTP theory of reactive concurrent continuous systems customised for the needs of INTO-CPS. \term{Hybrid-CSP} is a continuous version of CSP defined originally by He Jifeng~\cite{Jifeng94}. It will be used as a basis to inform the design of INTO-CSP.
 
-Several forms of verification are enabled through the use of formally defined languages.  \term{Refinement} is a verification and formal development technique pioneered by~\cite{Back&98} and~\cite{Morgan90a}. It is based on a behaviour preserving relation that allows the transformation of an abstract specification into more and more concrete models, potentially leading to an implementation. \term{Proof} is the process of showing how the validity of one statement is derived from others by applying justified rules of inference~\cite{Bicarregui&94}.
-
-For the purposes of verification in INTO-CPS, and in particular the work of WP2, we make use of the Isabelle/HOL theorem prover and the FDR3 refinement checker. These are not considered part of the INTO-CPS tool chain, and are used in the INTO-CPS project primarily to support the development of foundation work.
+Several forms of verification are enabled through the use of formally defined languages.  \term{Refinement} is a verification and formal development technique pioneered by~\cite{Back&98} and~\cite{Morgan90a}. It is based on a behaviour preserving relation that allows the transformation of an abstract specification into more and more concrete models, potentially leading to an implementation. \term{Proof} is the process of showing how the validity of one statement is derived from others by applying justified rules of inference~\cite{Bicarregui&94}. For the purposes of verification in INTO-CPS, we make use of the Isabelle/HOL theorem prover and the FDR3 refinement checker. These are not considered part of the INTO-CPS tool chain, but were used in the INTO-CPS project primarily to support the development of foundation work.
 
 
-\subsection{Introduction}
+\subsection{Activities Enabled by INTO-CPS}
 \label{sec:method:workflows}
+The following activities are all enabled by one or more of the INTO-CPS technologies. They are grouped into broad categories and include both existing, embedded systems activities and activities enabled by INTO-CPS, since INTO-CPS extends traditional embedded systems design capabilities towards CPS design. The choice of granularity for defining these activities naturally affects the size of such a list. The level chosen is instructive for describing workflows, but one that does not make the described workflows overly long.  %For example, those under the \textbf{Design} will often be supported by \textbf{Modelling} activities, but not necessarily.
 
-\subsection{Traceability}
-\label{sec:method:trace}
+In the following descriptions (and corresponding summary in Table~\ref{tab:activities}), we identify the tools that support the activities, where applicable, using the following icons:
 
-\subsection{Requirements Engineering}
-\label{sec:method:reqeng}
+\begin{itemize}[noitemsep]
+\item[\INTOCPS] The INTO-CPS Application, COE and its extensions.
+\item[\Modelio] Modelio.
+\item[\Overture] The Overture tool.
+%\item[\Crescendo] The Crescendo tool.
+\item[\RTTester] RT-Tester.
+\item[\OpenModelica] OpenModelica.
+\item[\TwentySim] 20-sim.
+\end{itemize}
 
-\subsection{Design Space Exploration}
-\label{sec:method:sysml}
+Descriptions of these tools can be found in Section~\ref{sec:concepts:language}. Those activities in \emph{italics} can be recorded by the traceability features of INTO-CPS, which are described in Section~\ref{sec:method:trace}.
 
-\subsection{Initial Multi-Modelling using a Discrete-Event Notation: VDM}
-\label{sec:method:defirst}
+\newpage
+\paragraph{Requirements and Traceability}
 
-\subsection{Modelling Networks with VDM in Multi-models}
-\label{sec:method:networks}
+Writing \emph{Design Notes} (\INTOCPS) includes documentation about what has been done during a design, why a decision was made and so on. \emph{Requirements} (\Modelio) includes requirements gathering and analysis. \emph{Validation} (\INTOCPS) is any form of validation of a design or implementation against its required behaviour.
 
-\subsection{Design Space Exploration}
-\label{sec:method:dse}
+\paragraph{Architectural Modelling}
 
-\fbox{How best to integrate the tutorials?}
+INTO-CPS primarily supports architectural modelling in SysML. \emph{Holistic Architectural Modelling} (\Modelio) and \emph{Design Architectural Modelling} (\Modelio) are described in Section~\ref{sec:method:sysml}. The former focuses on a domain-specific view, whereas the latter targets multi-modelling using a special SysML profile. The \emph{Export Model Descriptions} (\Modelio) activity indicated passing component descriptions from the Design Architectural Model to other modelling tools.
+
+\paragraph{Modelling}
+
+The \emph{Import Model Description} (\Overture~\TwentySim~\OpenModelica) activity means taking a component interface description from the Design Architectural Model into another modelling tool. \emph{Cyber Modelling} (\Overture) means capturing a ``cyber'' component of the system, e.g. using a formalism/tool such as VDM/Overture. \emph{Physical Modelling} (\TwentySim~\OpenModelica) means capturing the ``physical'' component of the system, e.g. in 20-sim  or OpenModelica. Collectively, these can be referred to as \emph{Simulation Modelling} (\Overture~\TwentySim~\OpenModelica) to distinguish from other forms, such as \emph{Architectural Modelling} (\Modelio). \emph{Co-modelling} (\Crescendo) means producing a system model with one DE and one CT part, e.g.\ in Crescendo. \emph{Multi-modelling} (\INTOCPS) means producing a system model with multiple DE or CT parts with several tools.
+
+\paragraph{Design}
+
+\emph{Supervisory Control Design} means designing some control logic that deals with high-level such as modal behaviour or error detection and recovery. \emph{Low Level Control Design} means designing control loops that control physical processes, e.g.\ PID control. \emph{Software Design} is the activity of designing any form of software (whether or not modelling is used). \emph{Hardware Design} means designing physical components (whether or not modelling is used).
+
+\paragraph{Analysis}
+
+In INTO-CPS, the RT-Tester tool enables the activities of \emph{Model Checking} (\RTTester), \emph{Creating Tests} (\RTTester) and creating a \emph{Test Oracle} (\RTTester) FMU. The \emph{Create a Configuration} (\INTOCPS) activity means preparing a multi-model for co-simulation. The \emph{Define Design Space Exploration Configurations} (\INTOCPS) activity means preparing a multi-model for multiple simulations. \emph{Export FMU} (\Overture~\TwentySim~\OpenModelica)  means to generate an FMU from a model of a component. \emph{Co-simulation} (\Crescendo~\INTOCPS) means simulating a co-model, e.g.\ using Crescendo baseline technology or the COE.
+
+\paragraph{Prototyping}
+
+\emph{Manual Code Writing} means creating code for some cyber component by hand. \emph{Generate Code} (\Overture~\TwentySim~\OpenModelica) means to automatically create code from a model of a cyber component. \emph{Hardware-in-the-Loop (HiL) Simulation} (\INTOCPS) and \emph{Software-in-the-Loop (HiL) Simulation} (\INTOCPS) mean simulating a multi-model with one or more of the models replaced by real code or hardware.
+
+% The above activities are summarised in Table~\ref{tab:activities}. Terms in \emph{italics} correspond to INTO-CPS activities that produce traceable artifacts, as described in the traceability ontology in Deliverable D3.1b~\cite{INTOCPSD3.2b}.%\fbox{Are they there?}.
+
+\begin{table}[p]
+\centering
+\caption{\protect{}Activities in existing embedded systems design workflows or enhanced INTO-CPS workflows.}\label{tab:activities}
+
+% Entries in italics correspond to traceable artifacts in INTO-CPS (see Chapter~\ref{sec:trace})}
+
+\begin{tabular}{ll}\hline
+\multicolumn{2}{l}{\textbf{Requirements Engineering}} \\
+{Stakeholder Documents} & \Modelio \\
+Requirement Definition & \Modelio \\
+Validation & \INTOCPS \\ \hline
+\multicolumn{2}{l}{\textbf{Architectural Modelling}} \\
+Holistic Architectural Modelling & \Modelio \\
+Design Architectural Modelling & \Modelio \\
+{Export Model Descriptions} & \Modelio \\ \hline
+\multicolumn{2}{l}{\textbf{Modelling}} \\
+{Import a Model Description} & \Overture~\TwentySim~\OpenModelica \\
+Physical Modelling ({Simulation Modelling}) & \TwentySim~\OpenModelica \\
+Cyber Modelling ({Simulation Modelling}) & \Overture \\
+{Co-modelling} & \Crescendo \\
+{Multi-modelling} & \INTOCPS \\ \hline
+\multicolumn{2}{l}{\textbf{Design}} \\
+Supervisory Controller Design & \\
+Low Level Controller Design & \\
+Software Design & \\
+Hardware Design & \\ \hline
+\multicolumn{2}{l}{\textbf{Analysis}} \\
+{Create Tests} & \RTTester \\
+{Model Checking} & \RTTester \\
+{Create Test Oracle} & \RTTester \\
+{Create a Configuration} & \INTOCPS \\
+{Define Design Space Exploration Configurations} & \INTOCPS \\
+{Export FMU} & \Overture~\TwentySim~\OpenModelica \\
+Co-simulation  & \Crescendo~\INTOCPS \\ \hline
+\multicolumn{2}{l}{\textbf{Prototyping}} \\
+{Generate Code} & \Overture~\TwentySim~\OpenModelica \\
+Hardware-in-the-Loop (HiL) Simulation & \INTOCPS \\
+Software-in-the-Loop (SiL) Simulation & \INTOCPS \\
+Manual Code Writing  & \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Configuring Multi-Models}
+
+As discussed in Chapter~\ref{sec:concepts}, a multi-model  is a collection of FMUs with a configuration file that: defines instances of those FMUs, specifies connections between the inputs/outputs of the FMU instances, defines values for design parameters of the FMU instances, and defines other simulation settings such as a start, end time, and Master algorithm settings. As seen above, creating a multi-model is a key part of using the INTO-CPS tool chain as it is a pre-requisite for many of the analysis techniques that INTO-CPS can perform.
+
+The INTO-CPS Application supports a project, a view of a folder containing source models, generated FMUs, and configuration files for co-simulation (multi-models) as well as configuration files for other analyses (design space exploration, model checking, test automation). Multi-model configurations can be created in three ways:
+
+\begin{enumerate}[noitemsep]
+  \item Created manually using the GUI of the INTO-CPS Application; or
+  \item Generated from a SysML model created in Modelio; or
+  \item Created manually by editing JSON configuration files
+\end{enumerate}
+
+All three approaches produce the same configuration file, so the choice of which to use depends on the engineer's background. Those comfortable with SysML may find it best to follow the SysML route, but this is not required. So those unfamiliar with SysML can use the Application directly.
+These two approaches are covered in the second and third tutorials in Part~\ref{part:tutorials}. Manually editing the JSON configuration is an advanced topic that is not covered in the tutorials, but since JSON is human-readable, not complicated with some experimentation.
+
+\subsection{First Steps for Users}
+\label{sec:firststeps}
+In this final section, we consider a how different types of users might approach the INTO-CPS technologies. As described in Section~\ref{sec:method:intro}, all new users are recommended to follow the first tutorial to experience the INTO-CPS Application, import one or two examples from the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}) into the INTO-CPS Application and interact with them, returning to this chapter and Chapter~\ref{cha:advanced} as and when you require guidance on a particular area.
+
+
+After initial familiarisation, the following list provides hints on next steps for different types of users, and where to find further information. As a reminder, updated tutorials supporting newer versions of the tool can be found at \url{https://github.com/INTO-CPS-Association/training/releases}.
+
+\begin{description}
+  \item[Students] Bachelor and Masters students wishing to build multi-models should follow the first few tutorials on adding exporting and adding FMUs. The SysML tutorial can be skipped if desired. Further guidance on exporting FMUs from different tools can be found in the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}.
+  \item[Individual Engineers] Engineers should follow the first few tutorials on adding and exporting FMUs. The SysML tutorial is also recommended. Further guidance on exporting FMUs from different tools can be found in the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}
+  \item[Engineering Teams] Teams requiring traceability must read Chapter~\ref{sec:trace} first (and Chapter~\ref{sec:reqeng} is also recommended), as traceability must be considered from the outset. The SysML tutorial is mandatory, because traceability links begin with requirements and architectural models in Modelio.
+  \item[Those with Legacy Models] A primary goal is to generate an FMU from the tool for your existing models. These can be incorporated into multi-models as described in the second tutorial.
+  \item[Those wishing to run Design Space Exploration] It is necessary to build a multi-model first in order to run a DSE, so the first tutorials should be followed. The SysML tutorial is optional, though useful as the SysML profile includes extensions to help configure DSE analyses. The later tutorials cover DSE, with further guidance in the user manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, and Deliverable D5.3e~\cite{INTOCPSD5.3e} (for more technical details).
+  \item[Those interested in model checking] The User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, provides useful insight, with in-depth information found in Deliverable D5.3c~\cite{INTOCPSD5.3c}.
+  \item[Those interested in formal semantics and analysis] The collection of D2.3deliverables~\cite{INTOCPSD2.3a,INTOCPSD2.3b,INTOCPSD2.3c,INTOCPSD2.3d} provides in-depth information on these aspects of the tool chain, including mechanisation efforts in Isabelle.
+\end{description}

@@ -25,6 +25,12 @@
 \usepackage{paralist}
 \usepackage{textcomp} % Used for 20-sim section \textrightarrow
 %\usepackage{showframe}
+\usepackage{titlesec}
+\titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{\baselineskip}
+\usepackage{listingsVDM}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{tocbibind}
 
 \usepackage{listings}
 %\input{listings-modelica.cfg}
@@ -38,9 +44,16 @@
 \acrodef{intocps}[INTO-CPS]{Integrated Tool Chain for Model-based Design of Cyber-Physical Systems}
 \acrodef{os}[OS]{Operating System}
 \acrodef{fmi}[FMI]{Functional Mock-up Interface}
-\acrodef{coe}[COE]{Co-simulation Orchestration Engine}  
+\acrodef{coe}[COE]{Co-simulation Orchestration Engine}
 \acrodef{egr}[EGR]{Exhaust Gas Recirculation}
 
+\newcommand{\Overture}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/Overture}}}
+\newcommand{\TwentySim}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/20sim}}}
+\newcommand{\OpenModelica}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=1.6ex]{figures/OpenModelica}}}
+\newcommand{\Modelio}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/Modelio}}}
+\newcommand{\Crescendo}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/Crescendo}}}
+\newcommand{\INTOCPS}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/INTO}}}
+\newcommand{\RTTester}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/RTTester}}}
 
 
 % The VDMlisting package loads the times package which changes the font so we just mark it as loaded to prevent the load.
@@ -104,6 +117,8 @@
 \fi%
 }%
 
+
+
 %
 %
 %\reportnumber{D4.3a}
@@ -153,27 +168,12 @@ Ken Pierce, Newcastle University\\
 Carl Gamble, Newcastle University\\
 Richard Payne, Newcastle University
 }
-%
-%
-%
+
 \editors{
   Peter Gorm Larsen, Aarhus University\\
   John Fitzgerald, Newcastle University
 }
-%
-%
-%
-%\reviewers{Ken Pierce, UNEW\\
-%Kangfeng Ye, UY\\
-%Luis Diogo Couto, UTRC}
-%
-%
-%
-%% Version details
-% #1: version
-% #2: date
-% #3: author
-% #4: description
+
 \addversion{0.01}{23-04-2018}{Peter Gorm Larsen}{Initial version.}
 
 %
@@ -215,6 +215,8 @@ This report is a guide to INTO-CPS. It includes a review of the challenges facin
 \input{sections/foundations.tex}
 \clearpage
 \input{sections/method.tex}
+\clearpage
+\input{sections/advanced.tex}
 \clearpage
 \input{sections/toolchain.tex}
 \clearpage
