@@ -22,7 +22,7 @@ A future research direction is to understand how to reconcile such contradicting
 A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them \cite{Gomes&18a}.
 This way does not solve all challenges in this regard, and the approach lacks validation from multiple domains. It is envisaged that this kind of Domain Specific Languages (DSLs) will be developed to make it easier to make semantic adaptations of FMUs.
 
-\claudio{Maybe providing``connector'' FMUs for the most common connections in different domains. For example, if I'm building a co-simulation of an hydraulic system, I may want to connect a large pipe to a small pipe.}
+%\claudio{Maybe providing``connector'' FMUs for the most common connections in different domains. For example, if I'm building a co-simulation of an hydraulic system, I may want to connect a large pipe to a small pipe.}
 
 \subsection{Enlarging the tools and standards supported by the INTO-CPS Tool Suite}
 
@@ -60,9 +60,10 @@ To accurately model flow of material (typically liquid or gasses) Computational 
 
 \subsection{Increased support for Human Interaction}
 
+Human-in-the-Loop where people can give input to co-simulations while they are running is certainly relevant. This have actually been carried out both using the PVSio technology on the line following robot example \cite{Palmieri&17}. In addition, human intervention has been used in a part of co-simulations in the IPP4CPPS project (see Section~\ref{sec:IPP4CPPS}). However, we imagine that substantial more automation and assistance can be made for this kind of human interaction. One can also imagine that debugging features such as pausing, inspecting values and possibly injecting faults could be included in the Co-simulation Orchestration Engine.
 
-\claudio{Can you provide example advancements to support this? Example, real-time co-simulation seems an easy one. Maybe the ability to pause, inspect, and debug co-simulations?
-Maybe fault injection?}
+%\claudio{Can you provide example advancements to support this? Example, real-time co-simulation seems an easy one. Maybe the ability to pause, inspect, and debug co-simulations?
+%Maybe fault injection?}
 
 \subsection{Increased support for Network Considerations}
 
@@ -72,16 +73,24 @@ FMI is not by itself good at modelling the communication layers between differen
 
 \subsection{Intelligence, Adaptivity and Autonomy}
 
-\claudio{We need to make this more concrete. Do we mean the co-simulation of adaptive systems?
-Are we looking at variable structure systems? Or the development of a COE that is adaptive (nice challenge, to ensure stability with adaptive master algorithms)?
-Also, another possible direction is to support certification processes by, e.g., having built in mechanisms to calculate the errors being made (during or after the co-simulation is run).
-This is interesting because the user just has to provide the bounds he can tolerace, and the co-simulation will be run as many times as required, so that these tolerances are met.
-Another possible direction is to support hybrid co-simulation (even when there is no possibility of rolling back from the FMUs).
-}
+CPSs also ideally are smart in the sense that they process intelligent behaviour. In order to introduce autonomy it can be ideal to introduce Machine Learning (ML) in different fashions in order to lear how to best behave. ML can be used in different ways here:
+
+\begin{itemize}
+\item Based on time series data for an individual physical component one can imagine that ML can be used to automatically derive an approximation FMU corresponding to that physical component
+\item In a digital twin setting one can imagine that ML can be used to learn to what extend the real system behave as predicted by the co-models. Based on this different actions could be taken automatically or manually if human intervention is desirable.
+\item FMUs themselves could contain ML elements for example in order to have adaptive control that will be valuable and express intelligent behaviour.
+\end{itemize}
+
+%\claudio{We need to make this more concrete. Do we mean the co-simulation of adaptive systems?
+%Are we looking at variable structure systems? Or the development of a COE that is adaptive (nice challenge, to ensure stability with adaptive master algorithms)?
+%Also, another possible direction is to support certification processes by, e.g., having built in mechanisms to calculate the errors being made (during or after the co-simulation is run).
+%This is interesting because the user just has to provide the bounds he can tolerace, and the co-simulation will be run as many times as required, so that these tolerances are met.
+%Another possible direction is to support hybrid co-simulation (even when there is no possibility of rolling back from the FMUs).
+%}
 
 \subsection{Tradeoff in Abstraction between Speed and Accuracy}
 
-\claudio{
-An interesting direction is to support DSE's, while using multiple abstraction models.
-For example, higher abstraction models might be used to optimize the design globally, while lower abstraction models validate the candidate found, and further optimize each of them to find the best one.
-}
+Many models can be expressed at different levels of abstraction. There is a natural tradeoff between speed and accuracy of a co-simulation. 
+An interesting direction could for example be to support DSE's, while using multiple abstraction models.
+For example, higher abstraction models might be used to optimise the design globally, while lower abstraction models validate the candidate found, and further optimise each of them to find the best one. In particular for FMUs that are very slow in simulating (e.g., CFD models) it may make a lot of sense to use more abstract models (at least initially) in order to be able to obtain results within a reasonable amount of time. For CFD models it is for example possible to produce Reduced Order Models (ROMs) and these can be automatically derived from more detailed models. Thus, it can be valuable to make it easy for users to select what level of abstraction to use in a co-simulation for each of the constituent models.
+
