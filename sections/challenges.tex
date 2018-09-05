@@ -1,16 +1,31 @@
 \section{Challenges in Engineering CPSs}\label{sec:challenges}
 
-\fbox{John Fitzgerald - rough notes at this point}
+%\fbox{John Fitzgerald - rough notes at this point}
 
-The vision underpinning \into is simple: that teams of developers from diverse disciplines and organisations are enabled to work together to converge more rapidly than today on system designs that perform optimally. Realising this vision requires methods and tools that each discipline and organisation to make its contribution without compromising its intellectual property or significantly altering its well-tried and established techniques. It should be possible to federate these diverse design artefacts to allow analysis of the system-level consequences of design decisions made in any one domain, and the trade-offs between them. How, then, can we support such multidisciplinary design with semantically well-founded approaches in a cost-effective manner? 
+The vision underpinning \into is simple: that teams of developers from diverse disciplines and organisations are enabled to work together to converge more rapidly than today on system designs that perform optimally. Realising this vision requires methods and tools that each discipline and organisation to make its contribution without compromising its intellectual property or significantly altering its well-tried and established techniques. It should be possible to federate these diverse design artefacts to allow analysis of the system-level consequences of design decisions made in any one domain, and the trade-offs between them. How, then, can we support such multidisciplinary design with semantically well-founded approaches in a cost-effective manner? In general we believe that there are a number of areas where there are challenges in the proper engineering of CPSs. These are described below in separate subsections.
 
-\begin{itemize}
-\item The challenge of time to market. Need for model-based methods to permit early design space exploration, optimisation, experimentation. \textbf{Faster route to market for engineering CPSs:}In a highly active CPS marketplace, getting the right solution first time is essential. We believe that the interoperability of tools in the INTO-CPS tool suite enables a more agile close collaboration between stakeholders with diverse disciplinary backgrounds. \textbf{Exploring large design spaces efficiently:} CPS design involves making design decisions in both the cyber and physical domains. Trade-off analysis can be challenging. Co-simulation enables the systematic exploration of large design spaces in the search for optimal solutions. \textbf{Limiting expensive physical tests:} CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
+\subsection{The challenge of time to market}
 
-\item The challenge of diversity. In the INTO-CPS project we start from the view that disciplines such as software, mechatronic and control engineering have evolved notations and theories that are tailored to their needs, and that it is undesirable to suppress this diversity by enforcing uniform general-purpose models~\cite{Fitzgerald&15,Larsen&16e}. The goal, then, must be to allow the effective federation of highly diverse design models.
+There is a clear need for model-based methods to permit early design space exploration, optimisation and experimentation without delaying the time from initial idea towards the launch of a new product to the market. We feel that the main areas of relevance here are:
 
-\item The challenge of collaboration. Need to provide mechanisms to support collaborative model-base engineering without compromising the independence of contributors. \textbf{Avoiding vendor lock-in by open tool chain:} Some commercial solutions provide at least a part of the functionality provided by the INTO-CPS tool chain with a high level of interoperability. However, in particular for Small and Medium-sized Enterprises (SMEs), there is a risk of being restricted in the choice of specialist tools. \textbf{Traceability and Provenance} CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
-\end{itemize} 
+\begin{description}
+\item[Faster route to market for engineering CPSs:] In a highly active CPS marketplace, getting the right solution first time is essential. We believe that the interoperability of tools in the INTO-CPS tool suite enables a more agile close collaboration between stakeholders with diverse disciplinary backgrounds. 
+\item[Exploring large design spaces efficiently:] CPS design involves making design decisions in both the cyber and physical domains. Trade-off analysis can be challenging. Co-simulation enables the systematic exploration of large design spaces in the search for optimal solutions. 
+\item[Limiting expensive physical tests:] CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
+\end{description}
+
+\subsection{The challenge of diversity}
+
+In the INTO-CPS project we start from the view that disciplines such as software, mechatronic and control engineering have evolved notations and theories that are tailored to their needs, and that it is undesirable to suppress this diversity by enforcing uniform general-purpose models~\cite{Fitzgerald&15,Larsen&16e}. The goal, then, must be to allow the effective federation of highly diverse design models.
+
+\subsection{The challenge of collaboration}
+
+There is a clear need to provide mechanisms to support collaborative model-base engineering without compromising the independence of contributors. We feel that the main areas of relevance here are:
+
+\begin{description}
+\item[Avoiding vendor lock-in by open tool chain:] Some commercial solutions provide at least a part of the functionality provided by the INTO-CPS tool chain with a high level of interoperability. However, in particular for Small and Medium-sized Enterprises (SMEs), there is a risk of being restricted in the choice of specialist tools. 
+\item[Traceability and Provenance:] CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
+\end{description} 
 
 
 
