@@ -27,7 +27,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}\relax
-\ProvidesClass{include/intocpslargereport}[2014/11/21 INTO-CPS Large Report Template]
+\ProvidesClass{include/intocpslargereport}[2014/11/21 INTO-CPS Association Large Report Template]
 
 %%Add [final] option to the report class to switch between draft and final version of the report
 \newif\iffinalversion						%Define new if
@@ -121,15 +121,15 @@
 \newcommand{\editors}[1]{\renewcommand{\intocps@editors}{#1}}
 \newcommand{\intocps@contributors}{Document Contributors}
 \newcommand{\contributors}[1]{\renewcommand{\intocps@contributors}{#1}}
-\newcommand{\intocps@reviewers}{Document Reviewers}
-\newcommand{\reviewers}[1]{\renewcommand{\intocps@reviewers}{#1}}
+%\newcommand{\intocps@reviewers}{Document Reviewers}
+%\newcommand{\reviewers}[1]{\renewcommand{\intocps@reviewers}{#1}}
 
 %%%% Determine whether deliverable or technote %%%%
 %%%% (from KGP Destecs addition, 2010/10/06) %%%%
 \newif\iftechnote
 % default to original behaviour
 \technotefalse
-\newcommand{\doctype}{\iftechnote{Technical Note}\else{Deliverable}\fi}
+%\newcommand{\doctype}{\iftechnote{Technical Note}\else{Deliverable}\fi}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -188,18 +188,19 @@
    \includegraphics[width=0.8\textwidth]{include/horizon2020-logo}\\
   %   \vfill
    %{\large Project: INTO-CPS}\\[2ex]
-   {\large Grant Agreement: 644047}\\[2ex]
+%   {\large Grant Agreement: 644047}\\[2ex]
    {\large INtegrated TOol chain for model-based design of CPSs}\\
      \vfill
    \includegraphics[width=.5\textwidth]{include/intocps-logo}
      \vfill
    {\textbf{\Large \intocps@reporttitle}}\\[4ex]
-   {\large \doctype\ Number: \intocps@reportnumber}\\[2ex]
+%   {\large \doctype\ Number: \intocps@reportnumber}\\[2ex]
    {\large Version: \intocps@docversion}\\[2ex]
    {\large Date: \intocps@submissiondate}\\[4ex]
-   {\large \intocps@reportstatus\ Document}
+%   {\large \intocps@reportstatus\ Document}
      \vfill
-   {http://into-cps.au.dk}
+   The INTO-CPS Association\\[2ex]
+   {http://into-cps.org}
  \end{center}
  \clearpage
 
@@ -223,35 +224,36 @@
      \intocps@editors
  \fi
 
- \ifx\intocps@reviewers\@empty
- \else
- \bigskip
-   \textbf{\large Reviewers:}
-
-   \bigskip
-     \intocps@reviewers
- \fi
+% \ifx\intocps@reviewers\@empty
+% \else
+% \bigskip
+%   \textbf{\large Reviewers:}
+%
+%   \bigskip
+%     \intocps@reviewers
+% \fi
 
  \vfill
- \textbf{\large Consortium:}
-\begin{table*}[!h]
-\centering
-\begin{tabular}{| l | l | l | l |}
-\hline
-Aarhus University & AU & Newcastle University & UNEW \\
-\hline
-University of York & UY & Link\"{o}ping University & LIU \\
-\hline
-Verified Systems International GmbH & VSI & Controllab Products & CLP \\
-\hline
-ClearSy & CLE & TWT GmbH & TWT \\
-\hline
-Agro Intelligence & AI & United Technologies & UTRC \\
-\hline
-Softeam & ST &  & \\
-\hline
-\end{tabular}
-\end{table*}%
+\copyright The INTO-CPS Association
+% \textbf{\large Consortium:}
+%\begin{table*}[!h]
+%\centering
+%\begin{tabular}{| l | l | l | l |}
+%\hline
+%Aarhus University & AU & Newcastle University & UNEW \\
+%\hline
+%University of York & UY & Link\"{o}ping University & LIU \\
+%\hline
+%Verified Systems International GmbH & VSI & Controllab Products & CLP \\
+%\hline
+%ClearSy & CLE & TWT GmbH & TWT \\
+%\hline
+%Agro Intelligence & AI & United Technologies & UTRC \\
+%\hline
+%Softeam & ST &  & \\
+%\hline
+%\end{tabular}
+%\end{table*}%
  \clearpage
 
 
