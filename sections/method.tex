@@ -4,16 +4,16 @@
 \subsection{Introduction}
 \label{sec:method:intro}
 
-The INTO-CPS tool chain enables collaborative multidisciplinary model-based design of CPSs. Although each discipline involved in a CPS engineering enterprise has its own culture, abstractions, and approaches to problem solving, it may only be on federating them that knowledge which is otherwise tacit in some disciplines has to be made explicit. To date, there is only limited experience in model-based multidisciplinary design of CPSs, and so the methods and approaches for bringing models together are only beginning to emerge. This chapter aims to distil the methods and guidelines that have emerged in our experience with the INTO-CPS toolchain, and to do so in a way that helps the reader understand how best to use INTO-CPS co-modelling technologies.
+The INTO-CPS tool chain enables collaborative multidisciplinary model-based design of CPSs. Although each discipline involved in a CPS engineering enterprise has its own culture, abstractions, and approaches to problem solving, it may only be on federating them that knowledge which is otherwise tacit in some disciplines has to be made explicit. To date, there is only limited experience in model-based multidisciplinary design of CPSs, and so the methods and approaches for bringing models together are only beginning to emerge. This section aims to distil the methods and guidelines that have emerged in our experience with the INTO-CPS toolchain, and to do so in a way that helps the reader understand how best to use INTO-CPS co-modelling technologies.
 
-The chapter complements the Tool Chain User Manual~\cite{INTOCPSD4.3a}--- which gives detail on how to use the features of the tool chain--- by providing guidance on when and why you might use these features. The guidance given here has been distilled from experience gained through pilot studies and applications of INTO-CPS technologies to real industrial cases. These pilot studies now appear as examples that can be opened directly from the INTO-CPS Application, supported by descriptions in the Examples Compendium~\cite{INTOCPSD3.6}. Industrial applications are described in the Case Studies report~\cite{INTOCPSD1.3a}. Sections~\ref{sec:method:intro}--\ref{sec:method:workflows} provide an introduction to core INTO-CPS terminology and the activities that INTO-CPS enables. Advanced topics including traceability, design space exploration, architectural modelling, New users are recommended to:
+This section complements the Tool Chain User Manual~\cite{INTOCPSD4.3a}--- which gives detail on how to use the features of the tool chain--- by providing guidance on when and why you might use these features. The guidance given here has been distilled from experience gained through pilot studies and applications of INTO-CPS technologies to real industrial cases. These pilot studies now appear as examples that can be opened directly from the INTO-CPS Application, supported by descriptions in the Examples Compendium~\cite{INTOCPSD3.6}. Industrial applications are described in the Case Studies report~\cite{INTOCPSD1.3a}. Sections~\ref{sec:method:intro}--\ref{sec:method:workflows} provide an introduction to core INTO-CPS terminology and the activities that INTO-CPS enables. Advanced topics including traceability, design space exploration, architectural modelling, New users are recommended to:
 
 %\begin{itemize}[noitemsep]
 \begin{itemize}
   \item Read the introductory material in Sections~\ref{sec:method:intro}--\ref{sec:method:workflows}.
   \item Follow the first tutorial to experience the INTO-CPS Application.
   \item Import one or two examples from the Examples Compendium\footnote{\url{https://github.com/INTO-CPS-Association/training/tree/master/tutorials}} into the INTO-CPS Application and interact with them.
-  \item As you start your own multi-modelling, return to this chapter for guidance on particular topics as required.
+  \item As you start your own multi-modelling, return to this section for guidance on particular topics as required.
 \end{itemize}
 
 \subsection{Concepts and Terminology}
@@ -28,7 +28,7 @@ A \term{System} is ``a combination of interacting elements organized to achieve 
 
 \term{Cyber-Physical Systems (CPSs)} are ``ICT systems (sensing, actuating, computing, communication, etc.) embedded in physical objects, interconnected (including through the Internet) and providing citizens and businesses with a wide range of innovative applications and services''~\cite{Thompson13, Deka&15}.
 
-Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of independent systems, integrated into a larger system that delivers unique capabilities''~\cite{INCSOEsosprimer18}.
+Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of independent systems, integrated into a larger system that delivers unique capabilities''~\cite{INCOSEsosprimer18}.
 %Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of constituent systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems''~\cite{Holt&14}. CPSs may exhibit the characteristics of SoSs.
 
 \subsubsection{Models}
@@ -207,7 +207,7 @@ Manual Code Writing  & \\ \hline
 
 \subsection{Configuring Multi-Models}
 
-As discussed in Chapter~\ref{sec:concepts}, a multi-model  is a collection of FMUs with a configuration file that: defines instances of those FMUs, specifies connections between the inputs/outputs of the FMU instances, defines values for design parameters of the FMU instances, and defines other simulation settings such as a start, end time, and Master algorithm settings. As seen above, creating a multi-model is a key part of using the INTO-CPS tool chain as it is a pre-requisite for many of the analysis techniques that INTO-CPS can perform.
+As discussed in Section~\ref{sec:method:concepts}, a multi-model  is a collection of FMUs with a configuration file that: defines instances of those FMUs, specifies connections between the inputs/outputs of the FMU instances, defines values for design parameters of the FMU instances, and defines other simulation settings such as a start, end time, and Master algorithm settings. As seen above, creating a multi-model is a key part of using the INTO-CPS tool chain as it is a pre-requisite for many of the analysis techniques that INTO-CPS can perform.
 
 The INTO-CPS Application supports a project, a view of a folder containing source models, generated FMUs, and configuration files for co-simulation (multi-models) as well as configuration files for other analyses (design space exploration, model checking, test automation). Multi-model configurations can be created in three ways:
 
@@ -222,17 +222,155 @@ These two approaches are covered in the second and third tutorials in Part~\ref{
 
 \subsection{First Steps for Users}
 \label{sec:firststeps}
-In this final section, we consider a how different types of users might approach the INTO-CPS technologies. As described in Section~\ref{sec:method:intro}, all new users are recommended to follow the first tutorial to experience the INTO-CPS Application, import one or two examples from the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}) into the INTO-CPS Application and interact with them, returning to this chapter and Chapter~\ref{cha:advanced} as and when you require guidance on a particular area.
+In this final section, we consider a how different types of users might approach the INTO-CPS technologies. As described in Section~\ref{sec:method:intro}, all new users are recommended to follow the first tutorial to experience the INTO-CPS Application, import one or two examples from the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}) into the INTO-CPS Application and interact with them, returning to this section and Section~\ref{cha:advanced} as and when guidance on a particular area is required.
 
 
 After initial familiarisation, the following list provides hints on next steps for different types of users, and where to find further information. As a reminder, updated tutorials supporting newer versions of the tool can be found at \url{https://github.com/INTO-CPS-Association/training/releases}.
 
+% *****
+
+\subsection{An Overview of Advanced Methods}
+\label{cha:advanced}
+
+\subsubsection{Traceability}
+\label{sec:method:trace}
+
+The technologies in the INTO-CPS tool chain are able to capture traceability information autonatically as activities are performed using the various elements of the tool chain. This includes information about who created or modified an artefact (model, simulation result etc.), and which requirements it is linked to. The traceability features of the INTO-CPS tool are described in depth in \cite{INTOCPSD3.3a}and the User Manual~\cite{INTOCPSD4.3a}.
+
+
+The INTO-CPS tool chain builds a graph of traceability relations, as there can be multiple relationships between different artefacts. The graph is however tree-like in the sense that there must be some root node(s) to trace from or back to. These root nodes are \emph{requirements}. The traceability graph is initialised by using Modelio from the beginning of the development process. The traceability graph is then subsequently updated by the baseline tools as models are created from the model descriptions, FMUs are exported and so on, and co-simulation runs and results will be recorded by the INTO-CPS Application. By performing the required manual input of requirements and links to SysML elements, it is then possible to automatically trace forward to models, FMUs and simulation results, and to trace backwards from these artefacts to individual requirements.
+
+Traceability in the tool chain is based upon a study of the actions performed when using the INTO-CPS tool chain, the artefacts that are used and produced and a combination of two existing standards, the W3C's Prov~\footnote{\url{https://www.w3.org/TR/prov-overview/}} and the OMG's OSLC~\footnote{\url{http://open-services.net/}}.   The combination of these resulted in the INTO-CPS traceability ontology that captures in detail all elements in the INTO-CPS workflow and describes the relationships between them.  The complete ontology is presented in~\cite{INTOCPSD3.3b}. Traceability data is inherently a graph based structure based upon nodes and the connections between them, and Prov provides basic types for those nodes along with list of relationships that may exist between them.  The three types of nodes are: Entities, things that may be produced or used during a development process; Activities, are things that act upon and make use of entities; and Agents, objects that have responsibility for entities and activities.  The Prov relations then allow then connection of nodes such as an activity may use an entity, and an entity may be generated by an activity.
+
+The combination of the Prov nodes and relations supports the representation of the processes that lead to the generation of a particular entity, but it does not support connection of those entities to requirements.  OSLC contains a set of specifications, each of which defines a list of relations that it supports between entities. In the case of the INTO-CPS traceability, parts of the OSLC architecture management and requirements management specifications are employed, these allow the connection of entities to requirements via a 'satisfies' relation indicating the entity attempts to address the needs of the requirement, additionally it allows the connection of simulation results to requirements via a 'verifies' relation indicating that the requirement has been met.
+Figure~\ref{fig:traceability:step02} shows the traceability links recorded during one step in the development of a line following robot.  In this example, the requirements, R1 \& R2, already exist in the architecture models and the user has created an ASD to decompose the proposed robot into components.  The user has, at the same time, associated the blocks within the ASD with the the requirements that each block aims to satisfy.  When the user saves the updates architecture model, the Modelio tool records the user's 'Architecture Modelling' activity, along with references to the ASD, the blocks it contains and the newly created links between the blocks and the requirements.  Here the \emph{used}, \emph{wgb} (short for 'was generated by'), \emph{assoc} (short for 'associated with') and \emph{attrib} (short for 'attributed to') are links that come from the Prov standard.  The \emph{OSLC\_Sat} (short for 'satisifies') comes from the OSLC requirements management specification.
+
+%\draftnote{CJG: Give example of one action in detail}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/Traceability/step02}
+\caption{Traceability links captured during the production of an ASD for a line following robot.}\label{fig:traceability:step02}
+\end{figure}
+
+%\draftnote{CJG: As the user(s) use the tools, they each record the their atomic actions, forming the traceability graph}
+
+A development project will likely consist of many instances of the activities identified in the ontology being performed and together they form a traceability graph.  Figure~\ref{fig:traceability:abstractTraceFlow} shows a simplified view of a traceability graph with some steps removed for brevity.  At the top of the graph we see the architecture modelling step described previously, that produces an architecture model.  From the architecture, model description files are exported to start the production of the simulation models.  In turn the simulation models are exported as FMUs and the FMUs are used to produce simulation results.  Key to the traceability graph then are the 'used' and 'wgb' connections that can be used by a query to determine from where each entity was generated.  By following these links back from any entity to the individual blocks within the architecture model, it is possible to determine which requirement(s) each should satisfy.  Finally when simulation results are output, these may be linked back to the relevant requirements, stating whether a requirement was verified or violated by that result.
+
+%\draftnote{CJG: Give abstract view of a resulting trace}
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/Traceability/abstractTraceFlow}
+\caption{Traceability links captured during the production of an ASD for a line following robot.}\label{fig:traceability:abstractTraceFlow}
+\end{figure}
+
+
+%\draftnote{CJG: A paragraph outlining the entities, activities and agents}
+
+The traceability ontology captures the significant activities and entities that form the INTO-CPS workflow.  For example a development project might see the following activities recorded in the traceability graph:  \emph{Requirements Management}, \emph{Architecture Modelling}, \emph{Architecture Configuration Creation} \emph{Model Description Export}, \emph{Simulation Modelling}, \emph{FMU Export}, \emph{Configuration Creation}, \emph{Simulation Configuration Creation} and then \emph{Simulation}.  These activities are connected in the workflow by the entities they create and use, so the example would see the traceability graph containing records of: \emph{Archtecture Structure Diagram}, \emph{Architecture SubSystem}, \emph{Architecture Connection Diagram}, \emph{Model Description File}, \emph{Simulation Model}, \emph{FMU}, \emph{Multi-model Configuration}, \emph{Simulation Configuration} and \emph{Simulation Result}.  Alongside these will be records of the agent(s), who are both associated with activities and have entities attributed to them.
+
+
+Once a graph has been built, queries can be executed over the graph to perform both forwards and backwards traceability. Below are some types of queries that can be executed over the graphs. Examples include: forward traceability (from requirements to entities); backwards traceability (from FMU to requirements); finding sources and sinks for a simulation; assessing coverage such as finding requirements without positive simulation results; and evaluating user impact, such as finding all artefacts influenced by a given user.
+
+\subsubsection{Requirements Engineering}
+\label{sec:method:reqeng}
+
+Requirements placed on a CPS may, for example, impose restrictions, define system capabilities or identify qualities of a system. The requirements should indicate some value or use for the different stakeholders of a CPS. Traceability needs requirements to be defined early in a development process, and these must be recorded in Modelio for the machine-assisted traceability information to be recorded accurately. It is therefore appropriate to consider requirements processes for such developments at this stage.
+
+In the INTO-CPS Methods guidelines~\cite{INTOCPSD3.3b}, we describe one possible approach to RE for CPS, adapting an approach already piloted on tsystems-of-systems (SoSs). Note however that this approach is not mandatory, and in general RE processes and tools vary widely across organisations and domains. For this reason, tool support for traceability in INTO-CPS begins once requirements have been defined and can be added to Modelio. The approach was adapted from standard systems engineering, and tailored for SoSs--- enabling the identification and reasoning about requirements across constituent systems of an SoS and understanding multi-stakeholder contexts. We suggest it might be useful to organisations trying to approach RE for CPS.
+
+In the approach, we propose a collection of views that could be represented as diagrams in SysML\footnote{Note that this approach is is not specifically supported as a Modelio plug-in, but other equivalent diagrams could be used.}, or could equally be represented in other tools where these are already used (e.g. Excel). Examples of views include:
+
 \begin{description}
-  \item[Students] Bachelor and Masters students wishing to build multi-models should follow the first few tutorials on adding exporting and adding FMUs. The SysML tutorial can be skipped if desired. Further guidance on exporting FMUs from different tools can be found in the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}.
-  \item[Individual Engineers] Engineers should follow the first few tutorials on adding and exporting FMUs. The SysML tutorial is also recommended. Further guidance on exporting FMUs from different tools can be found in the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}
-  \item[Engineering Teams] Teams requiring traceability must read Chapter~\ref{sec:trace} first (and Chapter~\ref{sec:reqeng} is also recommended), as traceability must be considered from the outset. The SysML tutorial is mandatory, because traceability links begin with requirements and architectural models in Modelio.
-  \item[Those with Legacy Models] A primary goal is to generate an FMU from the tool for your existing models. These can be incorporated into multi-models as described in the second tutorial.
-  \item[Those wishing to run Design Space Exploration] It is necessary to build a multi-model first in order to run a DSE, so the first tutorials should be followed. The SysML tutorial is optional, though useful as the SysML profile includes extensions to help configure DSE analyses. The later tutorials cover DSE, with further guidance in the user manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, and Deliverable D5.3e~\cite{INTOCPSD5.3e} (for more technical details).
-  \item[Those interested in model checking] The User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, provides useful insight, with in-depth information found in Deliverable D5.3c~\cite{INTOCPSD5.3c}.
-  \item[Those interested in formal semantics and analysis] The collection of D2.3deliverables~\cite{INTOCPSD2.3a,INTOCPSD2.3b,INTOCPSD2.3c,INTOCPSD2.3d} provides in-depth information on these aspects of the tool chain, including mechanisation efforts in Isabelle.
+\item[Source Element View (SEV)] which defines a collection of source materials from which requirements are derived. This could be represented as a SysML block definition diagram ior an Excel table or Word document (with each source having a unique identifier), or by simply referring to source documents using OSLC traces.
+
+\item[Requirement Description View (RDV)] which is used to define the requirements of a system and forms the core of the requirement definition. This can be done in a SysML requirements diagram or in tabulated form, such as through the use of Excel. In addition, specifying requirements in  Doors would support this view.
+
+\item[Context Definition View (CDV)] The CDV is a useful view for CPS engineering in order to explicitly identify interested stakeholders and points of context in the system development, including customers, suppliers and system engineers themselves. In SoS-ACRE, they are defined using SysML block definition diagrams, and could also be represented using an Excel table or Word document (with each context having a unique identifier). This diagram type could be useful when identifying the divide in CT/DE and cyber-physical elements of a system.
+
+\item[Requirement Context View (RCV)] In SoS-ACRE, a RCV is defined for each constituent system context identified in CDVs. This is appropriate when there is a set of diverse system owners, which is typical for SoSs and increasingly CPSs. A \textbf{Context Interaction View (CIV)} is then defined to understand the overlap of contexts and any common/conflicted views on requirements. In a CPS, however, there may not be such a clear delineation between the owners of constituent  system components. However, if we consider the different domains (e.g. CT/DE or cyber/physical divides) as different contexts, then this approach would be useful. In SoS-ACRE, RCVs and CIVs are both defined with SysML use case diagrams. Excel could be used if unique identifiers are defined for contexts and requirements as described earlier.
+
+\item[Validation View (VV)] VVs, defined as SysML sequence diagrams in SoS-ACRE, describe validation scenarios for a SoS to ensure each constituent system context understands the correct role of the requirements in the full SoS. This is not an obvious fit in CPS engineering, and therefore not necessarily required.
+
 \end{description}
+
+The full RE process is described in greater detail in \cite{INTOCPSD3.3a} as a disciplined approach involving identifying and recording source elements (in an SEV), system-level functional and non-functional requirements (using RDVs), an initial system structure (in an INTO-CPS ASD, which identified cyber and physical elements), and relevant contexts in CDVs. Requirements may then be traced using INTO-CPS tool chain models and results.
+
+\subsubsection{SysML and Multi-modelling}
+\label{sec:method:sysml}
+
+Standard SysML can be used as part of a development process to build a model of a system and link elements to requirements. The INTO-CPS tool chain also provides an extended SysML profile that help users to \emph{configure multi-models for co-simulation} and \emph{configure design space exploration (DSE) analysis}~\cite{INTOCPSD2.1a,INTOCPSD2.2a,INTOCPSD2.3a,INTOCPSD41c,INTOCPSD4.2c,INTOCPSD4.3c}.
+The multi-modelling SysML profile defines two diagrams for configuring a co-simulation. The INTO-CPS Application can run a co-simulation based on a configuration file which describes the FMUs, their parameters and connections between them. There are two types diagram, the \emph{Architectural Structure Diagram (ASD)} describing the static structure of FMUs, and the \emph{Connections Diagram (CD)} describing their instantiation and connections. These are shown in Figure~\ref{fig:sysml:intocps}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{figures/Architecting/ArchitecturalViews}
+\caption{Diagrams in the multi-modelling SysML profile}
+\label{fig:sysml:intocps}
+\end{figure}
+
+The design space exploration (DSE) SysML profile is an addition to the multi-modelling SysML profile described above. As with single co-simulation, the INTO-CPS Application can run a DSE based on a configuration file. Alternatively, a configuration can be generated by Modelio, from a set of diagrams defined in the profile. There are five diagram types (see Figure~\ref{fig:sysml:dse} which are used to define the objectives for a DSE and their instantiations, define the parameters that will be changed on each co-simulation in a DSE and their instantiations, and the objectives to be used for ranking competing designs.
+
+\paragraph{Holistic and Design Architectural Modelling}
+\label{sec:sysml:holistic}
+
+A system architecture defines the major components of a system, and identifies their relationships, behaviour and interactions. A model of the architecture is potentially partial (representing some or all of the system) and abstract, limited to those elements pertinent to the modelling goal. In CPS engineering, this goal may include understanding the system in terms of the application domain (a \emph{holistic} model), or capturing the system components in a way that targets multi-modelling (a \emph{design} model).
+
+The diagrams in the two profiles described above divide architectural models into subsystems composed of cyber or physical components. Defining an architecture this way may not be the best approach when designing a system ab initio, with systems comprising entities across different domains requiring diverse domain expertise. The Methods Guidelines~\cite{INTOCPSD3.3a} discusses and exemplifies both holistic and design architectural modelling approaches, and provides some commentary and guidance on how to model in a way which is natural for domain experts, and how to move from holistic to design models when multi-modelling.
+
+
+\paragraph{Representing Non-Design Elements in SysML}
+\label{sec:sysml:non-design}
+
+Using the INTO-CPS tool chain, we generate co-simulation configurations using an architectural model defined with the INTO-SysML profile. This model defines the structure of a system in terms of the composition of its components and their connections. There are however circumstances where elements in the multi-model are not part of the design of the final system, for example where an FMU is used purely for visualisation. This FMU must be connected to the system components, however is not itself a system component. This is also true when considering the environment of the system. The Methods Guidelines~\cite{INTOCPSD3.3a} presents an example of the use of these extensions.
+
+\subsubsection{A `DE-first' Approach to Developing Multi-models}
+
+After carrying out requirements engineering (RE), and design architectural modelling in SysML the engineering team should have  Architecture Structure Diagrams (ASDs) defining the composition of components to be realised as FMUs in cyber or physical formalisms, along with model descriptions exported for each component, and some Connections Diagrams (CDs) that will be used ot configure a multi-model. The next step is to generate a multi-model configuration in the INTO-CPS Application and populate it with FMUs, then run a first co-simulation. This however requires the source models for each FMU to be ready. If they already exist this is easy, however they may not exist if this is a new design. In order to generate these models, the model descriptions for each component can be passed to relevant engineering teams to build the models, then FMUs can be passed back to be integrated.
+
+It can be useful however to create and test simple, abstract FMUs first (or in parallel), then replace these with higher-fidelity FMUs as the models become available. This allows the composition of the multi-model to be checked early, and these simple FMUs can be reused for regression testing. This approach also mitigates the problem of modelling teams working at different rates.
+
+Where these simple FMUs are built within the DE formalism (such as VDM), this is called a \emph{DE-first} approach. This approach is particularly appropriate where complex DE control behaviours ---such as supervisory control or modal behaviours--- are identified as a priority or where the experience of the modelling team is primarily in the DE domain~\cite{Fitzgerald&14c}. Guidance on how to produce DE approximations for use in multi-modelling, and in particular approximations of CT behaviour, can be found in material describing the Crescendo baseline technology~\cite{Fitzgerald&13a}, which is also available via the Crescendo website\footnote{See \url{http://crescendotool.org/documentation/}}.
+
+In INTO-CPS, given an architectural structure diagram, connections diagram and model descriptions for each component, the suggested approach is to begin by building a single VDM-RT project in Overture with: a class for each component representing an FMU' a `system class' that instantiates port and FMU objects based on the connections diagram, and a `world' class that starts the thread of each FMU object. FMUs can be exported and co-simulated within the INTO-CPS tool. These FMUs can then be replaced as higher-fidelity versions become available, however they can be retained and used for regression and integration testing by using different multi-model configurations for each combination.
+
+\subsubsection{Modelling Networks with VDM in Multi-models}
+\label{sec:method:networks}
+When modelling and designing distributed controllers, it is necessary to model communications between controllers as well. While controller FMUs can be connected directly to each other through for co-simulation, this quickly becomes unwieldy due to the number of connections increasing exponentially. We suggest employing an `ether' pattern in which a representation of an abstract communications medium is introduced~\cite{Fitzgerald&14c}. In the INTO-CPS setting, the ether is an FMU that is connected to each controller that handles message-passing between them. This reduces the number of connections needed, particularly for large numbers of controllers such as swarms. In the Methods Guidelines~\cite{INTOCPSD3.3a}, we describe how to pass messages between VDM FMUs using string types, how the ether class works, some of the consequences of using the ether pattern, and finally some extensions for providing quality of service (QoS) guarantees. 
+
+
+\subsubsection{Design Space Exploration}
+\label{sec:method:dse}
+
+In this section, we outline guidelines for DSE over multi-models of CPSs. These are intended to (a) support decision management by helping engineers to articulate clearly the parameters, objectives and metrics of a DSE analysis; and (b) enable the tuning of DSE methods for given domains and systems of interest. Engineers need to be able to model at an early stage of design how DSE experiments relate to the model architecture, and where possible trace from requirements to the experiments. The Methods Guidelines describe the first step towards this vision: a SysML profile for modelling DSE experiments. As mentioned in Section~\ref{sec:method:dse}, the profile comprises five diagrams for defining \emph{parameters}, \emph{objectives} and \emph{rankings}.
+
+The Methods Guidelines~\cite{INTOCPSD3.3a} present an illustrative example of the use of the DSE-SysML profile -- from requirements engineering through defining parameters and objectives in the DSE-SysML profile to the final DSE configuration files. 
+
+DSE is performed in the DSE tool (see the INTO-CPS User Manual~\cite{INTOCPSD4.3a}) by processing the DSE configuration using scripts that contain the required algorithms.  The main scripts contain the search algorithm that determines which parameters to use in each simulation, the simplest of these is the exhaustive algorithm that methodically runs through all combinations of parameters and runs a simulation of each.  The log files produced by each simulation are then processed by other scripts to obtain the objective values defined in the previous section.  Finally, the objective values are used by a ranking script to place all the simulation results into a partial order according to the defined ranking.  The ranking information is used to produce tabular and graphical results that may be used to support decisions regarding design choices and directions.
+
+Figure~\ref{fig:dse-results} shows an example of the DSE results from a line follower robot where the lap time and mean cross track error were the objectives to optimise.  These results contain two representations of the data, a graph plotting the objective values for each design, with the Pareto front of optimal trade-offs between the key objectives highlighted, here in blue. The second part of the results presents the data is tables, indexed by the ranking position of each result.  This permits the user to determine the precise values for both the measured objectives and also the design parameters used to obtain that result.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/dse_results}
+	\caption{DSE results}
+	\label{fig:dse-results}
+\end{figure}
+
+\paragraph{An Approach to Effective DSE}
+\label{sec:dse-algorithms}
+
+Given a ``designed'' design space using the method detailed above, we use the INTO-CPS Tool Chain to simulate each design alternative. Whilst this approach is acceptable on small-scale studies, it quickly becomes infeasible as the design space grows. Inspired by processes found in nature, genetic algorithms ``breed'' new generations of optimal CPS designs from the previous generation's best candidates. This mimics the concept of survival of the fittest in Darwinian evolution.
+Figure~\ref{fig:ga_dse_process} outlines the structure of a genetic algorithm used for DSE.  Several activities are reused from exhaustive DSE: simulation; evaluation of objectives; rank simulated designs; and generate results. The remaining activities are specific to the genetic approach and are detailed in the Methods Guidelines~\cite{INTOCPSD3.3a}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/ga_process}
+	\caption{High-level process for DSE Genetic Algorithm}
+	\label{fig:ga_dse_process}
+\end{figure}
+
+
+An alternative to the genetic search, which is automated, is to use repeated exhaustive searches to home in on better regions of the design space.  In this approach the user would plan to perform multiple DSE experiments, each using some portion of their total simulation budget.  The first DSE experiment is used to cover the whole range of the design space, but not including all values for each parameter.   In this way the first DSE is used to locate regions of interest within the design space.  The regions of interest are areas of the design space that produced the better designs according to the ranking results, with the bounds of the 'area' defined by the parameter values that produced good results. The user then divides up their remaining simulation budget between the one or more areas of interest and perform further DSE on those areas.  
