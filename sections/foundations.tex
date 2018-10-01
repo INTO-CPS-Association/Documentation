@@ -1,5 +1,7 @@
 %!TEX root = ../INTO-CPS-Manifesto.tex
 
+\newcommand{\CML}{\textsf{CML}}
+
 \section{The INTO-CPS Foundations}\label{sec:foundations}
 
 %\fbox{Jim Woodcock}
@@ -47,3 +49,36 @@ There is no support to establish formal connections between a simulation and the
 \subsubsection{Future work}
 
 We first suggest the development of a tool that supports the user of our technique in automatically generating the Isabelle/UTP architectural model, as well as a sketch of the behavioural model. The formal developer can use the sketch as a starting point, completing it with a detailed encoding of functional behaviours of FMUs. Secondly, elements of the refinement strategy from abstract into concrete FMU models ought be explored for a larger spectrum of case studies and examples, beyond the ones we presented in this report. Both these works could be tackled by the INTO-CPS Association.
+
+INTO-CPS multi-models are composed of individual models whose foundations lie in a variety of modelling notations, each of which has its own unique syntax, semantics, and underlying paradigmatic concepts, such as discrete or continuous time.  The purpose of a multi-model is assign behaviour to a Cyber-Physical System (CPS) by composing the behaviours of the constituent models.  Thus, in order to provide an integrated tool chain for trustworthy CPS development, there is a necessity for unification of these underlying semantic models to allow consistent integration of heterogeneous system components.  This will then allow us to substantiate statements made about the multi-model with respect to the underlying mathematical core.  Hoare and He's Unifying Theories of Programming~\cite{Hoare&98} (UTP) has been designed as a framework in which the integration of languages, through the common semantic domain of the alphabetised relation calculus, can be achieved.  In the next two sections, we describe how UTP is used to provide the foundations for continuous-time modelling in the INTO-CPS tool chain.
+
+\subsection{Discrete Event Models}
+
+VDM-RT is a real-time dialect of the VDM formal modelling language that can be applied to the specification of discrete controllers for CPSs.  VDM-RT is object oriented, where all models are defined as classes that are instantiated as objects.  It supports concurrency through threading and communication between threads through shared objects.  The real-time features of the language comprise abstractions for deployment of objects to compute units that are connected by buses, and the time taken to evaluate expressions that advance a global ``wall clock'' to predict the computation time of a model.
+
+A denotational semantics exists for the core specification language~\cite{Larsen&95c}, and a structured operational semantics (SOS) exists for the real-time aspects~\cite{Lausdahl&13a}, but there is currently no full semantic description of VDM-RT.  To address this, the INTO-CPS project has established a comprehensive denotational semantics for the VDM-RT language, including object orientation, real time, and concurrency.
+
+We have given a UTP semantics to the language, and mechanised this in the Isabelle/UYP theorem prover.  The basis for our treatment of object orientation is an extended calculus for classes and objects, including novel healthiness conditions that allow handling of multiple inheritance.  Our semantics includes a new approach to handling static attributes, methods, and constructors.  We have mechanised Lausdahl's operational semantics of VDM-RT~\cite{Lausdahl&13a} in Isabelle/HOL, which allowed us to gain greater insight into the language.
+
+We use Hoare and He's \emph{Unifying Theories of Programming}~\cite{Hoare&98,Cavalcanti&06} (UTP) to give a denotational semantics to VDM-RT.  VDM-RT is a discrete real-time language, which leads us to employ the UTP theory of timed reactive designs as the semantic model, as embodied in the COMPASS Modelling Language (\CML).  We use the constructs of \CML to describe VDM-RT objects, threads, CPUs, and busses, together with actions that encode their orchestrated execution.  In order to accomplish this, we also extend \CML with a universe type for VDM-RT, and also timed expressions that cause language constructs like assignment to expend time during execution.
+
+Our semantics of VDM-RT is based on a pattern commonly employed in the INTO-CPS project to describe the discrete time component of a cyber-physical system.  Such a ``cyber component'' consists of one or more controller objects, each of which owns a number of sensors and actuators through which to interact with the physical components.  The topology of such a cyber component is thus fixed at instantiation, and there is no necessity to support dynamic object creation, which thus favours the use of static \CML processes to represent objects and threads.  Limiting ourselves to static topologies enables the application of static analysis techniques like model checking~\cite{fdr,Oliveira2014,Beg2015}, which typically requires a tractable state space.
+
+\subsection{Continuous Models}
+
+Modelling of continuous dynamical systems in the INTO-CPS tool chain is provided by the Modelica and 20-sim tools, both of which are based on differential equations.  We have created a formal denotational semantics for continuous-time models written using the Modelica language~\cite{ModelicaAssociation2014}.  The creation of such a semantics provides firm mathematical foundations for the language, allowing us to consider formal links between Modelica and other languages in INTO-CPS (such as VDM-RT and FMI), and enabling theorem-proving support for continuous models.  The Modelica language supports modelling based on ordinary differential equations (ODEs) and differential algebraic equations (DAEs) combined with an event handling mechanism.
+
+We have provided a \emph{flattening} process, whereby a collection of Modelica objects is converted to a pure hybrid DAE system, the core of the Modelica language. In our work, we have compared this to the Functional Mockup Interface's (FMI) representation of Hybrid ODEs.  Once more, we have used the UTP semantic framework~\cite{Hoare&98} to give Modelica a formal semantics, along with other continuous time and dynamical systems modelling languages.  Our theory of differential algebraic equations allows the definition of hybrid programs that mix continuous and discrete behaviour, and also specifications regarding their behaviour.
+
+We have mechanised our UTP theory in the Isabelle/HOL proof assistant~\cite{Isabelle}.  This allowed us to also show that our calculus satisfies well-known laws of programming.  Our combination of continuous invariants with timed reactive designs~\cite{Hayes2010,Canham15}, forms the basis of a refinement technique for hybrid systems.
+
+Our hybrid combinaiton of discrete and continuous models is known as \CyPhyCircus.  We have defined mappings from the core languages in \CyPhyCircus which, as illustrated Figure~\ref{fig:CyPhyCircus}, will also enable access to a number of static analysis tools and techniques, such as model checking~\cite{Oliveira2014,Beg2015,Beg2016} and theorem proving~\cite{Foster14,Foster16a,Zeyda16}.  \CyPhyCircus will build on the existing work of the \Circus language family~\cite{Woodcock&01,OCW2007,Woodcock14}, a suite of formal languages that combines rich state modelling (like as in the Z specification language~\cite{Woodcock&96}) with concurrency (like as in CSP~\cite{Hoare85}), with various other programming paradigms such as object orientation~\cite{Cavalcanti2005} and discrete real-time modelling~\cite{Wei2013}.  Our intention is to create a language that combines rich-state modelling, concurrent reactive processes, real-time modelling, continuous variables, and differential equations.  The theory of hybrid relations provides the foundations for such hybrid dynamical behaviour in \CyPhyCircus.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=14cm]{CyPhyCircus}
+  \end{center}
+  \caption{\CyPhyCircus as the INTO-CPS lingua franca}
+  \label{fig:CyPhyCircus}
+\end{figure}
+
