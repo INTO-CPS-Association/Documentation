@@ -6,10 +6,10 @@ These principles are co-simulation, design space exploration, model-based test a
 %
 This appendix provides an introduction to these concepts.
 
-\claudio{I suggest that references to introductions, references, and so forth, be made in these subsections.
-Currently, the text does not cover each topic adequately, providing merely a summary.
-Also, there is a risk that these sections will repeat what is already described as part of the tools descriptions.
-As such, I suggest that these topics be moved to appendix A, coming before the tool descriptions\ldots}
+%\claudio{I suggest that references to introductions, references, and so forth, be made in these subsections.
+%Currently, the text does not cover each topic adequately, providing merely a summary.
+%Also, there is a risk that these sections will repeat what is already described as part of the tools descriptions.
+%As such, I suggest that these topics be moved to appendix A, coming before the tool descriptions\ldots}
 
 %
 %
@@ -19,7 +19,7 @@ Co-simulation refers to the simultaneous simulation of individual models which t
 %
 A co-simulation is performed by a co-simulation orchestration engine.
 %
-This engine is responsible for initializing the individual simulations as needed;  for selecting correct time step sizes such that each constituent model can be simulated successfully for that duration, thus preventing time drift between the constituent simulations;  for asking each individual simulation to perform a simulation step;  and for synchronizing information between models as needed after each step.
+This engine is responsible for initialising the individual simulations as needed;  for selecting correct time step sizes such that each constituent model can be simulated successfully for that duration, thus preventing time drift between the constituent simulations;  for asking each individual simulation to perform a simulation step;  and for synchronising information between models as needed after each step.
 %
 The result of one such round of simulations is a single simulation step for the complete multi-model of the system of interest.
 
