@@ -105,8 +105,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% Various variables %%%%
-\newcommand{\intocps@reportnumber}{Document Number}
-\newcommand{\reportnumber}[1]{\renewcommand{\intocps@reportnumber}{#1}}
+%\newcommand{\intocps@reportnumber}{Document Number}
+%\newcommand{\reportnumber}[1]{\renewcommand{\intocps@reportnumber}{#1}}
 \newcommand{\intocps@reporttitle}{Document Title}
 \newcommand{\reporttitle}[1]{\renewcommand{\intocps@reporttitle}{#1}}
 \newcommand{\intocps@shortreporttitle}{Short Document Title}
@@ -163,7 +163,8 @@
 
  \pagestyle{fancy}
  %Left side of header - include doc number, short title and report status
- \lhead{\sffamily \intocps@reportnumber\ -\ \intocps@shortreporttitle\ (\intocps@reportstatus)}
+ \lhead{\sffamily %\intocps@reportnumber\ -\ 
+ \intocps@shortreporttitle\ (\intocps@reportstatus)}
  \rhead{\includegraphics[height=0.4cm]{include/intocps-logo-horiz}} %Compass logo
  \setlength{\headheight}{15pt}
  \renewcommand{\headrulewidth}{0.5pt} %solid line
