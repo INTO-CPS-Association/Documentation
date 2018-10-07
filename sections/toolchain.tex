@@ -28,18 +28,18 @@ Diagrams for handling of Design Space Exploration (DSE) were created for Modelio
 
 Behavioural models that are designed in Modelio as state machines can be exported as \texttt{.xmi} files, so that they can be imported to the RT Tester tool.
 
-Furthermore, Modelio allows Requirements management, and supports traceability in the context of INTO-CPS. More details about Modelio can be found in \autoref{app:modelio}.
+Furthermore, Modelio allows Requirements management, and supports traceability in the context of INTO-CPS. More details about Modelio can be found in Section~\ref{app:modelio}.
 
 \subsection{Modelling tools}
 \label{sec:toolchain:tools}
 
-At the core of the tool-chain are several modelling tools that describe a system or a sub-system in a specific formalism, and perform calculations to understand the dynamic behaviour of the (sub-)system. While the formalisms or application areas can be vastly different, the modelling tools share some common features, which are summarised in this section. 
+At the core of the tool-chain are several modelling tools that describe a system or a sub-system in a specific formalism, and perform calculations to understand the dynamic behaviour of the (sub-)system. While the formalisms or application areas can be vastly different, the modelling tools share some common features, which are summarised in this section.
 
-\paragraph{20-sim} is a commercial tool for modelling and simulation of mechatronic systems. Together with the related software, 20-sim 4C, Hardware-in-the-Loop simulations can be performed (\url{http://www.20sim.com/}). This is described further in \autoref{app:20sim}.
+\paragraph{20-sim} is a commercial tool for modelling and simulation of mechatronic systems. Together with the related software, 20-sim 4C, Hardware-in-the-Loop simulations can be performed (\url{http://www.20sim.com/}). This is described further in Section~\ref{app:20sim}.
 
-\paragraph{OpenModelica} is an open-source environment which is based on the Modelica language. It features numerous free libraries to easily model systems from different domains (\url{https://openmodelica.org/}). This is described further in \autoref{app:OM}.
+\paragraph{OpenModelica} is an open-source environment which is based on the Modelica language. It features numerous free libraries to easily model systems from different domains (\url{https://openmodelica.org/}). This is described further in Section~\ref{app:OM}.
 
-\paragraph{Overture} is an open-source tool that supports the modelling method \textit{The Vienna Development Method (VDM)}, which is a formal method to describe computing systems (\url{http://overturetool.org/}). This is described further in \autoref{app:overture}.
+\paragraph{Overture} is an open-source tool that supports the modelling method \textit{The Vienna Development Method (VDM)}, which is a formal method to describe computing systems (\url{http://overturetool.org/}). This is described further in Section~\ref{app:overture}.
 
 \paragraph{4Diac} is an open-source tool for distributed process measurement and control systems based on the IEC 61499 standard. \url{https://www.eclipse.org/4diac/}
 
@@ -71,7 +71,7 @@ Most modelling tools support the same functions in the context of INTO-CPS. A \t
 \subsection{RT Tester}
 \label{sec:tool-RTTester}
 
-In the framework of INTO-CPS, the RT Tester tool suite (see \url{https://www.verified.de/products/rt-tester/}) is extended with mainly two objectives: Integration of Test-Automation and of Model Checking in the INTO-CPS tool-chain. Both functions are integrated into the INTO-CPS application, and both support traceability. This is described further in \autoref{app:RTT}.
+In the framework of INTO-CPS, the RT Tester tool suite (see \url{https://www.verified.de/products/rt-tester/}) is extended with mainly two objectives: Integration of Test-Automation and of Model Checking in the INTO-CPS tool-chain. Both functions are integrated into the INTO-CPS application, and both support traceability. This is described further in Section~\ref{app:RTT}.
 
 \subsubsection{Test Automation}
 
@@ -88,4 +88,4 @@ The 3D animation FMU allows visualisation of the simulation. It is based on the 
 
 \subsection{The INTO-CPS Application}
 
-The INTO-CPS Application is the central tool to integrate the different tools and artefacts, to configure and run simulations, manage results, and more. It allows configuration and execution of DSE scenarios (which can be imported from Modelio), and is a front-end for Model-checking and Test automation, by using the RT Tester tool (see Section \ref{sec:tool-RTTester}). Furthermore, traceability data can be viewed in the Application, either in an expert view, using the Neo4J visualisation\footnote{\url{https://neo4j.com/}}, or by pre-configured queries.
+The INTO-CPS Application is the central tool to integrate the different tools and artefacts, to configure and run simulations, manage results, and more. It allows configuration and execution of DSE scenarios (which can be imported from Modelio), and is a front-end for Model-checking and Test automation, by using the RT Tester tool (see Section~\ref{sec:tool-RTTester}). Furthermore, traceability data can be viewed in the Application, either in an expert view, using the Neo4J visualisation\footnote{\url{https://neo4j.com/}}, or by pre-configured queries. 
