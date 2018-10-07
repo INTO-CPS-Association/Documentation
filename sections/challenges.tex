@@ -2,11 +2,11 @@
 
 %\fbox{John Fitzgerald - rough notes at this point}
 
-The vision underpinning \into\ is that teams of developers from diverse disciplines and organisations are enabled to work together to converge more rapidly than today on system designs that perform optimally. Realising this vision requires methods and tools that each discipline and organisation to make its contribution without compromising its intellectual property or significantly altering its well-tried and established techniques. It should be possible to federate these diverse design artefacts to allow analysis of the system-level consequences of design decisions made in any one domain, and the trade-offs between them. How, then, can we support such multidisciplinary design with semantically well-founded approaches in a cost-effective manner? In general we believe that there are a number of areas where there are challenges in the proper engineering of CPSs. These are described below in separate subsections.
+The vision underpinning \into\ is that teams of developers from diverse disciplines and organisations are enabled to collaborate and converge more rapidly than today on system designs that perform optimally. Realising this vision requires methods and tools that allow each discipline and organisation to make its contribution without compromising its intellectual property or significantly altering its well-tried and established techniques. It should be possible to federate these diverse design artefacts to allow analysis of the system-level consequences of design decisions made in any one domain, and the trade-offs between them. How, then, can we use semantically well-founded approaches to support such multidisciplinary design ina cost-effective way? This question poses several significant challenges. 
 
-\subsection{The challenge of time to market}
+\subsection{Time to Market}
 
-There is a clear need for model-based methods to permit early design space exploration, optimisation and experimentation without delaying the time from initial idea towards the launch of a new product to the market. We feel that the main areas of relevance here are:
+There is a clear need for model-based methods that permit early design space exploration, optimisation and experimentation without delaying the launch of a new product to the market. Important issues here are:
 
 \begin{description}
 \item[Faster route to market for engineering CPSs:] In a highly active CPS marketplace, getting the right solution first time is essential. We believe that the interoperability of tools in the INTO-CPS tool suite enables a more agile close collaboration between stakeholders with diverse disciplinary backgrounds.
@@ -14,20 +14,17 @@ There is a clear need for model-based methods to permit early design space explo
 \item[Limiting expensive physical tests:] CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
 \end{description}
 
-\subsection{The challenge of diversity}
+\subsection{Diversity of Design Models}
 
-In the INTO-CPS project we start from the view that disciplines such as software, mechatronic and control engineering have evolved notations and theories that are tailored to their needs, and that it is undesirable to suppress this diversity by enforcing uniform general-purpose models~\cite{Fitzgerald&15,Larsen&16e}. The goal, then, must be to allow the effective federation of highly diverse design models.
+Disciplines such as software, mechatronic and control engineering have evolved notations and theories that are tailored to their needs. It is undesirable to suppress this diversity by enforcing uniform general-purpose models~\cite{Fitzgerald&15,Larsen&16e}. The semantics of these notations and theories will have very different foundations in discrete or continuous domains. The goal, then, must be to support the effective federation of such highly diverse design models.
 
-\subsection{The challenge of collaboration}
+\subsection{Collaboration}
 
-There is a clear need to provide mechanisms to support collaborative model-base engineering without compromising the independence of contributors. We feel that the main areas of relevance here are:
-
+There is a clear need to provide mechanisms to support collaborative model-based engineering without compromising the independence of contributors. Important issues here are:
 \begin{description}
 \item[Avoiding vendor lock-in by open tool chain:] Some commercial solutions provide at least a part of the functionality provided by the INTO-CPS tool chain with a high level of interoperability. However, in particular for Small and Medium-sized Enterprises (SMEs), there is a risk of being restricted in the choice of specialist tools.
 \item[Traceability and Provenance:] CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
 \end{description}
 
-
-
-To the CPS engineer, the system of interest includes both computational and physical elements, so the foundations, methods and tools of CPS engineering should incorporate both the Discrete-Event (DE) models of computational processes, and the continuous-value and Continuous-Time (CT) formalisms of physical dynamics engineering. Our approach is to support the development of collaborative models (\emph{co-models}) containing DE and CT elements expressed in diverse notations, and to support their analysis by means of co-simulation based on a reconciled operational semantics of the individual notations' simulators \cite{Fitzgerald&14c}. This enables exploration of the design space and allows relatively straightforward adoption in businesses already exposed to some of these tools and techniques. The idea is to enable co-simulation of extensible groups of semantically diverse models, and at the same time the semantic foundations are extended using Unifying Theories of Programming (UTP) to permit analysis using advanced meta-level tools that are primarily targeted towards academics and thus not considered as a part of the industrial INTO-CPS tool chain.
+The foundations, methods and tools of CPS engineering should incorporate both the Discrete-Event (DE) models of computational processes, and the continuous-value and Continuous-Time (CT) formalisms of physical dynamics engineering. Our approach is to support the development of collaborative models containing DE and CT elements expressed in diverse notations, and to support their analysis by means of co-simulation based on a reconciled operational semantics of the individual notations' simulators \cite{Fitzgerald&14c}. This enables exploration of the design space and allows relatively straightforward adoption in businesses already exposed to some of these tools and techniques. At the same time the semantic foundations are extended using Unifying Theories of Programming (UTP) to permit analysis using advanced meta-level tools that are primarily targeted towards academics and thus not considered as a part of the industrial INTO-CPS tool chain.
 
