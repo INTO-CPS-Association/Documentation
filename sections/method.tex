@@ -185,7 +185,7 @@ In the following descriptions (and corresponding summary in Table~\ref{tab:activ
 \item[\TwentySim] 20-sim.
 \end{itemize}
 
-Descriptions of these tools can be found in Section~\ref{sec:toolchain}. Those activities in \emph{italics} can be recorded by the traceability features of INTO-CPS, which are described in Section~\ref{sec:method:trace}.
+Descriptions of these tools can be found in Section~\ref{sec:toolchain} and in appendix~\ref{appendix:tools} they are explained in more detail. Those activities in \emph{italics} can be recorded by the traceability features of INTO-CPS, which are described in Section~\ref{sec:method:trace}.
 
 \paragraph{Requirements and Traceability}
 
@@ -197,7 +197,7 @@ INTO-CPS primarily supports architectural modelling in SysML. \emph{Holistic Arc
 
 \paragraph{Modelling}
 
-The \emph{Import Model Description} (\Overture~\TwentySim~\OpenModelica) activity means taking a component interface description from the Design Architectural Model into another modelling tool. \emph{Cyber Modelling} (\Overture) means capturing a ``cyber'' component of the system, e.g. using a formalism/tool such as VDM/Overture. \emph{Physical Modelling} (\TwentySim~\OpenModelica) means capturing the ``physical'' component of the system, e.g. in 20-sim  or OpenModelica. Collectively, these can be referred to as \emph{Simulation Modelling} (\Overture~\TwentySim~\OpenModelica) to distinguish from other forms, such as \emph{Architectural Modelling} (\Modelio). \emph{Co-modelling} (\Crescendo) means producing a system model with one DE and one CT part, e.g.\ in Crescendo. \emph{Multi-modelling} (\INTOCPS) means producing a system model with multiple DE or CT parts with several tools.
+The \emph{Import Model Description} (\Overture~\TwentySim~\OpenModelica) activity means taking a component interface description from the Design Architectural Model into another modelling tool. \emph{Cyber Modelling} (\Overture) means capturing a ``cyber'' component of the system, e.g.\ using a formalism/tool such as VDM/Overture. \emph{Physical Modelling} (\TwentySim~\OpenModelica) means capturing the ``physical'' component of the system, e.g.\ in 20-sim  or OpenModelica. Collectively, these can be referred to as \emph{Simulation Modelling} (\Overture~\TwentySim~\OpenModelica) to distinguish from other forms, such as \emph{Architectural Modelling} (\Modelio). \emph{Co-modelling} (\Crescendo) means producing a system model with one DE and one CT part, e.g.\ in Crescendo. \emph{Multi-modelling} (\INTOCPS) means producing a system model with multiple DE or CT parts with several tools.
 
 \paragraph{Design}
 
@@ -205,7 +205,7 @@ The \emph{Import Model Description} (\Overture~\TwentySim~\OpenModelica) activit
 
 \paragraph{Analysis}
 
-In INTO-CPS, the RT-Tester tool enables the activities of \emph{Model Checking} (\RTTester), \emph{Creating Tests} (\RTTester) and creating a \emph{Test Oracle} (\RTTester) FMU. The \emph{Create a Configuration} (\INTOCPS) activity means preparing a multi-model for co-simulation. The \emph{Define Design Space Exploration Configurations} (\INTOCPS) activity means preparing a multi-model for multiple simulations. \emph{Export FMU} (\Overture~\TwentySim~\OpenModelica)  means to generate an FMU from a model of a component. \emph{Co-simulation} (\Crescendo~\INTOCPS) means simulating a co-model, e.g.\ using Crescendo baseline technology or the COE.
+In INTO-CPS, the RT-Tester tool enables the activities of \emph{Model Checking} (\RTTester), \emph{Creating Tests} (\RTTester) and creating a \emph{Test Oracle} (\RTTester) FMU. The \emph{Create a Configuration} (\INTOCPS) activity means preparing a multi-model for co-simulation. The \emph{Define Design Space Exploration Configurations} (\INTOCPS) activity means preparing a multi-model for multiple simulations. \emph{Export FMU} (\Overture~\TwentySim~\OpenModelica)  means to generate an FMU from a model of a component. \emph{Co-simulation} (\Crescendo~\INTOCPS) means simulating a co-model, e.g.\ using Crescendo baseline technology or the INTO-CPS COE called Maestro.
 
 \paragraph{Prototyping}
 
@@ -264,7 +264,7 @@ The INTO-CPS Application supports a project, a view of a folder containing sourc
 \begin{enumerate}[noitemsep]
   \item Created manually using the GUI of the INTO-CPS Application; or
   \item Generated from a SysML model created in Modelio; or
-  \item Created manually by editing JSON configuration files
+  \item Created manually by editing JSON configuration files.
 \end{enumerate}
 
 All three approaches produce the same configuration file, so the choice of which to use depends on the engineer's background. Those comfortable with SysML may find it best to follow the SysML route, but this is not required. So those unfamiliar with SysML can use the Application directly.
