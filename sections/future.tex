@@ -16,7 +16,7 @@ In the subsections below candidate future directions are proposed.
 \subsection{Adapting FMUs Easily to Ones Needs}
 
 In the context of continuous system co-simulation, it is well known that there is no one-size-fits-all co-simulation approach. 
-Different kinds of systems are best co-simulation different ways (cite survey).
+Different kinds of systems are best co-simulation different ways \cite{Gomes2018}.
 At the same time, different domains have specialised numerical solvers, which means we cannot ignore the solvers in the FMUs.
 A future research direction is to understand how to reconcile such contradicting requirements.
 A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them \cite{Gomes&18a}.
@@ -48,7 +48,7 @@ In order to increase the value of multi-models one can imagine making use of the
 
 \subsection{Increased Support for Dynamic Evolution Scenarios}
 
-In a System of System setting it is regular that the composition of constituent systems involved in a scenario change dynamically over time. In an FMI setting this is currently not possible since it is necessary to have a static composition of the FMUs used in a co-simulation. In order to be able to support dynamic evolution in a co-simulation scenario it is desirable to conduct research exploring to what extend this could be a possibility.
+In a System of Systems setting it is regular that the composition of constituent systems involved in a scenario change dynamically over time. In an FMI setting this is currently not possible since it is necessary to have a static composition of the FMUs used in a co-simulation. In order to be able to support dynamic evolution in a co-simulation scenario it is desirable to conduct research exploring to what extend this could be a possibility.
 
 %\claudio{Not clear what dynamic evolution means\ldots Is this supporting incremental development (having multiple refinements of the same component?) Isn't this related to traceability?}
 
@@ -73,7 +73,7 @@ FMI is not by itself good at modelling the communication layers between differen
 
 \subsection{Intelligence, Adaptivity and Autonomy}
 
-CPSs also ideally are smart in the sense that they process intelligent behaviour. In order to introduce autonomy it can be ideal to introduce Machine Learning (ML) in different fashions in order to lear how to best behave. ML can be used in different ways here:
+CPSs also ideally are smart in the sense that they process intelligent behaviour. In order to introduce autonomy it can be ideal to introduce Machine Learning (ML) in different fashions in order to learn how to best behave. ML can be used in different ways here:
 
 \begin{itemize}
 \item Based on time series data for an individual physical component one can imagine that ML can be used to automatically derive an approximation FMU corresponding to that physical component
