@@ -8,7 +8,7 @@
 
 %\fbox{Peter Gorm Larsen}
 
-It is envisaged that the INTO-CPS technology will be further extended as the FMI standard evolves and in particular in future research projects. 
+It is envisaged that the INTO-CPS technology will be further extended as the FMI standard evolves, in particular in future research projects. 
 Thus, the future directions here will depend both on the members of the INTO-CPS Association as well as which externally funded research projects that will be successful in achieving funding. 
 
 In the subsections below candidate future directions are proposed.
@@ -16,7 +16,7 @@ In the subsections below candidate future directions are proposed.
 \subsection{Adapting FMUs Easily to Ones Needs}
 
 In the context of continuous system co-simulation, it is well known that there is no one-size-fits-all co-simulation approach. 
-Different kinds of systems are best co-simulation different ways \cite{Gomes2018}.
+Different kinds of systems are best co-simulation different ways \cite{Gomes&18}.
 At the same time, different domains have specialised numerical solvers, which means we cannot ignore the solvers in the FMUs.
 A future research direction is to understand how to reconcile such contradicting requirements.
 A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them \cite{Gomes&18a}.
@@ -76,7 +76,7 @@ FMI is not by itself good at modelling the communication layers between differen
 CPSs also ideally are smart in the sense that they process intelligent behaviour. In order to introduce autonomy it can be ideal to introduce Machine Learning (ML) in different fashions in order to learn how to best behave. ML can be used in different ways here:
 
 \begin{itemize}
-\item Based on time series data for an individual physical component one can imagine that ML can be used to automatically derive an approximation FMU corresponding to that physical component
+\item Based on time series data for an individual physical component one can imagine that ML can be used to automatically derive an approximation FMU corresponding to that physical component.
 \item In a digital twin setting one can imagine that ML can be used to learn to what extend the real system behave as predicted by the co-models. Based on this different actions could be taken automatically or manually if human intervention is desirable.
 \item FMUs themselves could contain ML elements for example in order to have adaptive control that will be valuable and express intelligent behaviour.
 \end{itemize}
@@ -92,5 +92,5 @@ CPSs also ideally are smart in the sense that they process intelligent behaviour
 
 Many models can be expressed at different levels of abstraction. There is a natural tradeoff between speed and accuracy of a co-simulation. 
 An interesting direction could for example be to support DSE's, while using multiple abstraction models.
-For example, higher abstraction models might be used to optimise the design globally, while lower abstraction models validate the candidate found, and further optimise each of them to find the best one. In particular for FMUs that are very slow in simulating (e.g., CFD models) it may make a lot of sense to use more abstract models (at least initially) in order to be able to obtain results within a reasonable amount of time. For CFD models it is for example possible to produce Reduced Order Models (ROMs) and these can be automatically derived from more detailed models. Thus, it can be valuable to make it easy for users to select what level of abstraction to use in a co-simulation for each of the constituent models.
+For example, higher abstraction models might be used to optimise the design globally, while lower abstraction models validate the candidate found, and further optimise each of them to find the best one. In particular for FMUs that are very slow in simulating (e.g., CFD models) it may make a lot of sense to use more abstract models (at least initially) in order to be able to obtain results within a reasonable amount of time. For CFD models it is for example possible to produce ROMs and these can be automatically derived from more detailed models. Thus, it can be valuable to make it easy for users to select what level of abstraction to use in a co-simulation for each of the constituent models.
 

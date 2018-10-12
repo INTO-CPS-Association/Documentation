@@ -37,7 +37,7 @@ Users can use several extension mechanisms: light Python scripts or a rich Java 
 %
 %
 \subsection{Overture}\label{app:overture}
-The Overture platform \cite{Larsen&10a} is an Eclipse-based integrated development environment (IDE) for the development and validation of system specifications in three dialects of the specification language of the Vienna Development Method.
+The Overture platform \cite{Larsen&10a} is an Eclipse-based IDE for the development and validation of system specifications in three dialects of the specification language of the Vienna Development Method (VDM).
 %
 Overture is distributed with a suite of examples and step-by-step tutorials which demonstrate the features of the three dialects.
 %
@@ -59,9 +59,9 @@ Overture supports the following activities:
 %
 \item  Automated testing of specifications via a custom test suite definition language and execution engine.
 %
-\item  Visualization of test coverage information gathered from automated testing.
+\item  Visualisation of test coverage information gathered from automated testing.
 %
-\item  Visualization of timing behaviours for specifications incorporating timing information.
+\item  Visualisation of timing behaviours for specifications incorporating timing information.
 %
 \item  Translation to/from UML system representations.
 %
@@ -131,9 +131,10 @@ VDM-RT is a small extension to VDM++ which adds two primary features:
 %
 Finer details can be specified, such as execution synchronisation and mutual exclusion on shared resources.
 %
-A VDM-RT specification has the same structure as a VDM++ specification, only the conventional system class of VDM++ is mandatory in VDM-RT.
+A VDM-RT specification has the same structure as a VDM++ specification, only the conventional system class of VDM++ is mandatory in VDM-RT and it enables the description of distributed systems.
 %
-Examples can be found in the VDM-RT tutorials distributed with Overture.
+Examples can be found in the VDM-RT tutorials distributed with Overture. The integration of Overture into the INTO-CPS tool-chain is realised via the FMI standard.
+
 %
 %
 %
@@ -358,7 +359,7 @@ The 4DIAC framework allows the development of distributed control systems compli
     \item VxWorks
     \item freeRTOS
   \end{itemize}     
-  \item 4DIAC-IDE: This is the IDE (Integrated Development Environment) written in Java and based on the Eclipse framework and provides an extensible engineering environment for modeling 
+  \item 4DIAC-IDE: This is the IDE written in Java and based on the Eclipse framework and provides an extensible engineering environment for modeling 
   distributed control applications compliant to the IEC 61499 standard. The user uses 4DIAC to create FBs, applications, configure the devices and all related to IEC 61499 and also download this 
   to devices running FORTE.
   \item Function Block Library: contains Function Blocks which are available on the 4DIAC-RTE and can, therefore, be used to create IEC 61499 compliant control applications.

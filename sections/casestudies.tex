@@ -48,7 +48,7 @@ Related Publications can be found at \cite{Foldager&17,Foldager&18}.
 \end{figure}
 
 \subsection{The Building HVAC Case Study}
- A case study led by United Technologies (their research centre in Ireland) has focused on modelling and analysis of energy and comfort for Heating, Ventilation and Air Conditioning (HVAC) systems that control the temperature of connected areas inside building premises. The case study models various concepts shown in Fig.~\ref{fig:building} such as: a) Fan Coil Unit (FCU) and control; b) supervision and fault detection of FCUs; c) communication between master-slave FCUs; d) communication between FCUs and supervisor; e) Air Handling Unit (AHU) and control; f) chiller load and control; g) physical rooms and air flow; h) wWater and air pipe connections.
+ A case study led by United Technologies (their research centre in Ireland) has focused on modelling and analysis of energy and comfort for Heating, Ventilation and Air Conditioning (HVAC) systems that control the temperature of connected areas inside building premises. The case study models various concepts shown in Fig.~\ref{fig:building} such as: a) Fan Coil Unit (FCU) and control; b) supervision and fault detection of FCUs; c) communication between master-slave FCUs; d) communication between FCUs and supervisor; e) Air Handling Unit (AHU) and control; f) chiller load and control; g) physical rooms and air flow; h) water and air pipe connections.
 
 The functionality of the HVAC system is to regulate operation of various devices to ensure user comfort. User inputs are taken into account from room and zone thermostats and are compared with current Room Air Temperature (RAT) sensed by the FCUs, triggering certain action on the FCUs to reach the desired temperature by a) regulating the air flow using its fan, b) regulating the water pipe valves to control the cooled water into the coil, c) synchronising with the supervisor to coordinate with the rest of the FCUs. Fresh air is provided to the FCUs by the AHU and cooled by the Chiller.
 
@@ -63,11 +63,11 @@ Modelling and simulation was heavily used to evaluate performance and robustness
 
 \subsection{The Railway Case Study}
 
-In railway signalling, an \emph{interlocking} is an arrangement of signal apparatus that prevents conflicting movements of trains through an arrangement of tracks, junctions and crossings. Usually, interlocking is in charge of a complete railways or tram line, computing the status of actuators (switches and signals) based on signalling safety rules that are encoded as ``binary equations'' as shown in Figure 2, usually managing s 180.000 equations that have to be recalculated several times per second. These equations compute the commands to be issued to track-side devices: they encode the safety behaviour that enable trains to move from one position to another through routes that are allocated and then released. Currently, there are attempts to find the right trade-off between efficiency of an interlocking system (availability of routes, trains' delays and cost of interlocking system) and safety (collision avoidance, derailment prevention, availability and efficiency of emergency system).
+In railway signalling, an \emph{interlocking} is an arrangement of signal apparatus that prevents conflicting movements of trains through an arrangement of tracks, junctions and crossings. Usually, interlocking is in charge of a complete railways or tram line, computing the status of actuators (switches and signals) based on signalling safety rules that are encoded as ``binary equations'' as shown in Figure 2, usually managing 180.000 equations that have to be recalculated several times per second. These equations compute the commands to be issued to track-side devices: they encode the safety behaviour that enable trains to move from one position to another through routes that are allocated and then released. Currently, there are attempts to find the right trade-off between efficiency of an interlocking system (availability of routes, trains' delays and cost of interlocking system) and safety (collision avoidance, derailment prevention, availability and efficiency of emergency system).
 
 In this case study led by ClearSy from France, an Interlocking system was considered that controls a part of a tramway line, including two platforms and a bidirectional track (between SW5 and SW2). It involves eleven track circuits; sensors that detect the absence of a train on a railway track; three commands that can accept several positions and are activated by the train; five mechanical switches that allow changing direction (those switches have to be set accordingly to the route chosen) and three light signals, red when the train is not allowed on the track and green when it can pass. The interlocking system also makes use of five mechanical safety relays that externalise the state of a route and allow redundancy between software logic and electronic circuits.
 
-Related Publications can be found at~\cite{Larsen&16d}
+Related Publications can be found at~\cite{Larsen&16d,Hasanagic&18b}.
 
 \subsection{The Aerospace Case Study}
 INTO-CPS and its co-simulation features have been also exploited in Aerospace use cases. As a member of INTO-CPS association, UTRC Ireland have used INTO-CPS for its Irish Development Agency (IDA) internal project\footnote{"Network of Excellence in Aerospace Cyber Physical Systems", funded by IDA Agency, 2015} and its ongoing Clean Sky2 MISSION project~\cite{Burgio&17}.
@@ -83,18 +83,18 @@ The case study involved the co-simulation of a CPS motor actuation. Control modu
 
 The INTO-CPS technology already contains a suite of modelling and simulation tools that are being used in aerospace model-based system engineering applications. In addition to that, tools are FMI enabled and including 20-sim, Overture/VDM and the tool suite has been demonstrated to also work with Dymola, Matlab/Simulink/Modelon, OpenModelica, 4DIAC and SimulationX. This technology is already centered around FMI-based co-simulation and it has initial DSE capabilities that would automate and accelerate aerospace sensitivity analysis in model based development and analysis phases. In the same manner, initial support for test automation using RT Tester with static exploration of the space to be covered is also available, promoting an interesting choice for achieving MC/DC coverage need by aerospace regulations. In future projects the INTO-CPS association members aim to mature INTO-CPS  technology particularly for the aerospace industry and evolve it to TRL 6 and above.
 
-\subsection{Integrated Product-Production Co-simulation for \\Cyber-physical Production System} \label{sec:IPP4CPPS}
+\subsection{The Manufacturing Case Study} \label{sec:IPP4CPPS}
 
 The case study involved the virtual design and validation of a CPS-based manufacturing system for assembling USB sticks, inspired from Continental's real manufacturing and testing processes in a production line. It is a representative example of distributed heterogeneous systems in which products, manufacturing resources, orders and infrastructure are all cyber-physical. In this setting, several features (such as asynchronous communication, messages flow, autonomy, self-adaptation, etc.) could be investigated at design time, for example using a collaborative modelling approach. Consequently, the case study offered a balance between being sufficiently simple to be easily followed as a production line example, including generating a tangible output, and at the same time being sufficiently general to allow the study of the co-simulation complexity. Furthermore, by choosing a USB stick, the example opened the (unexplored) possibility of extending the purpose of the study to interactions between generated hardware and generated software solutions in the production line.
 
 Obviously, this small experiment, in terms of scale and time, could not give a full and clear assessment of benefits for developing an integrated product-production co-simulation for CPS-based industrial control. Nevertheless, there were some recognisable benefits compared to the current state of technology:
 
 \begin{itemize}
-\item the possibility to simulate, test and validate from a holistic perspective and with an increased level of accuracy an entire production system that needs cross-functional expertise; The initial development of a homogeneous co-simulation in VDM for the iPP4CPPS prototype was particularly useful in driving cooperation and making clear the assumptions of the distributed teams involved in modelling the specific components. This phase proved to be the most difficult and time-consuming in building the co-simulation, requiring a very intensive communication for a shared understating of the requirements. Once the VDM co-simulation was running, the independent developments of units could be integrated, validated and deployed in any order.
+\item the possibility to simulate, test and validate from a holistic perspective and with an increased level of accuracy an entire production system that needs cross-functional expertise. The initial development of a homogeneous co-simulation in VDM for the iPP4CPPS prototype was particularly useful in driving cooperation and making clear the assumptions of the distributed teams involved in modelling the specific components. This phase proved to be the most difficult and time-consuming in building the co-simulation, requiring a very intensive communication for a shared understating of the requirements. Once the VDM co-simulation was running, the independent developments of units could be integrated, validated and deployed in any order.
 \item to a certain extent, the ability to handle unpredictable integration requirements. The employment of co-simulations when designing an automated production system avoided the build-up inertia of subsequent design constraints, facilitating the low and late commitment for these decisions, i.e.\ the specific micro-controllers or PLCs, the layout of the plant, the number of memory boxes from the warehouse etc. For example, the possibility to generate code - from all the simulation tools used in this experiment (i.e.\ 4DIAC, 20-Sim, Overture) -- for an extended set of computational devices was a clear advantage in respect to late commitment for the computational system used in the production system.
 \end{itemize}
 
-The methodology adopted to develop the co-simulation closely followed the classical stages of agent-oriented or component-based software engineering methodologies. Following the mechanical model derived from the requirements, the high-level abstraction for the behaviour of each simulation was implemented and the interactions among the components could be analysed. It included distinct simulations for each component type (Table 1): production (i.e.\ warehouse station, robot, transporting wagons, and testing station), orders (i.e.\ placed via mobile devices), and factory infrastructure (i.e.\ part tracker).
+The methodology adopted to develop the co-simulation closely followed the classical stages of agent-oriented/component-based software engineering methodologies. Following the mechanical model derived from the requirements, the high-level abstraction for the behaviour of each simulation was implemented and the interactions among the components could be analysed. It included distinct simulations for each component type (Table 1): production (i.e.\ warehouse station, robot, transporting wagons, and testing station), orders (i.e.\ placed via mobile devices), and factory infrastructure (i.e.\ part tracker).
 
 The co-simulation model had been initially implemented in VDM and validated on the INTO-CPS tools chain. The main goal of this implementation was manifold: a) to validate the interaction protocols among the composite simulations; b) to have an early working co-simulation where the specific simulations may be gradually added, tested and validated; c) to allow for a more independent development among the dispersed teams involved in modelling the specific simulations, while at the same time keeping the co-simulation functional at all times; and d) to cover the left-over parts of the co-simulation whose modelling was not needed in detail for the validation of the interaction protocol (e.g.\ test station) or for which there is was FMI-compliant tool (i.e.\ factory infrastructure).
 
@@ -105,16 +105,16 @@ The co-simulation model had been initially implemented in VDM and validated on t
 			\hline\hline
 			Orders & HMI & 4DIAC + MQTT \textit{or} Overture (VDM) & smartphones and tablets \\ \hline
 			Infrastructure & Part Tracker & Overture (VDM) & NVIDIA Tegra Jetson\\ \hline
-			Production & Warehouse + Robotic Arm & 20-sim & Raspberry Pi with UniPi Expansion Board + Stäubli robot\\ \hline
+			Production & Warehouse + Robotic Arm & 20-sim & Raspberry Pi with UniPi Expansion Board + a Stäubli robot\\ \hline
 			Production & Wagons & 4DIAC & Raspberry Pi controlling DC motors, position sensors and anti-collision ultrasonic sensors \\ \hline
-			Production & Test Station & 4DIAC & Cognex Vision Insight 1100 camera connected to Raspberry Pi for actuators control\\ \hline
+			Production & Test Station & 4DIAC & Cognex Vision Insight 1100 camera connected to Raspberry Pi for control of actuators\\ \hline
 			General & Unity & 20-sim animation & PC\\\hline
 		\end{tabular}
 	\caption{Technologies used for different system components}
 	\label{tab:iPP4CPPS_technologies}
 \end{table*}
 
-The detailed model of each simulation covered a continuous-time model realised in 20-Sim for the warehouse and robotic arm, a discrete-time model in 4DIAC for the transportation system and test station, and a discrete-time model in Overture for the infrastructure. All units modelled and tested by the heterogeneous co-simulation were then deployed in a demo stand for fine tuning under real-life conditions (Table \ref{tab:iPP4CPPS_technologies}). This phase presumed the extension of code generation capabilities of the simulation tools, such as: 20-sim 4C has been extended with MQTT, Modbus, I2C colour sensor, I2C multiplexer and UniPi board for the Raspberry Pi; Overture for employing MQTT as communication protocol on a Raspberry Pi 3; and 4DIAC for accelerometers control.
+The detailed model of each simulation covered a continuous-time model realised in 20-Sim for the warehouse and robotic arm, a discrete-time model in 4DIAC for the transportation system and test station, and a DE model in Overture for the infrastructure. All units modelled and tested by the heterogeneous co-simulation were then deployed in a demo stand for fine tuning under real-life conditions (Table \ref{tab:iPP4CPPS_technologies}). This phase presumed the extension of code generation capabilities of the simulation tools, such as: 20-sim 4C has been extended with MQTT, Modbus, I2C colour sensor, I2C multiplexer and UniPi board for the Raspberry Pi; Overture for employing MQTT as communication protocol on a Raspberry Pi 3; and 4DIAC for accelerometers control.
 
 \begin{figure}[!ht]
 	\centering
@@ -125,7 +125,7 @@ The detailed model of each simulation covered a continuous-time model realised i
 
 The experiment assessed the benefits and the maturity level of model-driven engineering technologies for future adoption into CPS-based production systems. It covered the entire engineering life-cycle (i.e. from requirements to deployment into a real infrastructure) and contributed to several advancements of engineering methods and tools. The experiment delivered an effective proof-of-concept for model-driven engineering of CPS-based production system as a feasible and promising approach to (re)engineer the factory of the future with the employed technologies (i.e.\ INTO-CPS, Overture, 20-Sim and 4DIAC). Nevertheless, the experiment also identified a number of issues that may have further impact over the adoption of model-driven engineering technologies into real settings: the FMI-compatibility of the simulation tools used in industry; the hardware/software-in-the-loop simulations still display complex synchronisation problems for dissimilar time-scales; the extended set of low-level devices (i.e.\ sensors, industrial communication standards etc.) that are used in today and future industry require special standardisation effort to enhance the deployment capabilities of the simulation tools\footnote{More information can be found at \url{http://centers.ulbsibiu.ro/incon/index.php/ipp4cpps/} and \url{http://www.cpse-labs.eu/experiment.php?id=c3_uk_gs_ipp4cpps}.}
 
-\subsection{Use of the INTO-CPS Technology at MAN Diesel \& Turbo}
+\subsection{The Combustion Engine Case Study}
 
 As reported in \cite{Pedersen&17}, at \ac{mdt} the conventional approach for
 developing two-stroke combustion engines with a distributed embedded control
@@ -161,10 +161,10 @@ platform.
 %% Change this paragraph
 At \ac{mdt} the models used in the control department are based on a software
 framework and \ac{mdse} is implemented in C++ and run on a 32-bit Linux
-platform while the physical modelling tools often require Windows. During the
-INTO-CPS project it was illustrated how a transition from the current
-simulation process at \ac{mdt} to one using co-simulation utilising the
-\ac{fmi} standard can be performed by using the INTO-CPS  \ac{coe}.
+platform while the physical modelling tools often require Windows. It was illustrated how a transition from the current
+simulation process at \ac{mdt} to one using co-simulation utilising FMI.
+%the
+%\ac{fmi} standard can be performed by using the INTO-CPS  \ac{coe}.
 
 The aim with the approach suggested was to reduce redundancy in the
 development process and reuse and combine models from different
@@ -174,15 +174,15 @@ platforms due to constraints from software frameworks, physical simulation
 tools and version compatibility, and INTO-CPS Technology was key in overcoming
 it.
 
-\subsection{Use of the INTO-CPS Technology at the European Space Agency}
+\subsection{The Mars Rover Case Study}
 
 
 At the European Space Agency (ESA) many systems fall into the CPS category.  As
 reported in \cite{Feo-Arenis&17}, the Mars Rover case study, which was
 developed in Crescendo, a previous project, had been restricted to the
-combination of two models:  one Discrete Event (DE) model expressed using the
-Vienna Development Method (VDM) \cite{Fitzgerald&08c} using the Overture tool
-\cite{Larsen&10a} and one Continuous-Time (CT) model expressed using bond graphs
+combination of two models:  one DE model expressed using the
+VDM \cite{Fitzgerald&08c} and Overture 
+\cite{Larsen&10a} and one CT model expressed using bond graphs
 \cite{Karnopp&68} and the 20-sim tool \cite{Kleijn06}.
 
 Moreover, the CT model would have to be kept confidential.  Thus, it was
@@ -194,15 +194,15 @@ problems, such as allowing remote access through corporate firewalls, poor
 simulation performance, etc.
 
 For this issue, FMI and the INTO-CPS technology offer a potential solution since
-the Functional Mockup Units (FMUs) produced for each constituent model do not
+the FMUs produced for each constituent model do not
 necessarily need to contain the model itself. Thus, it is possible to protect
 the Intellectual Property (IP) in this manner.
 
 In \cite{Feo-Arenis&17}, the authors report on their successful attempt of
 migrating the Mars Rover co-model from Crescendo to the INTO-CPS technology,
-and how the INTO-CPS co-model enables a solution satisfying the requirements of
+and how the INTO-CPS multi-model enables a solution satisfying the requirements of
 an agency as ESA which, manages a multitude of suppliers are involved in
-multiple  missions. The ability management of IP and ease of model
+multiple  missions. The ability of managing IP and ease of model
 construction, system of systems mission analysis, and validating on-board
 software were reported as successes emerging from the usage of INTO-CPS.
 
