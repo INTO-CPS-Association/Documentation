@@ -6,16 +6,12 @@
 
 Cyber-Physical Systems (CPSs) present major business and societal
 opportunities in a variety of application areas--- \emph{if} they can be developed economically~\cite{Cengarle&13}. Model-Based Development (MBD) has the potential to enhance the development of CPSs, increasing the competitiveness of industry by shortening time to market and reducing development costs. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields. Some researchers advocate for describing such hybrid systems using a single formalism/tool \cite{Ptolemaeus14,Platzer18}, but here we believe that it is better to enable stakeholders with different disciplinary backgrounds to produce their constituent models using their preferred formalism/tool and then enable joint analysis using co-simulation \cite{Gomes&18} and ensuring that there is an underlying common foundation for all of them.
-\claudio{To be fair to \cite{Ptolemaeus14,Platzer18}, I would add ``Even the proposals for a single \cite{Ptolemaeus14,Platzer18} recognize that one cannot expect different stakeholders to learn the same formalism. Instead, they propose a formalism that integrates multiple sub-formalisms, to ensure that the result can cover a wide range of paradigms.''. If this is too long, then I'd rather remove the mention to these approaches, as we are not comparing our approach with them, and we should not be negative about them (without proiding more evidence).}
+Even the proposals for a single \cite{Ptolemaeus14,Platzer18} recognise that one cannot expect different stakeholders to learn the same formalism. Instead, they propose a formalism that integrates multiple sub-formalisms, to ensure that the result can cover a wide range of paradigms.
 
-Different stakeholders can produce constituent models of the parts they are responsible for, and we will call these constituent models that together form the CPS. 
-\claudio{The prev sentence is strange. It is attempting to both define a new concept, and explain how it relates to the CPS. Maybe split into two: ``Different stakeholders can produce constituent models of the parts they are responsible for. The combination of the different constituent models forms the CPS model''. Also beware that the combination of the models forms the CPS model, and not the CPS itself!}
+Different stakeholders can produce constituent models of the parts they are responsible for. The combination of the different constituent models forms the CPS model.
 The main challenge is to ensure that such constituent models connect and thus can be combined in different analysis conducted of the behaviour of the CPS in its desired surroundings, typically called its environment.
-\claudio{The prev sentence is also trying to do too much!}
-The design of CPSs involves the usage of results obtained
-using a combination of different formalisms serving different engineering
-disciplines.
-\claudio{Maybe rewrite the above to: ``Since the design of the CPSs depends on the ability to connect the behaviors of its constituent models, the main challenge is to make sure these results are trustworthy.''}
+%\claudio{The prev sentence is also trying to do too much!}
+Since the design of the CPSs depends on the ability to connect the behaviours of its constituent models, the main challenge is to make sure these results are trustworthy.
 %Different formalisms are usually
 %supported by different tools running on different Operating Systems (OSs).
 
