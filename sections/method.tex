@@ -28,7 +28,7 @@ Many CPSs are \term{Systems of Systems (SoSs)}. An SoS is a ``collection of inde
 
 A \term{model} is a  potentially partial and abstract description of a system, limited to those components and properties of the system that pertain to the current goal~\cite{Holt&14}. A model should be ``just complex enough to describe or study the phenomena that are relevant for our problem context''~\cite{Amerongen10}. Models should be abstract ``in the sense that aspects of the product not relevant to the analysis in hand are not included''~\cite{Fitzgerald&98b}. A model ``may contain representations of the system, environment and stimuli''~\cite{Fitzgerald&14c}
 
-In a model of a CPS, we describe systems with cyber, physical and network elements. These components are often modelled in a variety of languages, with different notations, concepts, levels of abstraction, and semantics, which are not necessarily easily mapped one to another. We use \term{continuous time (CT)} and \term{discrete event (DE)} models to represent physical and cyber elements as appropriate. A CT model has state that can be changed and observed \emph{continuously}~\cite{Amerongen10} and is described using either explicit continuous functions of time or implicitly as a solution of differential equations. A DE model has state that can be changed and observed only at fixed, \emph{discrete}, time intervals~\cite{Amerongen10}.  We use the term \term{multi-model} to refer to the federation \claudio{We haven't defined what federation means.} of several constituent DE and CT models.
+In a model of a CPS, we describe systems with cyber, physical and network elements. These components are often modelled in a variety of languages, with different notations, concepts, levels of abstraction, and semantics, which are not necessarily easily mapped one to another. We use \term{continuous time (CT)} and \term{discrete event (DE)} models to represent physical and cyber elements as appropriate. A CT model has state that can be changed and observed \emph{continuously}~\cite{Amerongen10} and is described using either explicit continuous functions of time or implicitly as a solution of differential equations. A DE model has state that can be changed and observed only at fixed, \emph{discrete}, time intervals~\cite{Amerongen10}.  We use the term \term{multi-model} to refer to the combination of several constituent DE and CT models.
 
 A \term{requirement} may impose restrictions, define capabilities or identify qualities of a system, and should indicate some value or use for the stakeholders in a CPS. \term{Requirements Engineering (RE)} is the process of specifying and documenting requirements placed upon a CPS. Requirements may be considered in relation to different \term{contexts} -- that is the point of view of some system component or domain, or interested stakeholder.
 
@@ -78,19 +78,19 @@ Other algorithms, such as a genetic search, where an initial set of randomly gen
 This means that the choice of next design to be simulated is driven by the results of previous simulations.
 
 Once a simulation has been performed, there are two steps required to close the loop.
-The first is to analyze the raw results output by the simulation to determine the value for each of the objectives by which the simulations are to be judged.
+The first is to analyse the raw results output by the simulation to determine the value for each of the objectives by which the simulations are to be judged.
 Such objective values could simply be the maximum power consumed by a component or the total distance traveled by an object, but they could also be more complex measures, such as the proportion of time a device was operating in the correct mode given some conditions.
 As well as numerical objectives, there can also be constraints on the system that are either passed or failed.
 Such constraints could be numeric, such as the maximum power that a substation must never exceed, or they could be based on temporal logic to check that undesirable events do not occur, such as all the lights at a road junction not being green at the same time.
 
-\claudio{In the prev par, make it clear what example we are referrign to. It seems that the reader has to imagine an example to make sense of what is given.}
+%\claudio{In the prev par, make it clear what example we are referrign to. It seems that the reader has to imagine an example to make sense of what is given.}
 
 The final step in a closed loop is to rank the designs according to how well each performs.
-The ranking may be trivial, such as in a search for a design that minimizes the total amount of energy used, or it may be more complex if there are multiple objectives to optimize and trade off.
+The ranking may be trivial, such as in a search for a design that minimises the total amount of energy used, or it may be more complex if there are multiple objectives to optimise and trade off.
 Such ranking functions can take the form of an equation that returns a score for each design, where the designs with the highest/lowest scores are considered the best.
 Alternatively, if the relationship between the desired objectives is not well understood, then a Pareto approach can be taken to ranking, where designs are allocated to ranks of designs that are indistinguishable from each other, in that each represents an optimum, but there exist different tradeoffs between the objective values.
 
-\claudio{I think the previous subsection is detailed (in comparison with the others). Maybe it should be summarized, with references given to other introductory material.}
+%\claudio{I think the previous subsection is detailed (in comparison with the others). Maybe it should be summarized, with references given to other introductory material.}
 
 \subsubsection{Model-Based Test Automation}
 \label{sec:concepts:mbta}
@@ -176,7 +176,7 @@ This restricts the choice of implementations to very few, often one, which is th
 \subsection{Activities Enabled by INTO-CPS}
 \label{sec:method:workflows}
 
-\claudio{Maybe we should give this sectino a different name. I like Workflows better. Currently, it seems that this is sort of the solution provided by into-cps, and not guidelines (as the main section implies).}
+%\claudio{Maybe we should give this sectino a different name. I like Workflows better. Currently, it seems that this is sort of the solution provided by into-cps, and not guidelines (as the main section implies).}
 
 The following activities are all enabled by one or more of the INTO-CPS technologies. They are grouped into broad categories and include both existing, embedded systems activities and activities enabled by INTO-CPS, since INTO-CPS extends traditional embedded systems design capabilities towards CPS design. The choice of granularity for defining these activities naturally affects the size of such a list. The level chosen is instructive for describing workflows, but one that does not make the described workflows overly long.  %For example, those under the \textbf{Design} will often be supported by \textbf{Modelling} activities, but not necessarily.
 
