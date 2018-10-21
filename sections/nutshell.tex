@@ -4,13 +4,14 @@
 
 %\fbox{Peter Gorm Larsen}
 
+\claudio{This is the section where we should focus on addressing the previous challenges.}
 
 To address the challenges presented above in Section~\ref{sec:challenges}, the INTO-CPS project has created an integrated ``tool chain'' for comprehensive model-based design of CPSs. The tool chain supports multidisciplinary, collaborative modelling of CPSs from requirements, through simulation of multiple heterogeneous models that represent the physical elements as well as the computational parts of the system, down to realisation in hardware and software, enabling traceability at all stages of the development as outlined in figure~\ref{fig:intooverview}.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{./figures/INTOoverview}
-\caption{Connections in the INTO-CPS tool chain.}
+\caption{Connections in the INTO-CPS tool chain. \claudio{DO you have a vector graphics version of this drawing? It does not look good on higher resolutions.}}
 \label{fig:intooverview}
 \end{figure}
 
@@ -44,7 +45,7 @@ A Co-simulation Orchestration Engine (COE) called Maestro has been built on the 
 \label{fig:toolchain}
 \end{figure}
 
-The COE connects multiple diverse models, each in the encapsulated form of a Functional Mock-up Unit (FMU) or running in its native modelling environment, to an overall system model. An algorithm for Design Space Exploration (DSE) enables sweeps through ranges of design parameters, performing co-simulations on each. System robustness can be evaluated by using Test Automation (TA) tools that can manipulate the simulation. Links to models can be kept in a database to allow for versioning and traceability even between artefacts produced by different tools. The INTO-CPS tool chain is described in more detail in Section~\ref{sec:toolchain}.
+The COE \claudio{Maybe cite the COE journal, once it is resubmitted.} connects multiple diverse models, each in the encapsulated form of a Functional Mock-up Unit (FMU) or running in its native modelling environment, to an overall system model. An algorithm for Design Space Exploration (DSE) enables sweeps through ranges of design parameters, performing co-simulations on each. System robustness can be evaluated by using Test Automation (TA) tools that can manipulate the simulation. Links to models can be kept in a database to allow for versioning and traceability even between artefacts produced by different tools. The INTO-CPS tool chain is described in more detail in Section~\ref{sec:toolchain}.
 %The entire co-simulation is controlled from a user interface. The final year of the project has seen a significant investment in promoting the co-simulation capabilities, and \url{http://fmi-standard.org/tools/} has been set up as a core webpage for all tools supporting FMI-based co-simulations.
 
 %During Year 3, the COE has been extended with capabilities both for distributed co-simulations and nested co-simulations. A graphical front-end for the entire tool chain called the INTO-CPS Application has been extended considerably. This has been developed further as a desktop application, using web technologies to enable a smoother transition to delivering this as an on-line service should this be desirable in the future . Building on the work of previous years, a 3D FMU support unit has been improved significantly, and has been used for multiple models, including those employed in the industrial case studies.
@@ -56,7 +57,7 @@ Inside the INTO-CPS project four industry-led case studies from different applic
 
 In the Railways case study led by the French company ClearSy, an innovative distributed interlocking solution has been developed, where signalling safety rules take both the logic and the physical conditions into account with a higher degree of independence than normally. The challenge was to find the right trade-off between the efficiency of an interlocking system (availability of routes, trains' delays and cost of interlocking system) and safety (collision avoidance, derailment prevention, availability and efficiency of the emergency system).
 
-The Agriculture case study led by the Danish company Agrointelli concerns both an automated control system for an agricultural robot as well as an autonomously operating lawn mower. The robot, which provides more efficient removal of weeds in the field while operating safely but with minimal human interaction. In addition, the development of the autonomous control for the lawn mower was carried out. The challenge in both cases was to simulate the behaviour of physical components (such as mechanical loading on certain elements) together with controls of the automated system even before the physical mechanical components are available. These controls access local data (e.g.\ sensors) and external data (e.g.\ GPS). Model-based design allowed for accelerated time-to-market and virtual verification while reducing the need for multiple physical prototypes.
+The Agriculture case study led by the Danish company Agrointelli concerns both an automated control system for an agricultural robot as well as an autonomously operating lawn mower. The robot, which provides more efficient removal of weeds in the field while operating safely but \claudio{and?} with minimal human interaction. In addition, the development of the autonomous control for the lawn mower was carried out. The challenge in both cases was to simulate the behaviour of physical components (such as mechanical loading on certain elements) together with controls of the automated system even before the physical mechanical components are available. These controls access local data (e.g.\ sensors) and external data (e.g.\ GPS). Model-based design allowed for accelerated time-to-market and virtual verification while reducing the need for multiple physical prototypes.
 %The Year 3 case study also demonstrated that reuse of ideas was possible in the sense that using the INTO-CPS technology development is faster compared to the traditional alternative.
 
 In the Building Automation case study led by the Irish part of United Technology Research Centre (UTRC), CPSs for control of Heating, Ventilation and Air-conditioning (HVAC) have been developed. These CPSs need to be adaptable to components of various manufacturers and different building patterns and the corresponding requirements. The challenge here is also to manage the complexity of the overall system in a way so the co-simulations are sufficiently scalable. The various parts that influence an HVAC system have been modelled and simulated, e.g.\ the fan-coil unit that distributes air, the buildings and rooms as well as the controllers of the fan-coil units.
@@ -71,7 +72,10 @@ In order to properly compare the INTO-CPS technology under development with exis
 
 \subsection{The INTO-CPS foundations}
 
-The development of tools and methods in INTO-CPS is based on a sound semantic description of co-simulation. Our tools use VDM-RT as the discrete-event language and Modelica as the continuous-time language. The framework for co-simulation is based on FMI. Both languages have been formalised and mechanised in this framework using Isabelle/UTP. We have a semantics of the relevant parts of SysML that can be used with FMI. These foundations allow for the formal checking of the validity of analysis and co-simulation results. There has also been a close integration with the industrial case studies (in particular, the railways and building applications) and supported the development of the INTO-CPS tool chain. It has been demonstrated how to use the foundational tools, with both theorem proving and model checking, to add value to the INTO-CPS tool chain. The foundations are described in more detail in Section~\ref{sec:foundations}.
+The development of tools and methods in INTO-CPS is based on a sound semantic description of co-simulation. Our tools use VDM-RT as the discrete-event language and Modelica as the continuous-time language. The framework for co-simulation is based on FMI. Both languages have been formalised and mechanised in this framework using Isabelle/UTP. We have a semantics of the relevant parts of SysML that can be used with FMI. 
+These foundations allow for the formal checking of the validity of analysis and co-simulation results. 
+\claudio{This might be a too strong claim. One cannot prove anything on black boxes. Maybe weaken the claim a bit by saying ``might''. Or give me a paper where this is done, as I'm very interested!}
+There has also been a close integration with the industrial case studies (in particular, the railways and building applications) and supported the development of the INTO-CPS tool chain. It has been demonstrated how to use the foundational tools, with both theorem proving and model checking, to add value to the INTO-CPS tool chain. The foundations are described in more detail in Section~\ref{sec:foundations}.
 
 \subsection{The INTO-CPS methods and guidelines}
 
@@ -80,3 +84,14 @@ Lowering the barriers to multidisciplinary model-based engineering of CPSs deman
 In order to ease practical deployment of INTO-CPS technology, a SysML profile has been developed to enable designers to move more readily from abstract system models to the structure of heterogeneous co-models. Thus, it has been extended with the ability to help engineers describe explicitly the parameters, objectives and ranking involved in the DSE process, and to allow sweeps to be made both over parameters and operating scenarios. We have developed a Traceability Information Model (TIM) that supports the needs of heterogeneous CPS engineering teams. In defining permissible relations between artefacts and activities, we have drawn on two sources: Open Services for Lifecycle Collaboration (OSLC)  and W3C PROV supported traceability links.
 
 Our guidelines have been implemented in training materials and pilot studies, which have been made publicly available and can readily be imported into the INTO-CPS Application, making it easy for newcomers to experiment with the INTO-CPS tools and methods. The pilots provide coverage of all INTO-CPS simulation technologies (VDM-RT, 20-sim and OpenModelica), have architectural models in SysML using the INTO-SysML profile, may be co-simulated with the INTO-CPS Application, can perform DSE, use code generation and have support for test automation. The methods and guidelines are described in more detail in Section~\ref{sec:method}.
+
+\claudio{I think this section is lacking a table (or figure) summarizing how the features of into-cps help on the challenges presented in the previous section. Moreover, on that same table (or figure), you could add which features where used in which case study. For example, see Fig \ref{figure:sketch}.
+Then, we could put in bold the features in the corresponding sections, to make the text more scannable (as the doc is quite long, I wouldn't be surprised that a lot of the readers are not going to read it in detail)}
+
+
+
+\begin{figure}[htb]
+  \centerline{\includegraphics[width=0.7\textwidth]{figures/sketch}}
+  \caption{Example summary.}
+  \label{figure:sketch}
+\end{figure}

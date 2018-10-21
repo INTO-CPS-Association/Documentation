@@ -2,7 +2,8 @@
 
 %\fbox{John Fitzgerald - rough notes at this point}
 
-The vision underpinning \into\ is that teams of developers from diverse disciplines and organisations are enabled to collaborate and converge more rapidly than today on system designs that perform optimally. Realising this vision requires methods and tools that allow each discipline and organisation to make its contribution without compromising its intellectual property or significantly altering its well-tried and established techniques. It should be possible to federate these diverse design artefacts to allow analy\-sis of the system-level consequences of design decisions made in any one domain, and the trade-offs between them. How, then, can we use semantically well-founded approaches to support such multidisciplinary design in a cost-effective way? This question poses several significant challenges. 
+The vision underpinning \into\ is that teams of developers from diverse disciplines and organisations are enabled \claudio{allowed?} to collaborate and converge more rapidly than today on system designs that perform optimally. Realising this vision requires methods and tools that allow each discipline and organisation to make its contribution without compromising its intellectual property or significantly altering its well-tried and established techniques. It should be possible to federate these diverse design artefacts to allow analy\-sis of the system-level consequences of design decisions made in any one domain, and the trade-offs between them. How, then, can we use semantically well-founded approaches to support such multidisciplinary design in a cost-effective way? This question poses several significant challenges. 
+\claudio{In the above paragraph, it's not clear why it needs to be semantically well founded? The rest is clear, but that part feels like we assume it is necessary.}
 
 \subsection{Time to Market}
 
@@ -13,6 +14,7 @@ There is a clear need for model-based methods that permit early design space exp
 \item[Exploring large design spaces efficiently:] CPS design involves making design decisions in both the cyber and physical domains. Trade-off analysis can be challenging. Co-simulation enables the systematic exploration of large design spaces in the search for optimal solutions.
 \item[Limiting expensive physical tests:] CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
 \end{description}
+\claudio{The above list should focus on issues, and not on solutions. It presents a solution to two of the items. Also, the first item is not consistent with the other ones (the verb). Maybe ``Cutting the time to market''?}
 
 \subsection{Diversity of Design Models}
 
@@ -25,6 +27,7 @@ There is a clear need to provide mechanisms to support collaborative model-based
 \item[Avoiding vendor lock-in by open tool chain:] Some commercial solutions provide at least a part of the functionality provided by the INTO-CPS tool chain with a high level of interoperability. However, in particular for Small and Medium-sized Enterprises (SMEs), there is a risk of being restricted in the choice of specialist tools.
 \item[Traceability and Provenance:] CPS development often relies on the expensive production and evaluation of a series of physical prototypes. Co-simulation enables users to focus on testing different models of CPS elements in a virtual setting, gaining early assessment of CPS-level consequences of design decisions.
 \end{description}
+\claudio{Again, focus on issues.}
 
 The foundations, methods and tools of CPS engineering should incorporate both the Discrete-Event (DE) models of computational processes, and the continuous-value and Continuous-Time (CT) formalisms of physical dynamics engineering. Our approach is to support the development of collaborative models containing DE and CT elements expressed in diverse notations, and to support their analysis by means of co-simulation based on a reconciled operational semantics of the individual notations' simulators \cite{Fitzgerald&14c}. This enables exploration of the design space and allows relatively straightforward adoption in businesses already exposed to some of these tools and techniques. 
 %At the same time the semantic foundations are extended using Unifying Theories of Programming (UTP) to permit analysis using advanced meta-level tools that are primarily targeted towards academics and thus not considered as a part of the industrial INTO-CPS tool chain.

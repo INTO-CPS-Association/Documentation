@@ -48,7 +48,7 @@ In order to increase the value of multi-models one can imagine making use of the
 
 \subsection{Increased Support for Dynamic Evolution Scenarios}
 
-In a System of Systems setting it is regular that the composition of constituent systems involved in a scenario change dynamically over time. In an FMI setting this is currently not possible since it is necessary to have a static composition of the FMUs used in a co-simulation. In order to be able to support dynamic evolution in a co-simulation scenario it is desirable to conduct research exploring to what extend this could be a possibility.
+In a System of Systems setting it is regular that the composition of constituent systems involved in a scenario change dynamically \claudio{dynamically means change over time} over time. In an FMI setting this is currently not possible since it is necessary to have a static composition of the FMUs used in a co-simulation. In order to be able to support dynamic evolution in a co-simulation scenario it is desirable to conduct research exploring to what extend this could be a possibility.
 
 %\claudio{Not clear what dynamic evolution means\ldots Is this supporting incremental development (having multiple refinements of the same component?) Isn't this related to traceability?}
 
@@ -94,3 +94,4 @@ Many models can be expressed at different levels of abstraction. There is a natu
 An interesting direction could for example be to support DSE's, while using multiple abstraction models.
 For example, higher abstraction models might be used to optimise the design globally, while lower abstraction models validate the candidate found, and further optimise each of them to find the best one. In particular for FMUs that are very slow in simulating (e.g., CFD models) it may make a lot of sense to use more abstract models (at least initially) in order to be able to obtain results within a reasonable amount of time. For CFD models it is for example possible to produce ROMs and these can be automatically derived from more detailed models. Thus, it can be valuable to make it easy for users to select what level of abstraction to use in a co-simulation for each of the constituent models.
 
+\claudio{Another suggestions (result of the unpublished empirical survey): Provide push button co-simulation. That means: the user does not have to fiddle with the parameters. The master algorithm is sophisticated enough to (possibly by a trial and error process) figure out a good approach to run the co-smulation)}
