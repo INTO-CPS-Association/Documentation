@@ -1,0 +1,110 @@
+%!TEX root = ../INTO-CPS-Manifesto.tex
+
+\section{Introduction}\label{sec:intro}
+
+%\fbox{Peter Gorm Larsen}
+
+Cyber-Physical Systems (CPSs) present major business and societal
+opportunities in a variety of application areas--- \emph{if} they can be developed economically~\cite{Cengarle&13}. Model-Based Development (MBD) has the potential to enhance the development of CPSs, increasing the competitiveness of industry by shortening time to market and reducing development costs. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields. Some researchers advocate for describing such hybrid systems using a single formalism/tool \cite{Ptolemaeus14,Platzer18}, but here we believe that it is better to enable stakeholders with different disciplinary backgrounds to produce their constituent models using their preferred formalism/tool and then enable joint analysis using co-simulation \cite{Gomes&18} and ensuring that there is an underlying common foundation for all of them.
+Even the proposals for a single formalism \cite{Ptolemaeus14,Platzer18} recognise that one cannot expect different stakeholders to learn the same formalism. Instead, they propose a formalism that integrates multiple sub-formalisms, to ensure that the result can cover a wide range of paradigms.
+
+Different stakeholders can produce constituent models of the parts they are responsible for. The combination of the different constituent models forms the CPS model.
+The main challenge is to ensure that such constituent models connect and thus can be combined in different analysis conducted of the behaviour of the CPS in its desired surroundings, typically called its environment.
+%\claudio{The prev sentence is also trying to do too much!}
+Since the design of the CPSs depends on the ability to connect the behaviours of its constituent models, the main challenge is to make sure these results are trustworthy.
+%Different formalisms are usually
+%supported by different tools running on different Operating Systems (OSs).
+
+Different research projects have targeted the development of chains of tools which collectively would enable the envisaged combination of different formalisms and tools in the development of CPSs. The DESTECS\footnote{This is an acronym for ``Design Support and Tooling for Embedded Control Software'', see \url{http://destecs.org/}.} project \cite{Broenink&10} combined the Overture/VDM tool \cite{Larsen&10a} with the 20-sim tool \cite{Kleijn06} with a dedicated co-simulation combination with a Crescendo tool \cite{Fitzgerald&14c}. The MODELISAR project\footnote{See \url{https://itea3.org/project/modelisar.html}.} developed an open standard for interfacing between different constituent models called the Functional Mockup Interface (FMI) enabling co-simulation between any tool supporting this standard maintained by the Modelica Association\footnote{See \url{https://www.modelica.org/}.}. The INTO-CPS project\footnote{See \url{http://projects.au.dk/into-cps/}.} took this further with a tool chain going all the way from requirements to final realisations using the FMI standard. This developed the INTO-CPS technology which consists of 1) a common semantic foundation, 2) a methodology with guidelines for the development of CPS and 3) an open tool chain. This can be summarised in Table~\ref{tab:projects}.
+%\claudio{Maybe you can summarize the above in a table. Maybe as in Table~\ref{tab:projects}.}
+
+\begin{table}[htb]
+  \scriptsize
+  \caption{Summary of resent research activities in the field of co-simulation.} %\claudio{Taken from a journal paper which has been submitted but not accepted yet. Maybe need to cite it like that\ldots}}
+  \label{tab:projects}
+  \begin{tabular}{llp{0.55\textwidth}}
+  \textbf{Project} & \textbf{Duration} & \textbf{Goals} \\ \hline
+  COSIBA~\cite{cosibas} & 2000--2002 &  Formulate a co-simulation backplane for coupling electronic design automation tools,  supporting different abstraction levels. \\
+  ODETTE~\cite{odette} & 2000--20003 &  Develop a complete co-design solution including hardware/software co-simulation and synthesis tools. \\
+  MODELISAR~\cite{modelisar} & 2008--2011 &  Improve the design of embedded software in vehicles. \\
+  DESTECS~\cite{destecs} & 2010--2012 &  Improve the development of fault-tolerant embedded systems. \\
+  INTO-CPS~\cite{intocps} & 2015--2017 &  Create an integrated tool chain for Model-Based Design of CPS with FMI.  \\
+  ACOSAR~\cite{acosar} & 2015--2018 &  Develop a non-proprietary advanced co-simulation interface for real time system integration.  \\
+  OpenCPS~\cite{opencps} & 2015--2018 &  Improve the interoperability between Modelica, UML and FMI.  \\
+  ERIGrid~\cite{erigrid} & 2015--2020 &  Propose solutions for Cyber-Physical Energy Systems through co-simulation.  \\
+  PEGASUS~\cite{pegasus} & 2016--2019 &  Establish standards for autonomous driving. \\
+  CyDER~\cite{cyder} & 2017--2020 &  Develop a co-simulation platform for integration and analysis of high PV penetration. \\
+  EMPHYSIS~\cite{emphysis} & 2017--2020 &  Develop a new standard (eFMI) for modeling and simulation environments of embedded systems.  \\ 
+  \hline
+  \end{tabular}%
+\end{table}
+
+
+Before the end of the INTO-CPS project, the Intellectual Property (IP) developed was transferred to the non-profit INTO-CPS Association\footnote{This is registered as a legal entity in Denmark, see \url{into-cps.org/}.}. The Association maintains and further develops the INTO-CPS technology, and grows the open tool chain by adding additional tools from its partners, while keeping the documentation and tutorial material up to date. 
+%It attempts to ensure that the different tools are kept in sync and that the importable examples expressed using diverse notations and tools are kept up to date.
+%\claudio{This last sentence seems redundant.}
+
+Since this guide is meant as a general introduction to INTO-CPS it is written such that it should be relatively easy to jump around and read different sections of interest. This guide to INTO-CPS begins with an overview of challenges in the engineering of CPSs in Section~\ref{sec:challenges}. Then Section~\ref{sec:nutshell} provides a short overview of the INTO-CPS project in a nutshell. Section~\ref{sec:foundations} gives an overview of the CPS foundations; Section~\ref{sec:method} gives an overview of the CPS methodology; and Section~\ref{sec:toolchain} an overview of the tool chain. The industrial use of the INTO-CPS technology is summarised in Section~\ref{sec:casestudies}. Finally, Section~\ref{sec:related} provides an overview of related work, and Section~\ref{sec:future} looks at potential future directions for the INTO-CPS technology. 
+There are two appendices: Appendix~\ref{appendix:acronyms} provides a list of acronyms,  
+%Appendix~\ref{appendix:principles} provides a common definition of the main terms used in the INTO-CPS documentation 
+and Appendix~\ref{appendix:tools} is an overview of the individual tools used in the INTO-CPS tool chain.
+%There are three appendices: Appendix~\ref{appendix:acronyms} provides a list of acronyms; Appendix~\ref{appendix:principles} provides a common definition of the main terms used in the INTO-CPS documentation and Appendix~\ref{appendix:tools} is an overview of the individual tools used in the INTO-CPS tool chain.
+
+%Systems composed of closely coupled computing and physical elements are becoming increasingly important in the modern world. For society and citizens, the potential of such smart systems to deliver more efficient, sustainable and resilient services is enormous.  Such Cyber-Physical Systems (CPSs) are characterised by a complex architecture and a design process involving several diverse science and engineering disciplines. In the interface between disciplines, different formalisms and technical cultures meet, and the traditional approaches for designing systems vary significantly among the relevant fields.
+%\claudio{It's not clear how the previous sentence relates to the next. Is it the cause of the vast design space? It seems to be more related to the two last sentences of this paragraph.}
+%The developer of a CPS faces a large design space that is hard to cover with hardware prototypes \claudio{maybe add: and physical experiments} due to the high cost of their implementation. Common workflows to assist the engineering of CPSs with a model-based approach, and the necessary tools, are currently lacking. Different stakeholders can produce models of the parts they are responsible for, and we will call these constituent models that together form the entire CPS.
+%
+%\claudio{This paragraph seems to be the continuous of the previous one (but the previous one has a gap, and should maybe be splitted).
+%Anyhow, the logical workflow is a bit confusing. Maybe we should go bottom up: first explain the there are diverse disciplines, and that each has its methods, formalisms, and jargon, and then explain that these need to interact and collaborate, in order to successfully develop a CPS. This then leads us to the need for into-cps.}
+%The design of CPSs involves the usage of results obtained
+%using a combination of different formalisms serving different engineering
+%disciplines. Different formalisms are usually
+%supported by different tools running on different Operating Systems (OSs).
+%
+%In this manifesto we put forward the idea of combining different formalisms and
+%respective supporting tools by means of a tool chain. A tool chain allows the
+%practitioner to easily combine the results from the various fields during the
+%design process.  Our view is that it is best to enable different disciplinary experts to use the tools they are most familiar with and
+%integrating the different constituent models by building an environment automating the tool chain
+%interaction, accessibility, and unifying the entry point to it.
+%\claudio{If the motivation is clearly provided in the previous paragraphs, then this last sentence should be redundant.}
+%
+%In such unified environment of several tools, users keep their usual patterns
+%of interaction with their familiar tool(s) available in the tool chain.
+%\claudio{The next sentence says the same thing as the previous one.}
+%Instead of having to learn a new formalism, the different disciplinary experts can stay with the tools they are most familiar with and they find most natural to create the constituent models requires for their work.
+%The chain of tools then needs also to enable each individual of seeing the consequences of changes locally in a global context where the other constituent models are incorporated.
+%\claudio{I think this paragraph should not need to exist, if the problem is well motivated. These are all pressing needs in the current development of CPS.
+%So the logical flow should be ``MOTIVATION (pressing needs) -> Solution (it should be clear why this is a solution, we don't need to justify more)''.}
+%
+%Naturally, such different constituent models needs to interface to each other and here we make use of a de-facto standard originating in the automotive industry called the Functional-Mockup Interface (FMI).
+%\claudio{The next sentence says the same thing as the previous one.}
+%Thus, the different tools in the INTO-CPS tool chain are able to interact with other tools directly or indirectly using the FMI standard.
+%\claudio{The next couple of sentences seems to be an afterthought. Maybe they should be put in a different paragraph, and the problem that the traceability solves should be described in the motivation section.}
+%In order also to be able to trace artefacts from different constituent models and results generated from analysis using different tools another standard called the Open Services for Lifecycle Collaboration (OSLC) is used. This enables seeing and documenting the dependencies between different versions of different constituent models and local or global analysis conducted about them.
+%
+%\claudio{What's the point of the next sentence?}
+%It is hard for a single person to master all the components of the tool chain, but fortunately that is not required.
+%The mastering of tool chains involves the management of the whole set
+%of models and inputs/results for each of the tools. In addition, the conversion
+%of results, traceability of changes and keeping track of the user interactions
+%need also to be taken into account.
+%\claudio{The next sentence is one of the motivations for the INTO-CPS association\ldots It should be in a paragraph by itself.}
+%Moreover, given the evolving nature of
+%each of the tools, the task of managing the tool chain while ensuring the
+%dependencies of each of the tools and their interoperability becomes too
+%complex. The INTO-CPS Association attempts to ensure that the different tools are kept in sync and that the importable examples expressed in a collection of notations using different tools \claudio{Do we need to say ``expressed in a collection of notations using different tools''? That seems redundant.} (these are called multi-models \claudio{We don't need to define a new term here, if we are not going to use it in this section.}) are kept up to date.
+%
+%%Practice shows users are more receptive to a  push-button approach when it is
+%%time to combine their results with the other tools.
+%
+%\claudio{Why did we switch from talking about the into-cps association, to the into-cps tool?
+%Why not start with the tecnology, and end with the into-cps association? Because we start with the tecnological problems\ldots}
+%The INTO-CPS technology builds upon a frontend application which was developed following the
+%unified entry point idea.  The INTO-CPS application allows the user to fetch
+%the different tools, checkout multi-models from repositories, orchestrate the
+%several tools run, and organise the results/interactions.  This reduces the
+%challenges of mastering the complexity essentially to a push-button effort when the multi-models have been produced by different disciplinary experts.
+%
+
+

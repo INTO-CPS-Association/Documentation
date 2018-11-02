@@ -1,6 +1,6 @@
 %%% Add [final] option to the report class to switch between draft and final version of the report
 %%% Use [narrowmargin] to enable narrow margins - this may impair readability.
-\documentclass[narrowmargin,final,12pt,a4paper]{include/intocpsassociation}   %Or intocpslargereport if chapters are required.
+\documentclass[narrowmargin,final,12pt,a4paper]{include/intocpsassociationlarge}   %Or intocpslargereport if chapters are required.
 
 \usepackage[compact]{titlesec}
 \usepackage[T1]{fontenc}
@@ -63,13 +63,14 @@
 %%% e.g. \technotetrue
 %\technotetrue % Comment out as appropriate
 
-\submissiondate{March 2018}
+\submissiondate{September 2018}
 \contributors{
 John Fitzgerald, UNEW\\
 Carl Gamble, UNEW\\
 Martin Mansfield, UNEW\\
 Richard Payne, UNEW\\
-Ken Pierce, UNEW
+Ken Pierce, UNEW\\
+Peter Gorm Larsen, AU
 }
 \editors{
  Ken Pierce, UNEW
@@ -97,6 +98,7 @@ Ken Pierce, UNEW
 \addversion{1.3}{18-12-2017}{Carl Gamble}{Traceability chapter completed}
 \addversion{1.4}{18-12-2017}{Carl Gamble}{DSE chapter completed}
 \addversion{1.5}{13-03-2018}{Peter Gorm Larsen}{Moved over to the INTO-CPS Association}
+\addversion{1.6}{06-09-2018}{Peter Gorm Larsen}{Updated macros}
 
 \begin{document}
 \maketitle
@@ -106,7 +108,7 @@ Ken Pierce, UNEW
 \section*{Abstract}
 \label{sec:abstract}
 
-This document is the final methods guidance document for the INTO-CPS technologies. It is aimed at end users of the technologies, and complements the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, by helping to describe the why to complement the how. This document presents: a concepts base, which describes the terminology used within INTO-CPS; information on getting started with the technologies, and the variety of workflows they support; a description of the traceability features of the tool chain, and why these must be considered at the beginning of development to realise them fully; guidelines on incorporating requirements engineering in a cyber-physical systems (CPS) context; a description of the INTO-SysML profile and its use; guidance on discrete-event first (DE-first) modelling as a way to begin multi-modelling; guidance on modelling networks in multi-models; and guidelines for the use of design space exploration (DSE) features of the INTO-CPS tool chain.
+This document is the final methods guidance document for the INTO-CPS technologies. It is aimed at end users of the technologies, and complements the User Manual, \cite{Larsen&18a}, by helping to describe the why to complement the how. This document presents: a concepts base, which describes the terminology used within INTO-CPS; information on getting started with the technologies, and the variety of workflows they support; a description of the traceability features of the tool chain, and why these must be considered at the beginning of development to realise them fully; guidelines on incorporating requirements engineering in a cyber-physical systems (CPS) context; a description of the INTO-SysML profile and its use; guidance on discrete-event first (DE-first) modelling as a way to begin multi-modelling; guidance on modelling networks in multi-models; and guidelines for the use of design space exploration (DSE) features of the INTO-CPS tool chain.
 
 \newpage
 

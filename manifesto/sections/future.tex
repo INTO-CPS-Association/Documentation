@@ -1,0 +1,99 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+% !TeX root = ../INTO-CPS-Manifesto.tex
+%
+%
+%
+\section{Future Directions}\label{sec:future}
+
+%\fbox{Peter Gorm Larsen}
+
+It is envisaged that the INTO-CPS technology will be further extended as the FMI standard evolves, in particular in future research projects. 
+Thus, the future directions here will depend both on the members of the INTO-CPS Association as well as which externally funded research projects that will be successful in achieving funding. 
+
+In the subsections below candidate future directions are proposed.
+
+\subsection{Adapting FMUs Easily to Ones Needs}
+
+In the context of continuous system co-simulation, it is well known that there is no one-size-fits-all co-simulation approach. 
+Different kinds of systems are best co-simulation different ways \cite{Gomes&18}.
+At the same time, different domains have specialised numerical solvers, which means we cannot ignore the solvers in the FMUs.
+A future research direction is to understand how to reconcile such contradicting requirements.
+A possible way is to allow the user to preserve the exported FMUs, but change the way these interact with the environment, by wrapping an FMU around them \cite{Gomes&18a}.
+This way does not solve all challenges in this regard, and the approach lacks validation from multiple domains. It is envisaged that this kind of Domain Specific Languages (DSLs) will be developed to make it easier to make semantic adaptations of FMUs.
+
+%\claudio{Maybe providing``connector'' FMUs for the most common connections in different domains. For example, if I'm building a co-simulation of an hydraulic system, I may want to connect a large pipe to a small pipe.}
+
+\subsection{Enlarging the tools and standards supported by the INTO-CPS Tool Suite}
+
+The INTO-CPS tool suite is on purpose open to any tool that live up to the requirements in the FMI version 2.0 standard for co-simulation. As indicated in Section~\ref{sec:toolchain} a possible entry point to the co-simulation setup is a special SysML profile supporting CPS models. Right now this is discussed in OMG as a potential new standard in a SysML setting and this is only supported by the Modelio tool (supporting export of both model descriptions as well as configurations of co-simulation). It would be great to see this special profile by other SysML tools as well. In addition, one can imagine that alternative tool supporting AADL \cite{AADL04} or Capella \cite{Roques17}.
+
+There are also a lot of other standards for co-simulations \cite{Gomes&18} and it is possible to imagine that bridges from the INTO-CPS tool chain will be made to a number of these. Here the most obvious candidate is High Level Architecture (HLA) \cite{IEEE1516}. Initial work has been carried out in other research groups for such a combination \cite{Neema&14,Awais&17} but we imagine that more work is needed here to get this combination working smoothly.
+
+%\claudio{Can you elaborate on this? What does supporting more tools mean? Also, which standards are we talking about? HLA?}
+
+\subsection{Use in a Cloud-based Eco-system/Marketplace}
+
+The INTO-CPS Application is made using Electron so it is using web technology but still requires local installation on the local computers. It is possible to imagine that it will be possible to move this to become a cloud application where it will no longer be necessary to install it locally. The DSE feature is already available in a cloud context as explained above. In a very long context it can also be imagined that the different modelling and simulation tools at some stage will become available on-line and possibly in a cloud context.
+
+In addition to the tools becoming available in a cloud context one can imagine that it some point in the future will be possible to share constituent models in a cloud context. Such models could then either be available in a source form or a generated form in the form of an FMU. Optimally these could include both free as well as commercial models in a marketplace setting. We believe that this could enable a shortage of time required to develop multi-models for CPSs.
+
+\subsection{Use in a Digital Twin setting}
+
+In order to increase the value of multi-models one can imagine making use of them in a deployed setting, i.e., after the CPS has been deployed if data from it can be fed back to a cloud where a co-simulation can be used to predict how alternative interventions can be made and what the consequences of these will be \cite{Gamble&18}. This is known as a \emph{digital twin} but there are naturally a number of research challenges in connection with something like this since you need to determine how to set up such a co-simulation as well as what the consequences will be of the frequency of the data arriving in pseudo-real-time. For some types of application this could work, whereas for others the predictions would be far from representing reality. Research is needed to determine when this would work.
+
+%\claudio{I can't understand what exactly this entails.
+%Maybe it is best to describe the case studies that we want to support?
+%To me, supporting digital twin entails at least enhancing the COE for real-time co-simulation (to use in a diagnosing use case)}
+
+\subsection{Increased Support for Dynamic Evolution Scenarios}
+
+In a System of Systems setting it is regular that the composition of constituent systems involved in a scenario change dynamically.
+%\claudio{dynamically means change over time} over time. 
+In an FMI setting this is currently not possible since it is necessary to have a static composition of the FMUs used in a co-simulation. In order to be able to support dynamic evolution in a co-simulation scenario it is desirable to conduct research exploring to what extend this could be a possibility.
+
+%\claudio{Not clear what dynamic evolution means\ldots Is this supporting incremental development (having multiple refinements of the same component?) Isn't this related to traceability?}
+
+\subsection{Incorporation of Computational Fluid Dynamics Co-simulations}
+
+To accurately model flow of material (typically liquid or gasses) Computational Fluid Dynamics (CFD) models are typically used. These are typically represented at a very detailed level, and as a consequence CFD simulations can be really slow. In addition, in case CFD simulations fail the error control is not properly aligned with the orchestration enabled in a FMI based setting. In order to properly support CFD elements in an INTO-CPS setting research is needed to determine how this can be carried out efficiently in a semantically sound manner. Here it is imagined that a part of this will be approximating the CFDs with Reduced Order Models (ROMs) \cite{Carlberg&13}.
+
+%\claudio{Might be easier to describe the use cases in concrete. For example, I think the into-cps can already support CFD co-simulations (you just need the FMUs to do that\ldots). What is does not support is error control techniques, that can kick in when CFD co-simulations are run.}
+
+\subsection{Increased support for Human Interaction}
+
+Human-in-the-Loop where people can give input to co-simulations while they are running is certainly relevant. This have actually been carried out both using the PVSio technology on the line following robot example \cite{Palmieri&17}. In addition, human intervention has been used in a part of co-simulations in the IPP4CPPS project (see Section~\ref{sec:IPP4CPPS}). However, we imagine that substantial more automation and assistance can be made for this kind of human interaction. One can also imagine that debugging features such as pausing, inspecting values and possibly injecting faults could be included in the Co-simulation Orchestration Engine.
+
+%\claudio{Can you provide example advancements to support this? Example, real-time co-simulation seems an easy one. Maybe the ability to pause, inspect, and debug co-simulations?
+%Maybe fault injection?}
+
+\subsection{Increased support for Network Considerations}
+
+FMI is not by itself good at modelling the communication layers between different constituent systems. In the INTO-CPS project it was attempted to model this as an FMU ether where messages can be lost. However, it would be ideal to be able to appropriate model each FMU being at a particular address (e.g., a URL or an IP address) and then have a library of alternative connections between such addresses, where one could experiment with non-ideal behaviour (e.g., delays and loosing messages). Such non-ideal behaviour may actually influence the way the real system behaves and thus it makes a lot of sense that it also would be possible to incorporate such aspects at a modelling level so it could be analysed either in plain co-simulations or with DSEs.
+
+%\claudio{What does this entail? Adding delays to the signals? Adding noise? Is this related to semantic adaptation or fault injection?}
+
+\subsection{Intelligence, Adaptivity and Autonomy}
+
+CPSs also ideally are smart in the sense that they process intelligent behaviour. In order to introduce autonomy it can be ideal to introduce Machine Learning (ML) in different fashions in order to learn how to best behave. ML can be used in different ways here:
+
+\begin{itemize}
+\item Based on time series data for an individual physical component one can imagine that ML can be used to automatically derive an approximation FMU corresponding to that physical component.
+\item In a digital twin setting one can imagine that ML can be used to learn to what extend the real system behave as predicted by the co-models. Based on this different actions could be taken automatically or manually if human intervention is desirable.
+\item FMUs themselves could contain ML elements for example in order to have adaptive control that will be valuable and express intelligent behaviour.
+\end{itemize}
+
+%\claudio{We need to make this more concrete. Do we mean the co-simulation of adaptive systems?
+%Are we looking at variable structure systems? Or the development of a COE that is adaptive (nice challenge, to ensure stability with adaptive master algorithms)?
+%Also, another possible direction is to support certification processes by, e.g., having built in mechanisms to calculate the errors being made (during or after the co-simulation is run).
+%This is interesting because the user just has to provide the bounds he can tolerace, and the co-simulation will be run as many times as required, so that these tolerances are met.
+%Another possible direction is to support hybrid co-simulation (even when there is no possibility of rolling back from the FMUs).
+%}
+
+\subsection{Tradeoff in Abstraction between Speed and Accuracy}
+
+Many models can be expressed at different levels of abstraction. There is a natural tradeoff between speed and accuracy of a co-simulation. 
+An interesting direction could for example be to support DSE's, while using multiple abstraction models.
+For example, higher abstraction models might be used to optimise the design globally, while lower abstraction models validate the candidate found, and further optimise each of them to find the best one. In particular for FMUs that are very slow in simulating (e.g., CFD models) it may make a lot of sense to use more abstract models (at least initially) in order to be able to obtain results within a reasonable amount of time. For CFD models it is for example possible to produce ROMs and these can be automatically derived from more detailed models. Thus, it can be valuable to make it easy for users to select what level of abstraction to use in a co-simulation for each of the constituent models.
+
+%\claudio{Another suggestions (result of the unpublished empirical survey): Provide push button co-simulation. That means: the user does not have to fiddle with the parameters. The master algorithm is sophisticated enough to (possibly by a trial and error process) figure out a good approach to run the co-smulation)}

@@ -1,5 +1,8 @@
 # Documentation for the INTO-CPS Tool chain
 
+## INTO-CPS Manifesto
+The INTO-CPS manifesto can be downloaded here: [INTO-CPS Manifesto](manifesto/INTO-CPS-Manifesto.pdf "INTO-CPS Manifesto")
+
 ## INTO-CPS User Manual
 The INTO-CPS user manual can be downloaded here: [INTO-CPS User Manual](user_manual/INTO-CPS_toolchain_User_Manual.pdf "INTO-CPS User Manual")
 
