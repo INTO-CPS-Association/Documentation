@@ -21,6 +21,7 @@ This deliverable is structured in different sections, each of which provides a b
  % \item Section~\ref{sec:smartgrid} presents a smart grid multi-model. This study is a preliminary study presenting only the architecture and constituent models in 20-sim and VDM-RT. FMUs have not yet been produced, therefore co-simulation has yet to be demonstrated.
   \item Section~\ref{sec:bicycle} presents an autonomous vehicle model. In this study, a multi-model demonstrates a vehicle traversing a path of defined waypoints. The multi-model comprises two FMUs; The dynamics of the vehicle are modelled by a 20-sim FMU, and the vehicle control is determined by a VDM-RT FMU. The example has a SysML architecture, can be co-simulated, and has support for DSE.
   \item Section~\ref{sec:massspringdamper} presents a mass spring damper model. The pilot uses models of masses and springs to demonstrate the utility of so-simulation stabilisation using both 20-sim and OpenModelica FMUs.
+  \item The IPP4CPPS presents a production line for USB-OTG sticks and uses VDM-RT FMUs. It is available at \url{https://github.com/INTO-CPS-Association/example-ipp4cpps}.
  
   
 \end{itemize}
@@ -61,8 +62,9 @@ UAV Swarm			&x&x&x& &x&x&x& &x&x&\\ \hline
 %Smart Grid			&x&x&x& &x&x& & & & &\\ \hline
 Autonomous Vehicle			& & &x& &x&x&x&x& & &\\ \hline
 Mass Spring Damper			& & &x&x& & &x& & & &\\ \hline
+IPP4CPPS & x & & & & x & & x & &  & & x \\ \hline
 \end{tabular}
-\caption{Overview of INTO-CPS technologies used for pilot studies. An unmaintained model is marked with {\textcolor{lightRed}{\rule{1em}{1em}}}}
+\caption{Overview of INTO-CPS technologies used for pilot studies. Unmaintained models are marked with {\textcolor{lightRed}{\rule{1em}{1em}}}}
 \label{tab:into_examples}
 \end{centering}
 \end{table}
