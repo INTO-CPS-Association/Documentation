@@ -1,0 +1,13 @@
+\section{Room Thermostat}
+\label{sec:roomThermostat}
+% \fbox{Responsible: UNEW, Provisional date: Nov 2016}
+
+\subsection{Example Description}
+The full example is available in the Introduction to CoHLA document\footnote{\url{https://github.com/INTO-CPS-Association/Documentation/blob/master/CoHLA-INTO-CPS/CoHLA\%20-\%20INTO-CPS.pdf}}. CoHLA is a co-simulation construction domain specific language based on the High Level Architecture standard for coordination of co-simulation. An extract from the Introduction to CoHLA document is presented below.
+
+{\itshape
+  A co-simulation of a small thermostat system – called the RoomThermostat – was developed to illustrate CoHLA. The system consists of one thermostat and three rooms. Each of the rooms contains a heater and a window. The thermostat reads the temperature in one of the rooms and is responsible for maintaining the temperature around the target temperature by controlling the heater state. The thermostat controls the heater state in all connected rooms, while the state is determined by the temperature in only one of the rooms. The three rooms have different characteristics such as the heater size, window size and surface area of the room.
+
+  The model of the room is a continuous-time model created in 20-sim. The Overture tool was used to create a discrete-time model of the thermostat using VDM-RT. Both models are exported to FMUs for use in a co-simulation.
+
+  The co-simulation of the system is specified in CoHLA to construct a co-simulation. The model of the room has one input, one output and five parameters specified. The strings after the parameter names represent the exact name within the FMU. A number of default simulation settings is provided, such as the default model to load, time policy of HLA and step size.}

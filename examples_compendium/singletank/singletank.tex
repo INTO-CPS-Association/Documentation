@@ -5,7 +5,7 @@
 \label{sec:singletank_desc}
 
 The single-tank water tank pilot study is a simple example that comprises a single water tank which is controlled by a cyber controller. When the water level of the tank reaches a particular level (defined in the controller) the controller sends a command to the tank to empty using an exit valve. A diagram of the example is shown in Figure~\ref{fig:singletankoverview}. 
-This pilot is also related to the next pilot in Section~\ref{sec:threetank}. 
+This pilot is also related to the next pilot in Section~\ref{sec:threetank}. An alternative version of this example is available\footnote{\url{https://github.com/INTO-CPS-Association/Documentation/blob/master/CoHLA-INTO-CPS/CoHLA\%20-\%20INTO-CPS.pdf}}, which is based on Configuring HLA (CoHLA). CoHLA is a co-simulation construction domain specific language based on the High Level Architecture standard for coordination of co-simulation.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -147,4 +147,4 @@ Two objectives are defined: \textit{cumulativeDeviation} and \textit{vCount}. Th
 
 The VDM-RT model, \textbf{SingleWT} can be exported from Overture as a C code FMU, in addition to the tool wrapper FMU as used above. The \emph{watertankController-SourceCode.FMU} included in this pilot is obtained directly from Overture using the ``Export Source Code FMU'' option. However, this FMU does not contain binaries for co-simulation and so one may use the \emph{FMU Builder} included in the INTO-CPS Application to compile FMUs for Windows, Mac and Linux. 
 
-This process has been performed and the resultant FMU is included in the pilot in the FMUs folder; \emph{watertankController-Standalone.FMU}. One example experiment available is to switch this FMU for the tool wrapper version -- \emph{SingleWT.FMU} -- and compare results. 
+This process has been performed and the resultant FMU is included in the pilot in the FMUs folder; \emph{watertankController-Standalone.FMU}. One example experiment available is to switch this FMU for the tool wrapper version -- \emph{SingleWT.FMU} -- and compare results.
