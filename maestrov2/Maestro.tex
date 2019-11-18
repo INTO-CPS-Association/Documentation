@@ -1,0 +1,172 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+
+%%% Add [final] option to the report class to switch between draft and final version of the report
+%%% Use [narrowmargin] to enable narrow margins - this may impair readability.
+%\documentclass[a4paper,12pt,draft]{include/intocpsreport}   %Or
+\documentclass[a4paper,12pt,final]{include/intocpsassociation}   %Or
+% intocpslargereport if chapters are required.
+%
+%
+%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{tikz-uml}
+\usepackage{framed}
+\usepackage{subcaption}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{courier}
+\usepackage{xspace}
+\usepackage{cleveref}
+\usepackage{subcaption}
+\usepackage{textcomp} % Used for 20-sim section \textrightarrow
+%\usepackage{showframe}
+
+\usepackage{listings}
+
+%% Define listing environment for XML
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+
+\lstnewenvironment{xml}[1][]{\lstset{  language=XML,
+  morekeywords={encoding, xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}\lstset{#1}}
+{}
+
+%% end listing environment for XML
+%
+%
+%
+\def\draftnote#1{\noindent\smallskip\framebox{\begin{minipage}{0.95\columnwidth}\color{red}#1\end{minipage}}\smallskip\par}
+\newenvironment{draftnoteenv}{\noindent\smallskip\begin{framed}\begin{minipage}{0.95\columnwidth}\color{red}}{\end{minipage}\end{framed}\smallskip\par}
+\newenvironment{assumption}{\noindent\smallskip\color{blue}\begin{framed}\begin{minipage}{0.95\columnwidth}}{\end{minipage}\end{framed}\smallskip\par}
+%
+%
+%
+\newcommand{\revisit}[1]{\textcolor{red}{\pmb{[[[}\@ #1\@ \pmb{]]]}}}
+%
+%
+\reporttitle{INTO-CPS Maestro Documentation}
+\shortreporttitle{INTO-CPS Maestro Documentation}  %To use if report title is too long for header
+%
+%
+%
+%%% Set document release class as appropriate
+%%% e.g. Public, Restricted, Programme Participant
+\reportstatus{Public Draft}
+%
+%
+%
+%%% If document is a deliverable, this flag should be commented out
+%%% e.g. %\technotetrue
+%%% If report is a technical report, leave uncommented
+%%% e.g. \technotetrue
+\technotetrue % Comment out as appropriate
+%
+%
+%
+\submissiondate{}
+\contributors{
+Kenneth Lausdahl, AU \\
+Casper Thule, AU
+}
+%
+%
+%
+\editors{
+  Casper Thule, AU
+}
+%
+%
+%
+%\reviewers{Ken Pierce, UNEW\\
+%Kangfeng Ye, UY\\
+%Luis Diogo Couto, UTRC}
+%
+%
+%
+%% Version details
+% #1: version
+% #2: date
+% #3: author
+% #4: description
+\addversion{0.01}{November 18, 2019}{Casper Thule}{Initial Version.}
+
+%
+%
+\begin{document}
+\maketitle
+%
+%
+%
+%%%% Document abstract page %%%%
+\section*{Abstract}
+\label{sec:abstract}
+%
+TBD
+%
+\newpage
+%
+%%%% Document table of contents page %%%%
+\tableofcontents
+\newpage
+%
+%
+%
+%%%% Document Content %%%%
+%% \chapter{Chapter Title} %% if intocpslargereport is in use
+%\begin{assumption}
+%
+%
+%
+\input{sections/intro.tex}
+\clearpage
+%
+%
+%
+%
+%%%% Bibliography %%%%
+\bibliographystyle{alpha}
+\bibliography{bibliography}
+\label{ch:bib} %label to refer to
+%
+%
+%
+\clearpage
+%
+%
+%
+\appendix
+\input{appendices/acronyms.tex}
+\clearpage
+%
+%
+%
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
