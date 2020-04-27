@@ -1,3 +1,9 @@
+#vscode
+.vscode
+
+# sphinx
+docs/_build
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
