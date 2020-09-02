@@ -1,3 +1,4 @@
+[![Documentation Status](https://readthedocs.org/projects/into-cps-association/badge/?version=latest)](https://into-cps-association.readthedocs.io/en/latest/?badge=latest)
 # Documentation for the INTO-CPS Tool chain
 
 ## INTO-CPS Manifesto
