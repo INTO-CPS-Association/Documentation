@@ -7,7 +7,8 @@ After this we can branch into the different types of simulation types. Finally w
 What is a simulation?
 ---------------------
 
-cosim
+
+Co-simulation
 -------------
 
 hehe

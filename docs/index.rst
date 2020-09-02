@@ -8,6 +8,7 @@
     fmi
     developer_documentation
 
+
 INTO-CPS Association
 ====================
 
@@ -16,9 +17,11 @@ INTO-CPS Association
    :target: https://gitter.im/INTO-CPS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
 Welcome to the documentation of INTO-CPS, the Integrated Tool Chain for Model-based Design of Cyber-Physical Systems.
-The toolchai
-An overview of the tools and how to use them can be found in :ref:`Tools` section.  :ref:`Functional Mock-Up Interface` 
+The tools aid in modelling of complex systems allowing it to be decomposed into several smaller components. 
+The complete system is simulated using a technique known as :ref:`Co-Simulation`, enabled by the use of a model exchange standard called `Functional Mock-up Interface`_ (FMI) standard.
 
+An overview of the tools and how to use them can be found in :ref:`Tools` section.
+In order to use the tools effectively it may be worthwhile to read :ref:`fmi_intro`.
 
 .. image:: images/into-cps-preview.png
 
@@ -36,3 +39,6 @@ Besides the information available on the website, please see the following docum
 * :download:`The INTO-CPS User Manual <../user_manual/INTO-CPS_toolchain_User_Manual.pdf>`
 * :download:`The INTO-CPS Examples Compendium<../examples_compendium/INTO-CPS_Examples_Compendium.pdf>`
 * :download:`The INTO-CPS Method Guidelines <../method_guidelines/INTO-CPS_Method_Guidelines.pdf>`
+
+
+.. _Functional Mock-up Interface: https://fmi-standard.org/

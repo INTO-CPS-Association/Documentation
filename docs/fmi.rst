@@ -1,11 +1,7 @@
-Functional Mock-Up Interface
-============================
+.. _fmi_intro:
 
-
-
-What is a co-simulation?
-------------------------
-
+Functional Mock-Up Interface Primer
+===================================
 
 Why is the FMI standard necessary?
 ----------------------------------
