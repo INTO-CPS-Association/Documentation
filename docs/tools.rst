@@ -11,15 +11,16 @@ A list of the tools and, grouped by the functionality they provide, can be found
 Performing Co-Simulations
 -------------------------
 
-INTO-CPS Desktop Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`INTO-CPS Desktop Application <https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The INTO-CPS Application provides a graphical user interface which can be used to configure and orchestrate co-simulation scenarios.
-Install instruction are found in the application's `documentation <https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/>`__
+Install instruction are found in the application's `documentation <https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/>`__.
 
 
-Maestro
-^^^^^^^
+`Maestro <https://github.com/INTO-CPS-Association/maestro>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maestro is a command line tool that orchestrates co-simulation of FMUs. 
 While, the program is used internally by the `INTO-CPS Desktop Application`_ it can also be downloaded and used seperately.
 The `GitHub repository <https://github.com/INTO-CPS-Association/maestro>`__ which also acts as its documentation.
@@ -29,24 +30,30 @@ Creating new FMUs
 -----------------
 
 Several commercial and open-source tools exist, that are enables the creation of FMUs.
-An comprehensive list of these can be found in the `tools section <https://fmi-standard.org/tools/>`__ on the FMI-standard's website.
+An comprehensive list of these can be found in the `tools section <https://fmi-standard.org/tools/>`_ on the FMI-standard's website.
 
-PyFMU
-^^^^^
+`PyFMU <https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-PyFMU is a command line program that enables the rapid development of FMUs using Python.
-For install instructions and how to use the tool, see the `documentation <https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/>`__ of the project.
+PyFMU_ is a command line program that enables the rapid development of FMUs using Python.
 
 
 Verifying compliance of FMUs
--------------------------------------
+----------------------------
 
-FMIChecker <https://github.com/INTO-CPS-Association/FMI-VDM-Model>
+`FMIChecker <https://github.com/INTO-CPS-Association/FMI-VDM-Model>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Web <https://sweng.au.dk/fmiutils/fmichecker>
+To maximize compatiblity between an FMU and existing simulation tools it is import to ensure strict compliance to the FMI standard.
+Unfortunately, the current situation is less that ideal, since a large portion of FMUs encountered do not implement the standard correctly.
+The FMIChecker_ is a command line tool that provides thorough static check of FMUs.
+Install instructions can be found on the `GitHub Repository <https://github.com/INTO-CPS-Association/FMI-VDM-Model>`__. Alternatively, the tool can be accessed at this `webpage <https://sweng.au.dk/fmiutils/fmichecker>`__, eliminating the need to install the tool. 
 
 
 Interfacing with hardware (HIL)
 -------------------------------
 
-Rabbitmq FMU <https://github.com/INTO-CPS-Association/fmu-rabbitmq>
+`Rabbitmq FMU <https://github.com/INTO-CPS-Association/fmu-rabbitmq>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Rabbitmq FMU`_ provides a way to couple the simulation of a system to one or more components of physical system, in a process known as `hardware-in-the-loop <https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation>`__.
