@@ -23,8 +23,8 @@ The complete system is simulated using a technique known as :ref:`Co-Simulation`
 An overview of the tools and how to use them can be found in :ref:`Tools` section.
 In order to use the tools effectively it may be worthwhile to read our quick guide :ref:`fmi_intro`, rather than the full specification.
 
-.. image:: images/into-cps-preview.png
-
+.. todo:
+   insert new graphics to replace view of into-cps app. The previous image would cause confusion
 
 Besides the information available on the website, please see the following documents:
 
