@@ -21,16 +21,9 @@ The tools aid in modelling of complex systems allowing it to be decomposed into 
 The complete system is simulated using a technique known as :ref:`Co-Simulation`, enabled by the use of a model exchange standard called `Functional Mock-up Interface`_ (FMI) standard.
 
 An overview of the tools and how to use them can be found in :ref:`Tools` section.
-In order to use the tools effectively it may be worthwhile to read :ref:`fmi_intro`.
+In order to use the tools effectively it may be worthwhile to read our quick guide :ref:`fmi_intro`, rather than the full specification.
 
 .. image:: images/into-cps-preview.png
-
-.. .. raw:: html
-
-..     <div>
-..     <iframe width="100%" height="100%"  src="https://www.youtube.com/embed/0Q47MiMFTdU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-..     </div>
-
 
 
 Besides the information available on the website, please see the following documents:

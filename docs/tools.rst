@@ -32,6 +32,13 @@ Creating new FMUs
 Several commercial and open-source tools exist, that are enables the creation of FMUs.
 An comprehensive list of these can be found in the `tools section <https://fmi-standard.org/tools/>`_ on the FMI-standard's website.
 
+`Overture <http://overturetool.org>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The Overture community supports the modelling method The Vienna Development Method (VDM) which is a set of modelling techniques that have a long and successful history in both research and industrial application in the development of computer-based systems.
+
+The Overture Tool is an open-source integrated development environment (IDE) for developing and analysing VDM models. The tool suite is written entirely in Java and built on top of the Eclipse platform.
+
+
 `PyFMU <https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
