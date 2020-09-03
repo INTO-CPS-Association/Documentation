@@ -11,7 +11,7 @@ A list of the tools and, grouped by the functionality they provide, can be found
 Performing Co-Simulations
 -------------------------
 
-`INTO-CPS Desktop Application <https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/>`__
+`INTO-CPS Desktop Application <https://into-cps-association.readthedocs.io/projects/desktop-application/en/master/>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The INTO-CPS Application provides a graphical user interface which can be used to configure and orchestrate co-simulation scenarios.
