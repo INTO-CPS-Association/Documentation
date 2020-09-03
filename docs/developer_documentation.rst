@@ -3,13 +3,8 @@ Developer Documentation
 
 This section of the documentation provides relevant information to maintainers and contributers of the project.
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Content
 
-    architecture
-    project_guidelines
-    generating_documentation
+Issues
+------
 
-
-    components
+Have you encountered any issues related to the tools? If so these can be submitted to the bug tracker of the respective repos
