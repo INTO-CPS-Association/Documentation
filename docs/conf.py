@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "INTO-CPS Association"
+project = "INTO-CPS Toolchain"
 copyright = "2020, INTO-CPS Association"
 author = "INTO-CPS Association"
 

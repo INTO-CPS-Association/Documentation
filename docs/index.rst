@@ -9,8 +9,8 @@
     developer_documentation
 
 
-INTO-CPS Association
-====================
+INTO-CPS Toolchain
+==================
 
 .. image:: https://badges.gitter.im/INTO-CPS/community.svg
    :alt: Join the chat at https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link
