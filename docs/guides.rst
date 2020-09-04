@@ -25,8 +25,13 @@ Design Space Exploration
 .. _fmi:
 
 Functional Mock-Up Interface
------------------------------------
+----------------------------
 
 .. warning::
     there is a DESPERATE need for a guide that explains FMI from a practicitioners standpoint!
 
+
+.. _fmu:
+
+Functional Mock-Up Unit
+^^^^^^^^^^^^^^^^^^^^^^^
