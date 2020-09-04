@@ -61,7 +61,9 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-
+html_css_files = [
+    "style.css",
+]
 # We do not wish to process "GitHub" README.MD in the source tree
 
 html_logo = "images/logo.svg"
