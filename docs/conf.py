@@ -48,6 +48,9 @@ exclude_patterns = [
     "submodules/**/LICENSE.md",
 ]
 
+# https://stackoverflow.com/questions/14492743/have-sphinx-report-broken-links
+nitpicky = True
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -67,3 +70,4 @@ html_css_files = [
 # We do not wish to process "GitHub" README.MD in the source tree
 
 html_logo = "images/logo.svg"
+

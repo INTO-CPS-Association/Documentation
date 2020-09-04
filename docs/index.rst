@@ -6,7 +6,7 @@
     tools
     simulation
     fmi
-    developer_documentation
+    contributers_guide
 
 
 INTO-CPS Toolchain
