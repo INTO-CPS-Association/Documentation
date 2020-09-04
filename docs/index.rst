@@ -1,16 +1,8 @@
-.. toctree::
-    :maxdepth: 2
-    :caption: Content
-    :hidden:
-    
-    tools
-    tutorials
-    guides
-    contributers_guide
 
 
 INTO-CPS
 ========
+
 .. image:: https://badges.gitter.im/INTO-CPS/community.svg
    :alt: Join the chat at https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link
    :target: https://gitter.im/INTO-CPS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
@@ -44,16 +36,11 @@ For a demonstration of the tools please check the `INTO-CPS Association's YouTub
    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0Q47MiMFTdU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
 
-How to use the tools?
----------------------
-
 The :ref:`tuts` demonstrates how the different tools can be used together to model and simulate a various types of systems.
 
 In order to use the tools effectively it may be worthwhile to read some theory on the technologies involved.
 This information can be found in the :doc:`guides` section, where topics such as :ref:`cosim` and :ref:`fmi` are covered.
 
-History and Legacy Documentation
---------------------------------
 
 Besides the information available on the website, please see the following documents:
 
@@ -64,3 +51,14 @@ Besides the information available on the website, please see the following docum
 
 
 .. _Functional Mock-up Interface: https://fmi-standard.org/
+
+
+.. toctree::
+    :maxdepth: 3
+    :caption: Content
+    :hidden:
+    
+    tools
+    tutorials
+    guides
+    contributers_guide
