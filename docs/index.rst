@@ -17,6 +17,10 @@ INTO-CPS
    :target: https://gitter.im/INTO-CPS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
 Welcome to the documentation of INTO-CPS, the Integrated Tool Chain for Model-based Design of Cyber-Physical Systems.
+
+.. image:: images/tool_preview.png
+   :align: center
+
 The tools aid in modelling of complex systems allowing it to be decomposed into several smaller components. 
 The complete system is simulated using a technique known as :ref:`cosim`, enabled by the use of a model exchange standard called Functional Mock-up Interface :ref:`fmi` (FMI) standard.
 
