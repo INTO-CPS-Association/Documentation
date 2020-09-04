@@ -2,7 +2,7 @@ Tools
 =====
 
 The INTO-CPS toolchain consists of several tools for developing Cyber-Physical Systems.
-These tools provide functionality needed to enable FMI based co-simulation namely as `Creating new FMUs`_, `Verifying compliance of FMUs`_ and `Performing Co-Simulations`_ the simulation of FMUs.
+These tools provide functionality needed to enable FMI based co-simulation namely as `Creating new FMUs`_, verify_ and `Performing Co-Simulations`_ the simulation of FMUs.
 To keep the infrastructure as lightweight and flexible as possible the projects are hosted independently in their own repostories and provide standalone documentation.
 
 A list of the tools and, grouped by the functionality they provide, can be found below:
@@ -58,11 +58,18 @@ An comprehensive list of these can be found in the `tools section <https://fmi-s
 `Overture <http://overturetool.org>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Overture community supports the modelling method The Vienna Development Method (VDM) which is a set of modelling techniques that have a long and successful history in both research and industrial application in the development of computer-based systems.
+The Overture Tool is an open-source integrated development environment (IDE) for developing and analysing VDM models. 
+The tool suite is written entirely in Java and built on top of the Eclipse platform.
 
 .. image:: images/tools_overture.png
     :align: center
 
-The Overture Tool is an open-source integrated development environment (IDE) for developing and analysing VDM models. The tool suite is written entirely in Java and built on top of the Eclipse platform.
+By installing a plugin Overture can export its models as FMUs as described in this `pdf <http://raw.github.com/overturetool/documentation/master/documentation/UserGuideOvertureIDE/OvertureIDEUserGuide.pdf>`__ found on Overture_.
+
+.. warning::
+    the github.io page gives install instruction on the overture C generator. 
+    I (chris) really dont think this is the place to give this info. 
+    I suggest this information is instead added to overturetool.org
 
 `PyFMU <https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,7 +88,7 @@ You can even generate C-code and run this code on hardware for rapid prototyping
 FMI support for INTO-CPS is provided using a code generation template. 
 
 .. note::
-    For 20-sim 4.5, this template can be downloaded from our `GitHub repository <https://into-cps-association.github.io/constituent-model-development/20sim.html>`_ and the installation instructions can be found in the included README file.
+    For 20-sim 4.5, this template can be downloaded from our `GitHub repository <https://into-cps-association.github.io/constituent-model-development/20sim.html>`__ and the installation instructions can be found in the included README file.
     Starting with 20-sim 4.6, the template is available out of the box.
 
 
@@ -99,6 +106,8 @@ The longer-term goal is to have a complete reference implementation of the Model
 
 For more information see OpenModelica `users documentation <https://openmodelica.org/useresresources/userdocumentation>`__.
 
+.. _verify:
+
 Verifying compliance of FMUs
 ----------------------------
 
@@ -114,6 +123,23 @@ Unfortunately, the current situation is less that ideal, since a large portion o
 The FMIChecker_ is a command line tool that provides thorough static check of FMUs.
 Install instructions can be found on the `GitHub Repository <https://github.com/INTO-CPS-Association/FMI-VDM-Model>`__. Alternatively, the tool can be accessed at this `webpage <https://sweng.au.dk/fmiutils/fmichecker>`__, eliminating the need to install the tool. 
 
+RT-Tester
+^^^^^^^^^
+
+`Core <https://www.verified.de/products/rt-tester/>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RT-Tester is a test automation tool for automatic test generation, test execution and real-time test evaluation. 
+Key features include a strong C/C++-based test script language, high performance multi-threading, and hard real-time capability.
+The tool has been successfully applied in avionics, rail automation, and automotive test projects.
+
+`Model Based Extension (RTT-MBT) <https://www.verified.de/products/model-based-testing/>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RT-Tester Model Based Test Case and Test Data Generator (RTT-MBT) supports model-based testing (MBT), that is, automated generation of test cases, test data, and test procedures from UML/SysML models.
+A number of common modelling tools can be used as front-end for this.
+The derived test procedures use the RT-Tester Core as a back-end, allowing the system under test to be provided on real hardware, software only, or even just simulation to aid test model development.
+RTT-MBT includes requirement tracing from test models down to test executions and allows for powerful status reporting in large scale testing projects.
 
 Interfacing with hardware (HIL)
 -------------------------------
