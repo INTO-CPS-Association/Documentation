@@ -1,8 +1,8 @@
 
 
+#########
 INTO-CPS
-========
-
+#########
 .. image:: https://badges.gitter.im/INTO-CPS/community.svg
    :alt: Join the chat at https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link
    :target: https://gitter.im/INTO-CPS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge

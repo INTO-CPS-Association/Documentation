@@ -1,5 +1,20 @@
+.. _`INTO-CPS Desktop Application`: https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/
+.. _`INTO-CPS Cloud Application`: https://github.com/INTO-CPS-Association/into-cps-application-cloud
+.. _PyFMU: https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/
+.. _Maestro: https://github.com/INTO-CPS-Association/maestro
+.. _Maestro2: https://github.com/INTO-CPS-Association/maestro
+.. _Modelio: https://www.modelio.org/
+.. _20-sim: https://www.20sim.com/
+.. _OpenModelica: https://www.openmodelica.org/
+.. _Overture: http://overturetool.org
+.. _`FMIChecker`: https://github.com/INTO-CPS-Association/FMI-VDM-Model
+.. _`Rabbit FMU`: https://github.com/INTO-CPS-Association/fmu-rabbitmq
+.. _`Core`: https://www.verified.de/products/rt-tester/
+.. _`Model Based Extension (RTT-MBT)`: https://www.verified.de/products/model-based-testing/
+
+*****
 Tools
-=====
+*****
 
 The INTO-CPS toolchain consists of several tools for developing Cyber-Physical Systems.
 These tools provide functionality needed to enable FMI based co-simulation namely as `Creating new FMUs`_, verify_ and `Performing Co-Simulations`_ the simulation of FMUs.
@@ -9,53 +24,39 @@ A list of the tools and, grouped by the functionality they provide, can be found
 
 
 Performing Co-Simulations
--------------------------
+==========================
 
 `INTO-CPS Desktop Application`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 The `INTO-CPS Desktop Application`_ provides a graphical user interface which can be used to configure and orchestrate co-simulation scenarios.
 Install instruction are found in the application's `documentation <https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/>`__.
 
 
 `INTO-CPS Cloud Application`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 .. warning::
     Add info
 
 
 `Modelio`_
-^^^^^^^^^^
-Modelio_ is a combined UML/BPMN modeler supporting a wide range of models and diagrams.
-Its main features are:
-    
-    * SysML support integrated with UML and BPMN
-    * XMI import and export
-    * Scripting language support (Jython)
-    * Extensibility: Modelio can be extended for any language, methodology or modeling technique just by adding modules. You can either use existing modules or else develop your own.
+----------
 
-.. image:: images/tools_modelio.jpg
-    :align: center
-
-In addition, to its general purpose use, a special SysML profile allows Modelio to be used to setup co-simulation scenarios that can be executed within the `INTO-CPS Desktop Application`_.
-For information on how to use this integration see `Desktop Application Modelio integration <https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/integrations.html#modelio>`_
+.. include:: ./tools/modelio.inc
 
 Maestro_
-^^^^^^^^
-
-Maestro_ is a command line tool that orchestrates co-simulation of FMUs. 
-While, the program is used internally by the `INTO-CPS Desktop Application`_ it can also be downloaded and used seperately.
-The `GitHub repository <https://github.com/INTO-CPS-Association/maestro>`__ which also acts as its documentation.
+--------
+.. include:: ./tools/maestro.inc
 
 
 Creating new FMUs
------------------
+==================
 
 Several commercial and open-source tools exist, that are enables the creation of FMUs.
 An comprehensive list of these can be found in the `tools section <https://fmi-standard.org/tools/>`_ on the FMI-standard's website.
 
 Overture_
-^^^^^^^^^
+---------
 The Overture community supports the modelling method The Vienna Development Method (VDM) which is a set of modelling techniques that have a long and successful history in both research and industrial application in the development of computer-based systems.
 `The Overture Tool`__ is an open-source integrated development environment (IDE) for developing and analysing VDM models. 
 The tool suite is written entirely in Java and built on top of the Eclipse platform.
@@ -75,11 +76,11 @@ __ Overture_
     I suggest this information is instead added to overturetool.org
 
 PyFMU_
-^^^^^^
+------
 PyFMU_ is a command line program that enables the rapid development of FMUs using Python.
 
 `20-sim`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 20-sim_ is a modeling and simulation program for mechatronic systems. 
 With 20-sim you can enter model graphically, similar to drawing an engineering scheme. 
 With these models you can simulate and analyze the behavior of multi-domain dynamic systems and create control systems.
@@ -96,7 +97,7 @@ FMI support for INTO-CPS is provided using a code generation template.
 
 
 `OpenModelica`_
-^^^^^^^^^^^^^^^
+---------------
 OpenModelica_ is an open-source Modelica-based modeling and simulation environment intended for industrial and academic usage.
 
 .. image:: images/tools_openmodelica.png
@@ -112,10 +113,10 @@ For more information see OpenModelica `users documentation <https://openmodelica
 .. _verify:
 
 Verifying compliance of FMUs
-----------------------------
+============================
 
 `FMIChecker`_
-^^^^^^^^^^^^^
+-------------
 To maximize compatiblity between an FMU and existing simulation tools it is import to ensure strict compliance to the FMI standard.
 Unfortunately, the current situation is less that ideal, since a large portion of FMUs encountered do not implement the standard correctly.
 
@@ -128,10 +129,10 @@ Install instructions can be found on the `GitHub Repository`__. Alternatively, t
 __ FMIChecker_
 
 RT-Tester
-^^^^^^^^^
+---------
 
 `Core`_
-~~~~~~~
+""""""""
 `RT-Tester`__ is a test automation tool for automatic test generation, test execution and real-time test evaluation. 
 Key features include a strong C/C++-based test script language, high performance multi-threading, and hard real-time capability.
 The tool has been successfully applied in avionics, rail automation, and automotive test projects.
@@ -139,7 +140,7 @@ The tool has been successfully applied in avionics, rail automation, and automot
 __ `Core`_
 
 `Model Based Extension (RTT-MBT)`_
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""""
 `RT-Tester Model Based Test Case and Test Data Generator (RTT-MBT)`__ supports model-based testing (MBT), that is, automated generation of test cases, test data, and test procedures from UML/SysML models.
 A number of common modelling tools can be used as front-end for this.
 The derived test procedures use the RT-Tester Core as a back-end, allowing the system under test to be provided on real hardware, software only, or even just simulation to aid test model development.
@@ -147,27 +148,16 @@ RTT-MBT includes requirement tracing from test models down to test executions an
 
 __ `Model Based Extension (RTT-MBT)`_
 
-Interfacing with hardware (HIL)
--------------------------------
+Interfacing
+===========
 
 
 
 `Rabbitmq FMU`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------
 
 `Rabbitmq FMU`_ provides a way to couple the simulation of a system to one or more components of physical system, in a process known as `hardware-in-the-loop <https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation>`__.
 
 
-.. _`INTO-CPS Desktop Application`: https://into-cps-association.readthedocs.io/projects/desktop-application/en/latest/
-.. _`INTO-CPS Cloud Application`: https://github.com/INTO-CPS-Association/into-cps-application-cloud
-.. _PyFMU: https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/
-.. _Maestro: https://github.com/INTO-CPS-Association/maestro
-.. _Modelio: https://www.modelio.org/
-.. _20-sim: https://www.20sim.com/
-.. _OpenModelica: https://www.openmodelica.org/
-.. _Overture: http://overturetool.org
-.. _`FMIChecker`: https://github.com/INTO-CPS-Association/FMI-VDM-Model
-.. _`Rabbit FMU`: https://github.com/INTO-CPS-Association/fmu-rabbitmq
-.. _`Core`: https://www.verified.de/products/rt-tester/
-.. _`Model Based Extension (RTT-MBT)`: https://www.verified.de/products/model-based-testing/
+
 

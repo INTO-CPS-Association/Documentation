@@ -4,7 +4,7 @@ Guides
 This section contains a number of guides to useful concepts such as sim_, cosim_, fmi_, and dse_.
 These are designed to answers basic questions such as "what is an FMU?", "how is cosimulation different than simulation?", and "How do i create my own FMU?".
 
-If you would like to take a more practical approach to learning these topics is by following the tutorials found in the :ref:tuts section.
+If you would like to take a more practical approach to learning these topics is by following the tutorials found in the :ref:`tuts` section.
 
 .. _sim:
 
