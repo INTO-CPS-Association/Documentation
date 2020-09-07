@@ -66,14 +66,8 @@ __ Overture_
 .. image:: images/tools_overture.png
     :align: center
 
-By installing a plugin Overture can export its models as FMUs as described in this `pdf <http://raw.github.com/overturetool/documentation/master/documentation/UserGuideOvertureIDE/OvertureIDEUserGuide.pdf>`__ found on `Overture's website`__.
+By installing a plugin Overture can export its models as C-code and FMUs. See http://overturetool.org/documentation/generating-c-code.html and http://overturetool.org/documentation/fmi/fmi-support.html.
 
-__ Overture_
-
-.. warning::
-    the github.io page gives install instruction on the overture C generator. 
-    I (chris) really dont think this is the place to give this info. 
-    I suggest this information is instead added to overturetool.org
 
 PyFMU_
 ------
