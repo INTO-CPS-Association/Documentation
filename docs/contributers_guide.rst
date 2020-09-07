@@ -7,12 +7,49 @@ Contributers Guide
 
 This section of the documentation provides relevant information to maintainers and contributers of the project.
 
+Updating the documentation
+--------------------------
+
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
+.. _`reStructuredText`: https://docutils.sourceforge.io/rst.html
+.. _`Read the docs`: https://readthedocs.org/
+.. _`Thomas Cokelar rst Cheatsheet`: https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#id4
+.. _`Ralsina rst Cheatsheet`: https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
+.. _Sphinx reStructuredText Primer: https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html
+.. _`Read the docs: Getting started with Sphinx`: https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html
+.. _`INTO-CPS Documentation repo`: https://github.com/INTO-CPS-Association/Documentation.git
+
+
+The documentation is build and hosted by a service called `Read the docs`_ (rtd) which uses Sphinx_ to build html, pdf and epub documenation. 
+The process is automated such that any commit to the `INTO-CPS Documentation repo`_ causes the documentation to be updated.
+Sphinx uses a markdown-like format called reStructuredText_ (rst) which is suitable for creating hierarchical document structures contains cross-references.
+
+Anyone can contribute to the documentation provided they have write access to `INTO-CPS Documentation repo`_.
+The documentation shown on this webpage is stored in the ``Documentation/docs`` directory as shown below.
+Of particular intrest is the ``index.rst`` and ``conf.py`` file, the former being the entry point of the documentation and the latter being the configuration used by Sphinx_.
+
+.. image:: images/contributing_to_documentation.png
+    :align: center
+
+The documentation can be build using the ``make`` command in the ``docs`` folder.
+
+.. code-block:: bash
+    
+    make html # builds html docs
+    make latexpdf # builds pdf
+    make linkcheck # verifies links are correct
+
+
+A good way to familiarize yourself with the workflow and rst is to go through `Read the docs: Getting started with Sphinx`_.
+Additionally, there exists a several good references on rst such as `Sphinx reStructuredText Primer`_, `Thomas Cokelar rst Cheatsheet`_ , and `Ralsina rst Cheatsheet`_ .
+
 Contact
 -------
 The easiest way to get in contact with us is using the `INTO-CPS Association Gitter channel <https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link>`__.
 This is a great place for less formal questions and sharing ideas if you want to contribute.
 
 In case you have encountered an bug in one of the tools, please use the appropriate issue tracker as listed in Issues_. 
+
 
 Issues
 ------
