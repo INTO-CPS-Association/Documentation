@@ -178,7 +178,7 @@ RT-Tester
 `Core`_
 ^^^^^^^^
 
-`RT-Tester`__ is a test automation tool for automatic test generation, test execution and real-time test evaluation. 
+`RT-Tester`__ is a test automation tool for automatic test generation, test execution and real-time test evaluation.
 Key features include a strong C/C++-based test script language, high performance multi-threading, and hard real-time capability.
 The tool has been successfully applied in avionics, rail automation, and automotive test projects.
 
