@@ -54,6 +54,8 @@ Creating new FMUs
 Several commercial and open-source tools exist, that are enables the creation of FMUs.
 An comprehensive list of these can be found in the `tools section <https://fmi-standard.org/tools/>`_ on the FMI-standard's website.
 
+Below is a list of tools that are part of INTO-CPS that supports FMI export.
+
 Overture_
 ---------
 The Overture community supports the modelling method The Vienna Development Method (VDM) which is a set of modelling techniques that have a long and successful history in both research and industrial application in the development of computer-based systems.
@@ -65,8 +67,7 @@ __ Overture_
 .. image:: images/tools_overture.png
     :align: center
 
-By installing a plugin Overture can export its models as C-code and FMUs. See http://overturetool.org/documentation/generating-c-code.html and http://overturetool.org/documentation/fmi/fmi-support.html.
-
+By installing a plugin, Overture can export its models as plain `C-code <http://overturetool.org/documentation/generating-c-code.html>`__ and as standalone `FMUs <http://overturetool.org/documentation/fmi/fmi-support.html>`__ that can be imported into a FMI compatible simulation tool such as the `INTO-CPS Desktop Application`_.
 
 PyFMU_
 ------
@@ -156,10 +157,12 @@ For more information see OpenModelica `users documentation <https://openmodelica
 Verifying compliance of FMUs
 ============================
 
-`FMIChecker`_
--------------
 To maximize compatiblity between an FMU and existing simulation tools it is import to ensure strict compliance to the FMI standard.
 Unfortunately, the current situation is less that ideal, since a large portion of FMUs encountered do not implement the standard correctly.
+
+`FMIChecker`_
+-------------
+
 
 .. image:: images/tools_fmichecker.png
     :align: center
@@ -187,7 +190,6 @@ __ `Core`_
 
 `Model Based Extension (RTT-MBT)`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 `RT-Tester Model Based Test Case and Test Data Generator (RTT-MBT)`__ supports model-based testing (MBT), that is, automated generation of test cases, test data, and test procedures from UML/SysML models.
 A number of common modelling tools can be used as front-end for this.
 The derived test procedures use the RT-Tester Core as a back-end, allowing the system under test to be provided on real hardware, software only, or even just simulation to aid test model development.
