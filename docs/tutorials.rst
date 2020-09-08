@@ -2,23 +2,19 @@
 
 Tutorials
 =========
-
-.. warning::
-    here we should design or adapt existing material to demonstrate the workflow of the application.
-    there should be tutorials ranging in complexity. This is also a good way to demonstrate how to use the different tools and how the fit together.
-
+The tutorials are avaiable at https://github.com/INTO-CPS-Association/training
 
 Case Studies
 ------------
 
+There are several case studies in the INTO-CPS Project. Besides the links below, please see the file :download:`The INTO-CPS Examples Compendium <../examples_compendium/INTO-CPS_Examples_Compendium.pdf>`
+
 Incubator
 ^^^^^^^^^
-.. warning::
-    add link once this goes public
+The Incubator case study is currently under development. It will be added in a future update.
 
 `Single Tank <https://github.com/INTO-CPS-Association/example-single_watertank.git>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 `Three Tank <https://github.com/INTO-CPS-Association/example-three_tank_watertank.git>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

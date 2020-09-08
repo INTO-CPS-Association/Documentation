@@ -80,7 +80,9 @@ Installing a module in a project
 
     1. Click on [|4|] to expand the Modules catalog.
     2. In the Modules catalog, select the module you want to install.
-    3. Click on [|5|] to install the module in the project.
+    3. Click on [|5|] to install the module in the project.. 
+    
+.. _modeliodocumentation:
 
 Documentation
 """""""""""""

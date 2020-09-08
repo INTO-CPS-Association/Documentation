@@ -1,3 +1,5 @@
+.. _contributers-guide:
+
 Contributers Guide
 ==================
 
@@ -5,7 +7,8 @@ Contributers Guide
    :alt: Join the chat at https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link
    :target: https://gitter.im/INTO-CPS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
-This section of the documentation provides relevant information to maintainers and contributers of the project.
+| This section of the documentation provides relevant information to maintainers and contributers of the project.
+| If you are interested in becoming a contributor, please see https://into-cps.org/contact/.
 
 Updating the documentation
 --------------------------
@@ -45,7 +48,7 @@ Additionally, there exists a several good references on rst such as `Sphinx reSt
 
 Contact
 -------
-The easiest way to get in contact with us is using the `INTO-CPS Association Gitter channel <https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link>`__.
+The easiest way to get in contact with us is using the `INTO-CPS Association Gitter channel <https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link>`__ or https://into-cps.org/contact/.
 This is a great place for less formal questions and sharing ideas if you want to contribute.
 
 In case you have encountered an bug in one of the tools, please use the appropriate issue tracker as listed in Issues_. 

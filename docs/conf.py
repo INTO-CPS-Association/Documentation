@@ -34,7 +34,7 @@ master_doc = "index"
 extensions = [
     "recommonmark",
     "sphinx_rtd_theme",
-    "sphinx.ext.autosectionlabel",
+    #"sphinx.ext.autosectionlabel",
     "sphinx.ext.imgconverter",
 ]
 
