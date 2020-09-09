@@ -2,7 +2,7 @@
 
 Tutorials
 =========
-The tutorials are avaiable at https://github.com/INTO-CPS-Association/training
+The tutorials are available at https://github.com/INTO-CPS-Association/training
 
 Case Studies
 ------------

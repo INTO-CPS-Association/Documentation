@@ -1,13 +1,13 @@
 .. _contributers-guide:
 
-Contributers Guide
+Contributors Guide
 ==================
 
 .. image:: https://badges.gitter.im/INTO-CPS/community.svg
    :alt: Join the chat at https://gitter.im/INTO-CPS/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link
    :target: https://gitter.im/INTO-CPS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
-| This section of the documentation provides relevant information to maintainers and contributers of the project.
+| This section of the documentation provides relevant information to maintainers and contributors of the project.
 | If you are interested in becoming a contributor, please see https://into-cps.org/contact/.
 
 Updating the documentation
@@ -23,13 +23,13 @@ Updating the documentation
 .. _`INTO-CPS Documentation repo`: https://github.com/INTO-CPS-Association/Documentation.git
 
 
-The documentation is build and hosted by a service called `Read the docs`_ (rtd) which uses Sphinx_ to build html, pdf and epub documenation. 
+The documentation is build and hosted by a service called `Read the docs`_ (rtd) which uses Sphinx_ to build html, pdf and epub documentation. 
 The process is automated such that any commit to the `INTO-CPS Documentation repo`_ causes the documentation to be updated.
 Sphinx uses a markdown-like format called reStructuredText_ (rst) which is suitable for creating hierarchical document structures contains cross-references.
 
 Anyone can contribute to the documentation provided they have write access to `INTO-CPS Documentation repo`_.
 The documentation shown on this webpage is stored in the ``Documentation/docs`` directory as shown below.
-Of particular intrest is the ``index.rst`` and ``conf.py`` file, the former being the entry point of the documentation and the latter being the configuration used by Sphinx_.
+Of particular interest is the ``index.rst`` and ``conf.py`` file, the former being the entry point of the documentation and the latter being the configuration used by Sphinx_.
 
 .. image:: images/contributing_to_documentation.png
     :align: center
@@ -59,7 +59,7 @@ Issues
 
 Have you encountered any issues related to the tools? If so these can be submitted to the bug tracker of the respective projects.
 The majority of these project are hosted on GitHub and makes use of its built-in issue tracker. 
-The remaining use other systems that may require a signup in order to view and submit issues.
+The remaining use other systems that may require a sign-up in order to view and submit issues.
 
 Below is a list of the issue trackers of the different tools:
 
