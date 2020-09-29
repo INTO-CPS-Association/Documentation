@@ -217,10 +217,10 @@ Links to Documentation
 """"""""""""""""""""""
 The links to documentation of different tools are:
 
-- Maestro CLI Interface
-- INTO-CPS Library
-- Python FMUs
-- Maestro v2
+- `Maestro CLI Interface`_
+- `INTO-CPS Library`_
+- `Python FMUs`_
+- `Maestro v2`_
 
 
 Downloads
