@@ -11,6 +11,13 @@
 .. _`RabbitMQ FMU`: https://github.com/INTO-CPS-Association/fmu-rabbitmq
 .. _`Core`: https://www.verified.de/products/rt-tester/
 .. _`Model Based Extension (RTT-MBT)`: https://www.verified.de/products/model-based-testing/
+.. _`Maestro CLI Interface`: https://github.com/INTO-CPS-Association/maestro/wiki/Getting-Started:-Running-a-co-simulation-through-maestro-CLI
+.. _`INTO-CPS Library`: https://gitlab.au.dk/clagms/intocps-fmi-native-api-example
+.. _`Python FMUs`: https://into-cps-association.readthedocs.io/projects/pyfmu/en/develop/
+.. _`Maestro v2`: https://into-cps-maestro.readthedocs.io/en/latest/index.html
+
+
+
 
 .. _tools:
 
@@ -20,7 +27,7 @@ Tools
 
 The INTO-CPS toolchain consists of several tools for developing Cyber-Physical Systems.
 These tools provide functionality needed to enable FMI based co-simulation namely as `Creating new FMUs`_, verify_ and `Performing Co-Simulations`_ the simulation of FMUs.
-To keep the infrastructure as lightweight and flexible as possible the projects are hosted independently in their own repostories and provide standalone documentation.
+To keep the infrastructure as lightweight and flexible as possible the projects are hosted independently in their own repositories and provide standalone documentation.
 
 A list of the tools and, grouped by the functionality they provide, can be found below:
 
@@ -107,7 +114,7 @@ The longer-term goal is to have a complete reference implementation of the Model
 Documentation
 ^^^^^^^^^^^^^
 
-The OpenModelizca users guide `as pdf or epub <https://openmodelica.org/doc/OpenModelicaUsersGuide/>`__
+The OpenModelica users guide `as pdf or epub <https://openmodelica.org/doc/OpenModelicaUsersGuide/>`__
 or as `html <https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/>`__.
 The OpenModelica `API documentation <https://build.openmodelica.org/Documentation/OpenModelica.Scripting.html>`__.
 More documentation can be found `here <https://openmodelica.org/useresresources/userdocumentation>`__.
@@ -157,7 +164,7 @@ For more information see OpenModelica `users documentation <https://openmodelica
 Verifying compliance of FMUs
 ============================
 
-To maximize compatiblity between an FMU and existing simulation tools it is import to ensure strict compliance to the FMI standard.
+To maximize compatibility between an FMU and existing simulation tools it is import to ensure strict compliance to the FMI standard.
 Unfortunately, the current situation is less that ideal, since a large portion of FMUs encountered do not implement the standard correctly.
 
 `FMIChecker`_
@@ -204,6 +211,17 @@ FMI/FMU support for RT-Tester / RTT-MBT
 The RTT-MBT component is catering for FMI/FMU by a specialised feature
 release that allows to cast a test procedures to an FMI2-compliant FMU.
 That FMU is in input to the COE.
+
+
+Links to Documentation
+""""""""""""""""""""""
+The links to documentation of different tools are:
+
+- `Maestro CLI Interface`_
+- `INTO-CPS Library`_
+- `Python FMUs`_
+- `Maestro v2`_
+
 
 Downloads
 """""""""

@@ -2,12 +2,16 @@
 
 Tutorials
 =========
-The tutorials are avaiable at https://github.com/INTO-CPS-Association/training
+The tutorials are available at https://github.com/INTO-CPS-Association/training
 
 Case Studies
 ------------
 
-There are several case studies in the INTO-CPS Project. Besides the links below, please see the file :download:`The INTO-CPS Examples Compendium <../examples_compendium/INTO-CPS_Examples_Compendium.pdf>`
+There are several case studies in the INTO-CPS Project. Besides the links below, please see the file :download:`The INTO-CPS Examples Compendium <../examples_compendium/INTO-CPS_Examples_Compendium.pdf>`.
+
+INTO-CPS FMI JNI
+^^^^^^^^^^^^^^^^
+It is possible to write Functional Mockup Units (FMUs) in Java. `This repository <https://gitlab.au.dk/clagms/intocps-fmi-native-api-example>`__ illustrates the use of Java Native Interface (JNI) for providing Functional Mockup Interface (FMI) to FMUs written in Java.
 
 Incubator
 ^^^^^^^^^
