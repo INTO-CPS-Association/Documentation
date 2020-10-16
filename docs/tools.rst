@@ -8,7 +8,7 @@
 .. _OpenModelica: https://www.openmodelica.org/
 .. _Overture: http://overturetool.org
 .. _`FMIChecker`: https://github.com/INTO-CPS-Association/FMI-VDM-Model
-.. _`Rabbit FMU`: https://github.com/INTO-CPS-Association/fmu-rabbitmq
+.. _`RabbitMQ FMU`: https://github.com/INTO-CPS-Association/fmu-rabbitmq
 .. _`Core`: https://www.verified.de/products/rt-tester/
 .. _`Model Based Extension (RTT-MBT)`: https://www.verified.de/products/model-based-testing/
 
@@ -219,11 +219,7 @@ Updates of the installers will be available at the same URL.
 Interfacing
 ===========
 
-`Rabbitmq FMU`_
+`RabbitMQ FMU`_
 ---------------
 
-`Rabbitmq FMU`_ provides a way to bring external data into an FMI co-simulation.
-
-
-
-
+`RabbitMQ FMU`_ provides a way to bring external data into an FMI co-simulation.
