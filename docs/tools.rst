@@ -225,9 +225,9 @@ The links to documentation of different tools are:
 
 Downloads
 """""""""
-In order to operate properly, it is necessary to first obtain the prerequisite tools Python-2.7 and gcc-4.9_v2. An installer collection is available for Windows via GitHub from `here <https://github.com/Frank-Zeyda/vsi-supplement/releases/download/v0.1.1/install_Python27_gcc49_v2.exe>`__.
+In order to operate properly, it is necessary to first obtain the prerequisite tools Python-2.7 and gcc-4.9_v2. An installer collection is available for Windows via GitHub from `here <https://github.com/INTO-CPS-Association/vsi-supplements/releases/download/v0.1.1/install_Python27_gcc49_v2.exe>`__.
 
-RT-Tester Core, RTT-MBT, RTTUI3, and prepared example projects can be downloaded and installed by one click (on Windows) using the VSI_bundle_v0_1_1.exe file. This file can be downloaded via GitHub from `here <https://github.com/Frank-Zeyda/vsi-supplement/releases/download/v0.1.1/VSI_bundle_v0_1_1.exe>`__.
+RT-Tester Core, RTT-MBT, RTTUI3, and prepared example projects can be downloaded and installed by one click (on Windows) using the VSI_bundle_v0_1_1.exe file. This file can be downloaded via GitHub from `here <https://github.com/INTO-CPS-Association/vsi-supplements/releases/download/v0.1.1/VSI_bundle_v0_1_1.exe>`__.
 
 Updates of the installers will be available at the same URL & GitHub repository.
 
